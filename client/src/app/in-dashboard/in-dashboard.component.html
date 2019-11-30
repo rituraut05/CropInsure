@@ -56,15 +56,46 @@
                         </clr-vertical-nav-group-children>
                     </ng-template>
                 </clr-vertical-nav-group>
-
+                <clr-vertical-nav-group routerLinkActive="active">
+                        <a
+                            [routerLink]="['./beatles']"
+                            routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact:true}"
+                            clrVerticalNavLink>
+                            <clr-icon [attr.shape]="'line-chart'" clrVerticalNavIcon></clr-icon>
+                            Analytics
+                        </a>
+                        <ng-template
+                            [clrIfExpanded]="groupExpand"
+                            (clrIfExpandedChange)="updateGroupExpand($event)">
+                            <clr-vertical-nav-group-children>
+                                <a routerLinkActive="active"
+                                   clrVerticalNavLink
+                                   [routerLink]="['./abbey-road']">
+                                    Abbey Road
+                                </a>
+                                <a routerLinkActive="active"
+                                   clrVerticalNavLink
+                                   [routerLink]="['./revolver']">
+                                    Revolver
+                                </a>
+                                <a routerLinkActive="active"
+                                   clrVerticalNavLink
+                                   [routerLink]="['./rubber-soul']">
+                                    Rubber Soul
+                                </a>
+                            </clr-vertical-nav-group-children>
+                        </ng-template>
+                    </clr-vertical-nav-group>
+    
                 <clr-vertical-nav-group routerLinkActive="active" routerLinkActive="active">
                     <a
                         [routerLink]="['./killers']"
                         routerLinkActive="active"
                         [routerLinkActiveOptions]="{exact:true}"
                         clrVerticalNavLink>
-                        <clr-icon [attr.shape]="'home'" clrVerticalNavIcon></clr-icon>
-                        The Killers
+                        <clr-icon [attr.shape]="'slider'" clrVerticalNavIcon></clr-icon>
+                        Filters
                     </a>
                     <ng-template clrIfExpanded>
                         <clr-vertical-nav-group-children>

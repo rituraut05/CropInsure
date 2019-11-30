@@ -23,6 +23,7 @@
     "@clr/icons": "^2.3.2",
     "@clr/ui": "^2.3.2",
     "@webcomponents/custom-elements": "^1.0.0",
+    "chart.js": "^2.9.3",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"

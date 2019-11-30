@@ -11,6 +11,8 @@ import { ProgbarExampleComponent } from './progbar-example/progbar-example.compo
 import { InsuranceFormComponent } from './insurance-form/insurance-form.component';
 import { Dashboard2Component } from './dashboard2/dashboard2.component';
 import { InDashboardComponent } from './in-dashboard/in-dashboard.component';
+import { AnalyticsComponent } from './analytics/analytics.component';
+import { ClrChartsComponent } from './clr-charts/clr-charts.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { InDashboardComponent } from './in-dashboard/in-dashboard.component';
     ProgbarExampleComponent,
     InsuranceFormComponent,
     Dashboard2Component,
-    InDashboardComponent
+    InDashboardComponent,
+    AnalyticsComponent,
+    ClrChartsComponent
   ],
   imports: [
     BrowserModule,

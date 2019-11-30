@@ -1,0 +1,169 @@
+<header class="header-6">
+        <div class="branding">
+            <a class="nav-link">
+                <!-- <clr-icon shape="vm-bug"></clr-icon> -->
+                <span class="title">CROP INSURE</span>
+            </a>
+        </div>
+        <div class="header-actions">
+            <a class="nav-link nav-icon" aria-label="settings">
+                <clr-icon shape="bell"></clr-icon>
+            </a>
+            <a href="#" class="nav-link nav-icon" aria-label="settings">
+                <clr-icon shape="cog"></clr-icon>
+            </a>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="content-container">
+            <clr-vertical-nav *ngIf="option === 'lazy'"
+                                [clrVerticalNavCollapsible]="true"
+                                [clrVerticalNavCollapsed]="navCollapsed"
+                                (clrVerticalNavCollapsedChange)="updateNavCollapsed($event)">
+
+                <clr-vertical-nav-group routerLinkActive="active">
+                    <a
+                        [routerLink]="['./beatles']"
+                        routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact:true}"
+                        clrVerticalNavLink>
+                        <clr-icon [attr.shape]="'home'" clrVerticalNavIcon></clr-icon>
+                        The Beatles
+                    </a>
+                    <ng-template
+                        [clrIfExpanded]="groupExpand"
+                        (clrIfExpandedChange)="updateGroupExpand($event)">
+                        <clr-vertical-nav-group-children>
+                            <a routerLinkActive="active"
+                                clrVerticalNavLink
+                                [routerLink]="['./abbey-road']">
+                                Abbey Road
+                            </a>
+                            <a routerLinkActive="active"
+                                clrVerticalNavLink
+                                [routerLink]="['./revolver']">
+                                Revolver
+                            </a>
+                            <a routerLinkActive="active"
+                                clrVerticalNavLink
+                                [routerLink]="['./rubber-soul']">
+                                Rubber Soul
+                            </a>
+                        </clr-vertical-nav-group-children>
+                    </ng-template>
+                </clr-vertical-nav-group>
+                <clr-vertical-nav-group routerLinkActive="active">
+                        <a
+                            [routerLink]="['./beatles']"
+                            routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact:true}"
+                            clrVerticalNavLink>
+                            <clr-icon [attr.shape]="'line-chart'" clrVerticalNavIcon></clr-icon>
+                            Analytics
+                        </a>
+                        <ng-template
+                            [clrIfExpanded]="groupExpand"
+                            (clrIfExpandedChange)="updateGroupExpand($event)">
+                            <clr-vertical-nav-group-children>
+                                <a routerLinkActive="active"
+                                    clrVerticalNavLink
+                                    [routerLink]="['./abbey-road']">
+                                    Abbey Road
+                                </a>
+                                <a routerLinkActive="active"
+                                    clrVerticalNavLink
+                                    [routerLink]="['./revolver']">
+                                    Revolver
+                                </a>
+                                <a routerLinkActive="active"
+                                    clrVerticalNavLink
+                                    [routerLink]="['./rubber-soul']">
+                                    Rubber Soul
+                                </a>
+                            </clr-vertical-nav-group-children>
+                        </ng-template>
+                    </clr-vertical-nav-group>
+    
+                <clr-vertical-nav-group routerLinkActive="active" routerLinkActive="active">
+                    <a
+                        [routerLink]="['./killers']"
+                        routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact:true}"
+                        clrVerticalNavLink>
+                        <clr-icon [attr.shape]="'slider'" clrVerticalNavIcon></clr-icon>
+                        Filters
+                    </a>
+                    <ng-template clrIfExpanded>
+                        <clr-vertical-nav-group-children>
+                            <a routerLinkActive="active"
+                                [routerLink]="['./hot-fuss']"
+                                clrVerticalNavLink>
+                                Hot Fuss
+                            </a>
+                            <a routerLinkActive="active"
+                                clrVerticalNavLink
+                                [routerLink]="['./day-and-age']">
+                                Day & Age
+                            </a>
+                            <a routerLinkActive="active"
+                                clrVerticalNavLink
+                                [routerLink]="['./sams-town']">
+                                Sam's Town
+                            </a>
+                        </clr-vertical-nav-group-children>
+                    </ng-template>
+                </clr-vertical-nav-group>
+
+                <a routerLinkActive="active"
+                    clrVerticalNavLink
+                    [routerLink]="['./wikipedia']">
+                    <clr-icon shape="certificate" clrVerticalNavIcon></clr-icon>
+                    Wikipedia
+                </a>
+                <div style="position: fixed; bottom: 4px;">
+                    <span style="padding: 8px;"><a routerLinkActive="active"
+                        [routerLink]="['./wikipedia']">English</a></span>
+                    <span style="padding: 8px;"><a routerLinkActive="active"
+                    [routerLink]="['./wikipedia']">मराठी</a></span>
+                    <span style="padding: 8px;"><a routerLinkActive="active"
+                        [routerLink]="['./wikipedia']">हिंदी</a></span>
+                    <span style="padding: 8px;"><a routerLinkActive="active"
+                        [routerLink]="['./wikipedia']">ગુજ્રતિ</a></span>
+                </div>
+                
+
+            </clr-vertical-nav>
+        <div class="content-area">
+            <h3 style="padding: 10px;">Analytics</h3>
+            <div class="btn-group">
+                    <div class="radio btn">
+                        <input type="radio" name="btn-group-demo-radios" id="btn-demo-radio-1">
+                        <label for="btn-demo-radio-1">Week</label>
+                    </div>
+                    <div class="radio btn">
+                        <input type="radio" name="btn-group-demo-radios" id="btn-demo-radio-2">
+                        <label for="btn-demo-radio-2">Month</label>
+                    </div>
+                    <div class="radio btn">
+                        <input type="radio" name="btn-group-demo-radios" id="btn-demo-radio-3">
+                        <label for="btn-demo-radio-3">Quarter</label>
+                    </div>
+                    <div class="radio btn">
+                        <input type="radio" name="btn-group-demo-radios" id="btn-demo-radio-4" checked>
+                        <label for="btn-demo-radio-4">Year</label>
+                    </div>
+                </div>
+            <br>
+            <clr-charts type='line'[data]="data" options="options"></clr-charts>
+<clr-charts type='bar'[data]="data" options="options"></clr-charts>
+<clr-charts type='pie'[data]="data" options="options"></clr-charts> 
+<clr-charts type='radar'[data]="data" options="options"></clr-charts>
+<clr-charts type='doughnut' [data]="data" options="options"></clr-charts>
+<clr-charts type='polarArea'[data]="data" options="options"></clr-charts>
+<clr-charts type='scatter'[data]="data" options="options"></clr-charts>
+        </div>
+        
+        </div>
+    </div>
+    
