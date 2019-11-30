@@ -1,0 +1,172 @@
+<header class="header-6">
+        <div class="branding">
+            <a class="nav-link">
+                <!-- <clr-icon shape="vm-bug"></clr-icon> -->
+                <span class="title">CROP INSURE</span>
+            </a>
+        </div>
+        <div class="header-actions">
+            <a class="nav-link nav-icon" aria-label="settings">
+                <clr-icon shape="bell"></clr-icon>
+            </a>
+            <a href="#" class="nav-link nav-icon" aria-label="settings">
+                <clr-icon shape="cog"></clr-icon>
+            </a>
+        </div>
+    </header>
+    
+    
+    
+    <div class="main-container">
+    <div class="content-container">
+        <div class="content-area">
+            <div class="clr-row" style="z-index: -1">
+                <div class="clr-col-lg-12" style="align:center;">
+                    <div class="card clickable">
+                        <div class="card-block">
+                            <h3>Add your insurance</h3>
+                                <span class="label label-purple" style="display: inline" >Upload your insurance policy</span>
+                                <br><br>
+                                <input #file type="file" name="photo">
+                                <div>
+                                    <br>
+                                    <button type="button" class="btn btn-primary btn-s" [disabled]="submitbuttonStatus"(click)="uplaoddata()">
+                                            Upload 
+                                    </button>
+                                    <p style="display: inline; text-align: right; ">Upload your insurance policy document</p>
+                                </div>
+                                
+                                <div *ngIf="!progressisHidden">
+                                    <div class="clr-row">
+                                        <div class="clr-col">
+                                            <div class="clrweb-DoxMedia">
+                                                <div class="clrweb-DoxMedia-block">
+                                                    <clr-progress-bar-story-demo></clr-progress-bar-story-demo>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <br>
+                <form clrForm>
+                        <span class="clr-sr-only">Tabbing through form inputs will trigger validation messages to be read aloud.</span>
+                        <h4>Basic Details</h4>
+                        <div class="clr-row">
+                                <clr-input-container class="clr-col-lg-4">
+                                        <label>Adhaar Number</label>
+                                        <input clrInput type="text"  name="adhaarNumber" required />
+                                        <clr-control-error>We need your first name for legal compliance</clr-control-error>
+                                    </clr-input-container>
+                                    <clr-input-container class="clr-col-lg-4">
+                                        <label>Farmer Name<span class="required">*</span></label>
+                                        <input clrInput type="text"  name="farmerName" />
+                                    </clr-input-container>
+                                    <clr-input-container class="clr-col-lg-4">
+                                        <label>Father/Husband's Name<span class="required">*</span></label>
+                                        <input clrInput type="text"  name="husbandName" required />
+                                        <clr-control-error>We need your last name for legal compliance</clr-control-error>
+                                    </clr-input-container>
+                        </div>
+                        <div class="clr-row"></div>
+                        <clr-input-container>
+                                <label>Door No<span class="required">*</span></label>
+                                <input clrInput type="text"  name="doorNo" />
+                        </clr-input-container>
+                        <clr-input-container>
+                                <label>Locality<span class="required">*</span></label>
+                                <input clrInput type="text"  name="doorNo" />
+                        </clr-input-container>
+                        <clr-input-container>
+                                <label>District<span class="required">*</span></label>
+                                <input clrInput type="text"  name="doorNo" />
+                        </clr-input-container>
+                        <clr-input-container>
+                                <label>Mandal<span class="required">*</span></label>
+                                <input clrInput type="text"  name="doorNo" />
+                        </clr-input-container>
+                        <clr-input-container>
+                                <label>Village/Ward<span class="required">*</span></label>
+                                <input clrInput type="text"  name="doorNo" />
+                        </clr-input-container>
+                        <clr-input-container>
+                                <label>Community category (change to checkboxes)<span class="required">*</span></label>
+                                <input clrInput type="text"  name="doorNo" />
+                        </clr-input-container>
+                        <clr-input-container>
+                                <label>Farmer Category<span class="required">*</span></label>
+                                <input clrInput type="text"  name="doorNo" />
+                        </clr-input-container>
+                        <clr-input-container>
+                                <label>Bank Account No.<span class="required">*</span></label>
+                                <input clrInput type="text"  name="doorNo" />
+                        </clr-input-container>
+                        <clr-input-container>
+                                <label>Branch Name<span class="required">*</span></label>
+                                <input clrInput type="text"  name="doorNo" />
+                        </clr-input-container>
+                        <clr-input-container>
+                                <label>IFSC Code<span class="required">*</span></label>
+                                <input clrInput type="text"  name="doorNo" />
+                        </clr-input-container>
+                        <clr-input-container>
+                                <label>Delivery Type<span class="required">*</span></label>
+                                <input clrInput type="text"  name="doorNo" />
+                        </clr-input-container>
+                        <clr-input-container>
+                                <label>Mobile no.<span class="required">*</span></label>
+                                <input clrInput type="text"  name="doorNo" />
+                        </clr-input-container>
+                        <clr-input-container>
+                                <label>Email<span class="required">*</span></label>
+                                <input clrInput type="text"  name="doorNo" />
+                        </clr-input-container>
+                        <clr-input-container>
+                                <label>Ration card no.<span class="required">*</span></label>
+                                <input clrInput type="text"  name="doorNo" />
+                        </clr-input-container>
+                        <clr-input-container>
+                                <label>District<span class="required">*</span></label>
+                                <input clrInput type="text"  name="doorNo" />
+                        </clr-input-container>
+                        <clr-input-container>
+                                <label>Mandal<span class="required">*</span></label>
+                                <input clrInput type="text"  name="doorNo" />
+                        </clr-input-container>
+                        <clr-input-container>
+                                <label>Village/Ward<span class="required">*</span></label>
+                                <input clrInput type="text"  name="doorNo" />
+                        </clr-input-container>
+                        <clr-input-container>
+                                <label>Survey number<span class="required">*</span></label>
+                                <input clrInput type="text"  name="doorNo" />
+                        </clr-input-container>
+                        <clr-input-container>
+                                <label>Extent<span class="required">*</span></label>
+                                <input clrInput type="text"  name="doorNo" />
+                        </clr-input-container>
+                        <clr-input-container>
+                                <label>Name of crop<span class="required">*</span></label>
+                                <input clrInput type="text"  name="doorNo" />
+                        </clr-input-container>
+                        <clr-input-container>
+                                <label>Date of sowing<span class="required">*</span></label>
+                                <input clrInput type="text"  name="doorNo" />
+                        </clr-input-container>
+                        <clr-input-container>
+                                <label>Area sown<span class="required">*</span></label>
+                                <input clrInput type="text"  name="doorNo" />
+                        </clr-input-container>
+                        <clr-input-container>
+                                <label>Season<span class="required">*</span></label>
+                                <input clrInput type="text"  name="doorNo" />
+                        </clr-input-container>
+                        <button class="btn btn-primary" type="submit" (click)="next_page()">Submit</button>
+                    </form>                                                                         
+                </div>  
+              </div>
+              
+    </div>
