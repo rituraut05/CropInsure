@@ -11,6 +11,7 @@ export class AnalyticsComponent implements OnInit {
   constructor() { }
   data: any;
   options: any;
+  option = "lazy";
   ngOnInit() {
     this.data = {
       labels: ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"],

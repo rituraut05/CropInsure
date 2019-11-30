@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
 
   constructor(private router: Router) { }
-
+  option = "lazy";
+  
   next_page() {
     history.pushState({data: {key: 'valuee'}}, '', '');
     this.router.navigate(['/InsuranceForm'], {state: {data: {key: 'valuee'}}});

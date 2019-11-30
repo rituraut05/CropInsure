@@ -102,17 +102,17 @@
                             <a routerLinkActive="active"
                                [routerLink]="['./hot-fuss']"
                                clrVerticalNavLink>
-                                Hot Fuss
+                                District
                             </a>
                             <a routerLinkActive="active"
                                clrVerticalNavLink
                                [routerLink]="['./day-and-age']">
-                                Day & Age
+                                Farm size
                             </a>
                             <a routerLinkActive="active"
                                clrVerticalNavLink
                                [routerLink]="['./sams-town']">
-                                Sam's Town
+                                Farmer Type
                             </a>
                         </clr-vertical-nav-group-children>
                     </ng-template>
@@ -190,65 +190,83 @@
                     <br>
                     <div>
                       <h3 style="display:inline;">Manage Insurances</h3>
-                      <div class="search" style="display:inline; padding-left: 20%">    
+                      <div class="search" style="display:inline; padding-left: 10%">    
                         <input placeholder="Search insurance" style="width:50%" >
                         <button class="btn btn-link"><clr-icon shape="search"></clr-icon></button>
+                        <!-- <button class="btn btn-link">Check Risks</button> -->
+                        <button class="btn btn-primary btn-sm" (click)='toggle_check_risk()'>Check Risks</button>
                       </div>
+                      
+                        <clr-toggle-wrapper style="display:inline; padding-left: 10%">
+                            <input type="checkbox" clrToggle value="option1" name="options" />
+                            <label>Claim critical cases automatically</label>
+                        </clr-toggle-wrapper>
                       </div>
+                      
+                      <!-- <span class="spinner spinner-lg">
+                            Loading...
+                        </span> TODO--> 
                       <div class="clr-row">
-                            <div class="clr-col-lg-3 clr-col-12" *ngFor="let item of items; let i = index">
-                                
-                                    <div class="card" >
-                                        <div class="card-header">
-                                            Flood Insurance
-                                        </div>
-        
-                                        <div class="card-block">
-                                                
-                                            <div class="card-media-block wrap">
-                                                   
-                                                <div class="card-media-description">
-                                                    <span>Issue Date: 28/11/2019</span>
-                                                    <span>Maturity: 29/11/2024</span>
-                                                    <span>Premium amount: 1000 Rs</span>
-                                                    <span>Recurrence: Monthly</span>
-                                                </div>
-                                            </div>
-                                            <span class="label label-success">Premium Paid</span>
-                                                <span class="label label-purple">Claimed</span>
-                                            
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                                <div class="clr-col-lg-3 clr-col-12" *ngFor="let item of items; let i = index">
+                            <div class="clr-col-lg-3 clr-col-12" *ngFor="let item of contracts">
                                     <div class="card">
                                             <div class="card-header">
-                                                Drought Insurance
+                                                {{item.type}}
+                                                <div *ngIf="check_risk && item.damage > 80" class="alert alert-danger alert-sm">
+                                                    <div class="alert-items">
+                                                        <div class="alert-item static" role="alert">
+                                                            <div class="alert-icon-wrapper">
+                                                                <clr-icon class="alert-icon" shape="exclamation-circle"></clr-icon>
+                                                            </div>
+                                                            <span class="alert-text">
+                                                                Damage % > 80%
+                                                            </span>
+                                                        </div>
+                                                    </div>                                                   
+                                                    <button type="button" class="close" aria-label="Close">
+                                                            <clr-icon aria-hidden="true" shape="close"></clr-icon>
+                                                        </button>
+                                                </div>
+                                                <div *ngIf="check_risk && item.damage < 80" class="alert alert-info alert-sm">
+                                                        <div class="alert-items">
+                                                            <div class="alert-item static" role="alert">
+                                                                <div class="alert-icon-wrapper">
+                                                                    <clr-icon class="alert-icon" shape="info-circle"></clr-icon>
+                                                                </div>
+                                                                <span class="alert-text">
+                                                                    Damage % = {{item.damage}}
+                                                                </span>
+                                                            </div>
+                                                        </div>                                                   
+                                                        <button type="button" class="close" aria-label="Close">
+                                                                <clr-icon aria-hidden="true" shape="close"></clr-icon>
+                                                            </button>
+                                                    </div>
                                             </div>
             
                                             <div class="card-block">
                                                     
                                                 <div class="card-media-block wrap">                                           
                                                     <div class="card-media-description">
-                                                        <span>Issue Date: 28/11/2019</span>
-                                                        <span>Maturity: 29/11/2024</span>
-                                                        <span>Premium amount: 1000 Rs</span>
-                                                        <span>Recurrence: Monthly</span>
+                                                        <span>{{item.farmer_name}}</span>
+                                                        <span>Issue Date: {{item.issue}}</span>
+                                                        <span>Maturity: {{item.maturity}}</span>
+                                                        <span>Premium amount: {{item.premium}}</span>
+                                                        <span>Recurrence: {{item.recurrence}}</span>
+                                                        <span>Region: {{item.region}}</span>
                                                     </div>
                                                 </div>
-                                                <span class="label label-info">Premium Due</span>
+                                                <span *ngIf="item.due" class="label label-info">Premium Due</span>
+                                                <span *ngIf="!item.due" class="label label-success">Premium Paid</span>
                                                 <a href="#" class="label label-purple clickable">
                                                         Claim Now
                                                     </a>
                                                 
                                             </div>
                                             
+                                            
                                         </div>
                                     </div>
-                                
                       </div>
                 </div>
-              </div>
-              
+            </div>
     </div>
