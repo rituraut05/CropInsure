@@ -11,26 +11,26 @@ export class InsuranceFormComponent implements OnInit {
   constructor(private router: Router, private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
       basic: this.formBuilder.group({
-        name: ['Luke', Validators.required],
-        adhaar: ['Skywalker', Validators.required],
-        mobile: ['Skywalker', Validators.required],
+        name: ['Ganpatrao Patil', Validators.required],
+        adhaar: ['5845 5000 8000', Validators.required],
+        mobile: ['9458889772', Validators.required],
       }),
       farm: this.formBuilder.group({
-        district: ['Luke', Validators.required],
-        village: ['Skywalker', Validators.required],
-        survey: ['Skywalker', Validators.required],
-        area: ['Skywalker', Validators.required]
+        district: ['Satara', Validators.required],
+        village: ['Koregaon', Validators.required],
+        survey: ['10', Validators.required],
+        area: ['0.5 acres', Validators.required]
       }),
       crop: this.formBuilder.group({
-        cropname: ['Luke', Validators.required],
-        sownarea: ['Skywalker', Validators.required],
-        sowdate: ['Skywalker', Validators.required],
-        season: ['Skywalker', Validators.required]
+        cropname: ['Wheat', Validators.required],
+        sownarea: ['0.42', Validators.required],
+        sowdate: ['20/10/2019', Validators.required],
+        season: ['Winter', Validators.required]
       }),
       bank: this.formBuilder.group({
-        bankaccount: ['Luke', Validators.required],
-        ifsc: ['Skywalker', Validators.required],
-        branch: ['Skywalker', Validators.required],
+        bankaccount: ['645XXXXXXX', Validators.required],
+        ifsc: ['MAHB00301', Validators.required],
+        branch: ['Koregaon', Validators.required],
       }),
     });
    }
