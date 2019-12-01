@@ -1,0 +1,10 @@
+{
+    "demo": {
+        "title": "Übersetzungs-Demo",
+        "text": "﻿Dies ist eine einfache Applikation um die Funktionen von ngx-transalte zu demonstrieren.",
+        "greeting": "Hallo {{name}}!"
+    },
+    "Crop": {
+        "Crop_Insurance": "फसल बिमा"
+    }
+}

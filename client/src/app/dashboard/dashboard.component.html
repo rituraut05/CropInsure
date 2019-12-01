@@ -2,7 +2,7 @@
     <div class="branding">
         <a class="nav-link">
             <!-- <clr-icon shape="vm-bug"></clr-icon> -->
-            <span class="title">CROP INSURE</span>
+            <span class="title">{{'Crop.Crop_Insurance'|translate}}</span>
         </a>
     </div>
     <div class="header-actions">
@@ -16,146 +16,192 @@
 </header>
 
 <div>
-        <img  src='../../assets/pptpic.png' style="width:100%; height: 50%;" class='card-media-image'>
-    </div>
+    <img src='../../assets/pptpic.png' style="width:100%; height: 50%;" class='card-media-image'>
+</div>
 
 <div class="main-container">
-<div class="content-container">
-        <!-- <div class="clr-row" >
-                
-                </div> -->
-    <div class="content-area">
-        <!-- <div class="clr-row" style="z-index: -1">
-            <div class="clr-col-lg-12" style="align:center;">
-                <div class="card clickable">
-                    <div class="card-block">
-                        <h3>Add your insurance</h3>
-                            <span class="label label-purple" style="display: inline" >Upload your insurance policy</span>
-                            <br><br>
-                            <input #file type="file" name="photo">
-                            <div>
-                                <br>
-                                <button type="button" class="btn btn-primary btn-s" [disabled]="submitbuttonStatus"(click)="uplaoddata()">
-                                        Upload 
-                                </button>
-                                <p style="display: inline; text-align: right; ">Upload your insurance policy document</p>
-                            </div>
-                            
-                            <div *ngIf="!progressisHidden">
-                                <div class="clr-row">
-                                    <div class="clr-col">
-                                        <div class="clrweb-DoxMedia">
-                                            <div class="clrweb-DoxMedia-block">
-                                                <clr-progress-bar-story-demo></clr-progress-bar-story-demo>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                </div>
-                </div>
-            </div> -->
-            <br>
+    <div class="content-container">
+
+        <div class="content-area">
+            <clr-vertical-nav *ngIf="option === 'lazy'" [clrVerticalNavCollapsible]="true" [clrVerticalNavCollapsed]="navCollapsed" (clrVerticalNavCollapsedChange)="updateNavCollapsed($event)">
+
+                <clr-vertical-nav-group routerLinkActive="active">
+                    <a [routerLink]="['./beatles']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" clrVerticalNavLink>
+                        <clr-icon [attr.shape]="'home'" clrVerticalNavIcon></clr-icon>
+                        The Beatles
+                    </a>
+                    <ng-template [clrIfExpanded]="groupExpand" (clrIfExpandedChange)="updateGroupExpand($event)">
+                        <clr-vertical-nav-group-children>
+                            <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./abbey-road']">
+                                Abbey Road
+                            </a>
+                            <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./revolver']">
+                                Revolver
+                            </a>
+                            <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./rubber-soul']">
+                                Rubber Soul
+                            </a>
+                        </clr-vertical-nav-group-children>
+                    </ng-template>
+                </clr-vertical-nav-group>
+                <clr-vertical-nav-group routerLinkActive="active">
+                    <a [routerLink]="['./beatles']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" clrVerticalNavLink>
+                        <clr-icon [attr.shape]="'line-chart'" clrVerticalNavIcon></clr-icon>
+                        Analytics
+                    </a>
+                    <ng-template [clrIfExpanded]="groupExpand" (clrIfExpandedChange)="updateGroupExpand($event)">
+                        <clr-vertical-nav-group-children>
+                            <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./abbey-road']">
+                                Abbey Road
+                            </a>
+                            <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./revolver']">
+                                Revolver
+                            </a>
+                            <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./rubber-soul']">
+                                Rubber Soul
+                            </a>
+                        </clr-vertical-nav-group-children>
+                    </ng-template>
+                </clr-vertical-nav-group>
+
+                <clr-vertical-nav-group routerLinkActive="active" routerLinkActive="active">
+                    <a [routerLink]="['./killers']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" clrVerticalNavLink>
+                        <clr-icon [attr.shape]="'slider'" clrVerticalNavIcon></clr-icon>
+                        Filters
+                    </a>
+                    <ng-template clrIfExpanded>
+                        <clr-vertical-nav-group-children>
+                            <a routerLinkActive="active" [routerLink]="['./hot-fuss']" clrVerticalNavLink>
+                                Hot Fuss
+                            </a>
+                            <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./day-and-age']">
+                                Day & Age
+                            </a>
+                            <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./sams-town']">
+                                Sam's Town
+                            </a>
+                        </clr-vertical-nav-group-children>
+                    </ng-template>
+                </clr-vertical-nav-group>
+
+                <!-- <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./wikipedia']">
+                    <clr-icon shape="certificate" clrVerticalNavIcon></clr-icon>
+                    Wikipedia
+                </a> -->
                 <div>
-                  <h3 style="display:inline;">Manage Insurances</h3>
-                  <div class="search" style="display:inline; padding-left: 20%">    
-                    <input placeholder="Search insurance" style="width:50%" >
-                    <button class="btn btn-link"><clr-icon shape="search"></clr-icon></button>
-                  </div>
-                  </div>
-                  
-                <div class="clr-row">
-                        <div class="clr-col-lg-2 clr-col-12">
-                                <a class="card clickable" (click)='next_page()'>
+                    <button (click)="changeLanguage('en')">English</button>
 
-                                            <div class="card-block">
-                                                <div style="padding-left: 25px;">
-                                                <clr-icon shape="plus-circle" class="is-solid is-info" size="140"></clr-icon>
-                                                </div>
-                                                <h4 class="is-info">
-                                                    Create Insurance
-                                                </h4>
-                                            </div>
-                                </a>
-                            </div>
-                        <div class="clr-col-lg-2 clr-col-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    Flood Insurance
-                                </div>
+                    <button (click)="changeLanguage('ma')">मराठी</button>
+                    <button (click)="changeLanguage('hn')">हिंदी</button>
 
-                                <div class="card-block">
-                                        
-                                    <div class="card-media-block wrap">
-                                           
-                                        <div class="card-media-description">
-                                            <span>Issue Date: 28/11/2019</span>
-                                            <span>Maturity: 29/11/2024</span>
-                                            <span>Premium amount: 1000 Rs</span>
-                                            <span>Recurrence: Monthly</span>
-                                        </div>
-                                    </div>
-                                    <span class="label label-success">Premium Paid</span>
-                                        <span class="label label-purple">Claimed</span>
-                                    
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div class="clr-col-lg-2 clr-col-12">
-                        <div class="card">
-                                <div class="card-header">
-                                    Drought Insurance
-                                </div>
+                    <!-- <a routerLinkActive="active" onclick="changeLanguage('hn')">हिंदी</a>
+                            <a routerLinkActive="active" [routerLink]="['./wikipedia']">ગુજ્રતિ</a> -->
+                </div>
 
-                                <div class="card-block">
-                                        
-                                    <div class="card-media-block wrap">                                           
-                                        <div class="card-media-description">
-                                            <span>Issue Date: 28/11/2019</span>
-                                            <span>Maturity: 29/11/2024</span>
-                                            <span>Premium amount: 1000 Rs</span>
-                                            <span>Recurrence: Monthly</span>
-                                        </div>
-                                    </div>
-                                    <span class="label label-info">Premium Due</span>
-                                    <a href="#" class="label label-purple clickable">
-                                            Claim Now
-                                        </a>
-                                    
-                                </div>
-                                
-                            </div>
-                            </div>
-                            <div class="clr-col-lg-2 clr-col-12">
-                                <div class="card">
-                                        <div class="card-header">
-                                            Wasp Disease Insurance
-                                        </div>
-        
-                                        <div class="card-block">
-                                                
-                                            <div class="card-media-block wrap">
-                                                    
-                                                <div class="card-media-description">
-                                                    <span>Issue Date: 28/11/2019</span>
-                                                    <span>Maturity: 29/11/2024</span>
-                                                    <span>Premium amount: 1000 Rs</span>
-                                                    <span>Recurrence: Monthly</span>
-                                                </div>
-                                            </div>
-                                            <span class="label label-info">Premium Due</span>
-                                            <a href="#" class="label label-purple clickable">
-                                                    Claim Now
-                                                </a>
-                                            
-                                        </div>
-                                        
-                                    </div>
-                            </div>                            
-                    </div>
+
+            </clr-vertical-nav>
+            <br>
+            <div>
+                <h3 style="display:inline;">Manage Insurances</h3>
+                <div class="search" style="display:inline; padding-left: 20%">
+                    <input placeholder="Search insurance" style="width:50%">
+                    <button class="btn btn-link">
+                        <clr-icon shape="search"></clr-icon>
+                    </button>
+                </div>
             </div>
-          </div>
-          
+
+            <div class="clr-row">
+                <div class="clr-col-lg-2 clr-col-12">
+                    <a class="card clickable" (click)='next_page()'>
+
+                        <div class="card-block">
+                            <div style="padding-left: 25px;">
+                                <clr-icon shape="plus-circle" class="is-solid is-info" size="140"></clr-icon>
+                            </div>
+                            <h4 class="is-info">
+                                Create Insurance
+                            </h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="clr-col-lg-2 clr-col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            Flood Insurance
+                        </div>
+
+                        <div class="card-block">
+
+                            <div class="card-media-block wrap">
+
+                                <div class="card-media-description">
+                                    <span>Issue Date: 28/11/2019</span>
+                                    <span>Maturity: 29/11/2024</span>
+                                    <span>Premium amount: 1000 Rs</span>
+                                    <span>Recurrence: Monthly</span>
+                                </div>
+                            </div>
+                            <span class="label label-success">Premium Paid</span>
+                            <span class="label label-purple">Claimed</span>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="clr-col-lg-2 clr-col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            Drought Insurance
+                        </div>
+
+                        <div class="card-block">
+
+                            <div class="card-media-block wrap">
+                                <div class="card-media-description">
+                                    <span>Issue Date: 28/11/2019</span>
+                                    <span>Maturity: 29/11/2024</span>
+                                    <span>Premium amount: 1000 Rs</span>
+                                    <span>Recurrence: Monthly</span>
+                                </div>
+                            </div>
+                            <span class="label label-info">Premium Due</span>
+                            <a href="#" class="label label-purple clickable">
+                                Claim Now
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="clr-col-lg-2 clr-col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            Wasp Disease Insurance
+                        </div>
+
+                        <div class="card-block">
+
+                            <div class="card-media-block wrap">
+
+                                <div class="card-media-description">
+                                    <span>Issue Date: 28/11/2019</span>
+                                    <span>Maturity: 29/11/2024</span>
+                                    <span>Premium amount: 1000 Rs</span>
+                                    <span>Recurrence: Monthly</span>
+                                </div>
+                            </div>
+                            <span class="label label-info">Premium Due</span>
+                            <a href="#" class="label label-purple clickable">
+                                Claim Now
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>

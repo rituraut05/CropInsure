@@ -11,7 +11,13 @@ import { ProgbarExampleComponent } from './progbar-example/progbar-example.compo
 import { InsuranceFormComponent } from './insurance-form/insurance-form.component';
 import { Dashboard2Component } from './dashboard2/dashboard2.component';
 import { InDashboardComponent } from './in-dashboard/in-dashboard.component';
+import { AnalyticsComponent } from './analytics/analytics.component';
+import { ClrChartsComponent } from './clr-charts/clr-charts.component';
 
+// import ngx-translate and the http loader
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,10 +26,20 @@ import { InDashboardComponent } from './in-dashboard/in-dashboard.component';
     ProgbarExampleComponent,
     InsuranceFormComponent,
     Dashboard2Component,
-    InDashboardComponent
+    InDashboardComponent,
+    AnalyticsComponent,
+    ClrChartsComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
     AppRoutingModule,
     BrowserAnimationsModule,
     ClarityModule
@@ -32,3 +48,6 @@ import { InDashboardComponent } from './in-dashboard/in-dashboard.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

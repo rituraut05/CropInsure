@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class Dashboard2Component implements OnInit {
 
   constructor(private router: Router) { }
-
+  option = "lazy";
   next_page() {
     this.router.navigate(['/InsuranceForm']);
   }
