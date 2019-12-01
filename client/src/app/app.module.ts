@@ -14,6 +14,7 @@ import { InDashboardComponent } from './in-dashboard/in-dashboard.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { ClrChartsComponent } from './clr-charts/clr-charts.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     Dashboard2Component,
     InDashboardComponent,
     AnalyticsComponent,
-    ClrChartsComponent
+    ClrChartsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

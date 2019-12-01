@@ -5,11 +5,16 @@ import { InsuranceFormComponent } from './insurance-form/insurance-form.componen
 import { Dashboard2Component } from './dashboard2/dashboard2.component';
 import { InDashboardComponent } from './in-dashboard/in-dashboard.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
   {
     path:'',
+    component:LoginComponent
+  },
+  {
+    path:'index1',
     component:DashboardComponent
   },
   {
