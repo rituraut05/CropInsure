@@ -13,6 +13,7 @@ import { Dashboard2Component } from './dashboard2/dashboard2.component';
 import { InDashboardComponent } from './in-dashboard/in-dashboard.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { ClrChartsComponent } from './clr-charts/clr-charts.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { ClrChartsComponent } from './clr-charts/clr-charts.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ClarityModule
+    ClarityModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
