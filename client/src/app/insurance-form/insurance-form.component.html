@@ -55,7 +55,7 @@
                 <form clrStepper [formGroup]="form" (ngSubmit)="submit()">
                         <clr-stepper-panel formGroupName="basic">
                                 <clr-step-title>Farmer Basic Details</clr-step-title>
-                                <clr-step-description>Description goes here.</clr-step-description>
+                                <clr-step-description></clr-step-description>
                                 <clr-step-content *clrIfExpanded class="clr-row">
                                 
                                 <clr-input-container class="clr-col-lg-4">
@@ -84,15 +84,16 @@
                                 <label class="clr-control-label">Farmer Category</label>
                                 <div class="clr-control-container clr-control-inline">
                                         <div class="clr-radio-wrapper">
-                                        <input type="radio" id="vertical-radio1" name="radio-full" value="option1" class="clr-radio">
+                                        <input type="radio" id="vertical-radio1" name="radio-full1" *ngIf="infoisHidden" ng value="option1" class="clr-radio">                                        
+                                        <input type="radio" id="vertical-radio1" name="radio-full1" *ngIf="!infoisHidden" checked value="option1" class="clr-radio">
                                         <label for="vertical-radio1" class="clr-control-label">Small Farmer</label>
                                         </div>
                                         <div class="clr-radio-wrapper">
-                                        <input type="radio" id="vertical-radio2" name="radio-full" value="option2" class="clr-radio">
+                                        <input type="radio" id="vertical-radio2" name="radio-full1" value="option2" class="clr-radio">
                                         <label for="vertical-radio2" class="clr-control-label">Marginal Farmer</label>
                                         </div>
                                         <div class="clr-radio-wrapper">
-                                        <input type="radio" id="vertical-radio3" name="radio-full" value="option3" class="clr-radio">
+                                        <input type="radio" id="vertical-radio3" name="radio-full1" value="option3" class="clr-radio">
                                         <label for="vertical-radio3" class="clr-control-label">Big Farmer</label>
                                         </div>
                                         <div class="clr-subtext-wrapper">
@@ -106,7 +107,8 @@
                                 <label class="clr-control-label">Caste Category</label>
                                 <div class="clr-control-container clr-control-inline">
                                         <div class="clr-radio-wrapper">
-                                        <input type="radio" id="vertical-radio1" name="radio-full" value="option1" class="clr-radio">
+                                        <input type="radio" id="vertical-radio1" name="radio-full" value="option1" *ngIf="infoisHidden" class="clr-radio">                                        
+                                        <input type="radio" id="vertical-radio1" name="radio-full" value="option1"*ngIf="!infoisHidden" checked class="clr-radio">
                                         <label for="vertical-radio1" class="clr-control-label">SC/ST</label>
                                         </div>
                                         <div class="clr-radio-wrapper">

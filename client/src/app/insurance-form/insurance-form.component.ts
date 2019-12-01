@@ -11,9 +11,9 @@ export class InsuranceFormComponent implements OnInit {
   constructor(private router: Router, private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
       basic: this.formBuilder.group({
-        name: ['Ganpatrao Patil', Validators.required],
-        adhaar: ['5845 5000 8000', Validators.required],
-        mobile: ['9458889772', Validators.required],
+        name: ['', Validators.required],
+        adhaar: ['', Validators.required],
+        mobile: ['', Validators.required],
       }),
       farm: this.formBuilder.group({
         district: ['Satara', Validators.required],
@@ -38,11 +38,49 @@ export class InsuranceFormComponent implements OnInit {
     console.log('reactive form submit', this.form.value);
   }
   progressisHidden = true;
+  infoisHidden = true;
   firstName = '';
   midleName = '';
   lastName = '';
+  setValues(){
+    setTimeout(
+      () => {
+        this.infoisHidden = false
+        this.form = this.formBuilder.group({
+          basic: this.formBuilder.group({
+            name: ['Ganpatrao Patil', Validators.required],
+            adhaar: ['5845 5000 8000', Validators.required],
+            mobile: ['9458889772', Validators.required],
+          }),
+          farm: this.formBuilder.group({
+            district: ['Satara', Validators.required],
+            village: ['Koregaon', Validators.required],
+            survey: ['10', Validators.required],
+            area: ['0.5 acres', Validators.required]
+          }),
+          crop: this.formBuilder.group({
+            cropname: ['Wheat', Validators.required],
+            sownarea: ['0.42', Validators.required],
+            sowdate: ['20/10/2019', Validators.required],
+            season: ['Winter', Validators.required]
+          }),
+          bank: this.formBuilder.group({
+            bankaccount: ['645XXXXXXX', Validators.required],
+            ifsc: ['MAHB00301', Validators.required],
+            branch: ['Koregaon', Validators.required],
+          }),
+        });
+      },
+      6000
+    );
+  }
   uplaoddata() {
+    
     this.progressisHidden = false;
+    this.setValues();
+    
+    // tslint:disable-next-line: no-unused-expression
+    
   }
   next_page() {
     this.router.navigate(['/index']);
