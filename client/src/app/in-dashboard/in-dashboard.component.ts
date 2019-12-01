@@ -20,11 +20,11 @@ export class InDashboardComponent implements OnInit {
   }
   // tslint:disable-next-line: member-ordering
   contracts = [{
-    farmer_name: 'Shivram Bhau Patil',
+    farmer_name: 'Ganpatrao Patil',
     type: 'Flood Insurance',
-    region: 'Jalgaon, Maharashtra',
-    issue: '28/11/2019',
-    maturity: '29/11/2024',
+    region: 'Satara, Maharashtra',
+    issue: '2/12/2019',
+    maturity: '30/11/2021',
     premium: '1000 Rs',
     recurrence: 'Monthly',
     due: true,

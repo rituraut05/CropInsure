@@ -20,18 +20,7 @@ export class DashboardComponent implements OnInit {
     this.basic = true
   }
 
-  contracts = [{
-    farmer_name: 'Shivram Bhau Patil',
-    type: 'Flood Insurance',
-    region: 'Jalgaon, Maharashtra',
-    issue: '28/11/2019',
-    maturity: '29/11/2024',
-    premium: '1000 Rs',
-    recurrence: 'Monthly',
-    due: true,
-    claim: false,
-    damage: 90
-  },
+  contracts = [
   {
     farmer_name: 'Shivram Bhau Patil',
     type: 'Wasp Disease Insurance',
