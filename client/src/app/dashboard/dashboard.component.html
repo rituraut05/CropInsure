@@ -2,7 +2,7 @@
     <div class="branding">
         <a class="nav-link">
             <!-- <clr-icon shape="vm-bug"></clr-icon> -->
-            <span class="title">{{'Crop.Crop_Insurance'|translate}}</span>
+            <span class="title">{{'Crop Insurance'|translate}}</span>
         </a>
     </div>
     <div class="header-actions">
@@ -28,7 +28,7 @@
                 <clr-vertical-nav-group routerLinkActive="active">
                     <a [routerLink]="['./beatles']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" clrVerticalNavLink>
                         <clr-icon [attr.shape]="'home'" clrVerticalNavIcon></clr-icon>
-                        The Beatles
+                        {{'The Beatles'|translate}}
                     </a>
                     <ng-template [clrIfExpanded]="groupExpand" (clrIfExpandedChange)="updateGroupExpand($event)">
                         <clr-vertical-nav-group-children>
@@ -47,12 +47,12 @@
                 <clr-vertical-nav-group routerLinkActive="active">
                     <a [routerLink]="['./beatles']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" clrVerticalNavLink>
                         <clr-icon [attr.shape]="'line-chart'" clrVerticalNavIcon></clr-icon>
-                        Analytics
+                        {{'Analytics'|translate}}
                     </a>
                     <ng-template [clrIfExpanded]="groupExpand" (clrIfExpandedChange)="updateGroupExpand($event)">
                         <clr-vertical-nav-group-children>
                             <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./abbey-road']">
-                                Abbey Road
+                                {{'Abbey Road'|translate}}
                             </a>
                             <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./revolver']">
                                 Revolver
@@ -67,7 +67,7 @@
                 <clr-vertical-nav-group routerLinkActive="active" routerLinkActive="active">
                     <a [routerLink]="['./killers']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" clrVerticalNavLink>
                         <clr-icon [attr.shape]="'slider'" clrVerticalNavIcon></clr-icon>
-                        Filters
+                        {{'Filters'|translate}}
                     </a>
                     <ng-template clrIfExpanded>
                         <clr-vertical-nav-group-children>
@@ -102,7 +102,7 @@
             </clr-vertical-nav>
             <br>
             <div>
-                <h3 style="display:inline;">Manage Insurances</h3>
+                <h3 style="display:inline;">{{'Manage Insurances'|translate}}</h3>
                 <div class="search" style="display:inline; padding-left: 20%">
                     <input placeholder="Search insurance" style="width:50%">
                     <button class="btn btn-link">
@@ -120,7 +120,7 @@
                                 <clr-icon shape="plus-circle" class="is-solid is-info" size="140"></clr-icon>
                             </div>
                             <h4 class="is-info">
-                                Create Insurance
+                                {{'Create Insurance'|translate}}
                             </h4>
                         </div>
                     </a>
@@ -128,7 +128,7 @@
                 <div class="clr-col-lg-2 clr-col-12">
                     <div class="card">
                         <div class="card-header">
-                            Flood Insurance
+                            {{'Flood Insurance'|translate}}
                         </div>
 
                         <div class="card-block">
@@ -136,14 +136,14 @@
                             <div class="card-media-block wrap">
 
                                 <div class="card-media-description">
-                                    <span>Issue Date: 28/11/2019</span>
-                                    <span>Maturity: 29/11/2024</span>
-                                    <span>Premium amount: 1000 Rs</span>
-                                    <span>Recurrence: Monthly</span>
+                                    <span>{{'Issue Date'|translate}}: 28/11/2019</span>
+                                    <span>{{'Maturity'|translate}}: 29/11/2024</span>
+                                    <span>{{'Premium amount'|translate}}: 1000 Rs</span>
+                                    <span>{{'Recurrence'|translate}}: Monthly</span>
                                 </div>
                             </div>
-                            <span class="label label-success">Premium Paid</span>
-                            <span class="label label-purple">Claimed</span>
+                            <span class="label label-success">{{'Premium Paid'|translate}}</span>
+                            <span class="label label-purple">{{'Claimed'|translate}}</span>
 
                         </div>
 
@@ -152,22 +152,22 @@
                 <div class="clr-col-lg-2 clr-col-12">
                     <div class="card">
                         <div class="card-header">
-                            Drought Insurance
+                            {{'Drought Insurance'|translate}}
                         </div>
 
                         <div class="card-block">
 
                             <div class="card-media-block wrap">
                                 <div class="card-media-description">
-                                    <span>Issue Date: 28/11/2019</span>
-                                    <span>Maturity: 29/11/2024</span>
-                                    <span>Premium amount: 1000 Rs</span>
-                                    <span>Recurrence: Monthly</span>
+                                    <span>{{'Issue Date'|translate}}: 28/11/2019</span>
+                                    <span>{{'Maturity'|translate}}: 29/11/2024</span>
+                                    <span>{{'Premium amount'|translate}}: 1000 Rs</span>
+                                    <span>{{'Recurrence'|translate}}: Monthly</span>
                                 </div>
                             </div>
-                            <span class="label label-info">Premium Due</span>
+                            <span class="label label-info">{{'Premium Due'|translate}}</span>
                             <a href="#" class="label label-purple clickable">
-                                Claim Now
+                                {{'Claim Now'|translate}}
                             </a>
 
                         </div>
@@ -177,7 +177,7 @@
                 <div class="clr-col-lg-2 clr-col-12">
                     <div class="card">
                         <div class="card-header">
-                            Wasp Disease Insurance
+                            {{'Wasp Disease Insurance'|translate}}
                         </div>
 
                         <div class="card-block">
@@ -185,15 +185,15 @@
                             <div class="card-media-block wrap">
 
                                 <div class="card-media-description">
-                                    <span>Issue Date: 28/11/2019</span>
-                                    <span>Maturity: 29/11/2024</span>
-                                    <span>Premium amount: 1000 Rs</span>
-                                    <span>Recurrence: Monthly</span>
+                                    <span>{{'Issue Date'|translate}}: 28/11/2019</span>
+                                    <span>{{'Maturity'|translate}}: 29/11/2024</span>
+                                    <span>{{'Premium amount'|translate}}: 1000 Rs</span>
+                                    <span>{{'Recurrence'|translate}}: Monthly</span>
                                 </div>
                             </div>
-                            <span class="label label-info">Premium Due</span>
+                            <span class="label label-info">{{'Premium Due'|translate}}</span>
                             <a href="#" class="label label-purple clickable">
-                                Claim Now
+                                {{'Claim Now'|translate}}
                             </a>
 
                         </div>

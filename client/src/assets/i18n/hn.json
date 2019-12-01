@@ -1,10 +1,26 @@
 {
-    "demo": {
-        "title": "Übersetzungs-Demo",
-        "text": "﻿Dies ist eine einfache Applikation um die Funktionen von ngx-transalte zu demonstrieren.",
-        "greeting": "Hallo {{name}}!"
-    },
-    "Crop": {
-        "Crop_Insurance": "फसल बिमा"
-    }
+    "Crop_Insurance": "फसल बिमा",
+    "The Beatles": "द बीटल्स",
+    "Abbey Road": "एबे रोड",
+    "Revolver": "रिवॉल्वर",
+    "Rubber Sou": "रबर सू",
+    "Analytics": "एनालिटिक्स",
+    "Filters": "फ़िल्टर",
+    "Hot Fuss": "झमेला",
+    "Day & Age": "दिन और आयु",
+    "Sam's Town": "सैम टाउन",
+    "Manage Insurances": "बीमा प्रबंधित करें",
+    "Create Insurance": "बीमा बनाएँ",
+    "Flood Insurance": "बाढ़ बीमा",
+    "Issue Date": "जारी करने की तिथि",
+    "Maturity": "परिपक्वता",
+    "Premium amount": "प्रीमियम राशि",
+    "Recurrence": "पुनरावृत्ति",
+    "Monthly": "महीने के",
+    "Premium Paid": "बीमा शुल्क का भुगतान",
+    "Claimed": "दावा किया",
+    "Wasp Disease Insurance": "ततैया रोग बीमा",
+    "Premium Due": "प्रीमियम देय",
+    "Claim Now": "अब दावा करो",
+    "Drought Insurance": "सूखा बीमा"
 }
