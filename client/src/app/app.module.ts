@@ -13,6 +13,7 @@ import { Dashboard2Component } from './dashboard2/dashboard2.component';
 import { InDashboardComponent } from './in-dashboard/in-dashboard.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { ClrChartsComponent } from './clr-charts/clr-charts.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // import ngx-translate and the http loader
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -42,7 +43,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     }),
     AppRoutingModule,
     BrowserAnimationsModule,
-    ClarityModule
+    ClarityModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

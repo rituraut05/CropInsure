@@ -52,7 +52,217 @@
                     </div>
                 </div>
                 <br>
-                <form clrForm>
+                <form clrStepper [formGroup]="form" (ngSubmit)="submit()">
+                        <clr-stepper-panel formGroupName="basic">
+                                <clr-step-title>Farmer Basic Details</clr-step-title>
+                                <clr-step-description></clr-step-description>
+                                <clr-step-content *clrIfExpanded class="clr-row">
+                                
+                                <clr-input-container class="clr-col-lg-4">
+                                <label>Full Name</label>
+                                <input clrInput formControlName="name" />
+                                <clr-control-error *clrIfError="'required'">Full Name Required</clr-control-error>
+                                </clr-input-container>
+                        
+                                <clr-input-container class="clr-col-lg-4">
+                                <label>Adhaar Card Number</label>
+                                <input clrInput formControlName="adhaar" />
+                                <clr-control-error *clrIfError="'required'">Adhaar Card Number Required</clr-control-error>
+                                </clr-input-container>
+
+                                <clr-input-container class="clr-col-lg-4">
+                                <label>Mobile/Contact Number</label>
+                                <input clrInput formControlName="mobile" />
+                                <clr-control-error *clrIfError="'required'">Mobile/Contact Number Required</clr-control-error>
+                                </clr-input-container>
+                                <!-- <clr-input-container class="clr-col-lg-4">
+                                <label>Farmer Category</label>
+                                <input clrInput formControlName="last" />
+                                <clr-control-error *clrIfError="'required'">Farmer Category Required</clr-control-error>
+                                </clr-input-container> -->
+                                <div style = "padding-top: 20px;" class="clr-form-control" class="clr-col-lg-8">
+                                <label class="clr-control-label">Farmer Category</label>
+                                <div class="clr-control-container clr-control-inline">
+                                        <div class="clr-radio-wrapper">
+                                        <input type="radio" id="vertical-radio1" name="radio-full1" *ngIf="infoisHidden" ng value="option1" class="clr-radio">                                        
+                                        <input type="radio" id="vertical-radio1" name="radio-full1" *ngIf="!infoisHidden" checked value="option1" class="clr-radio">
+                                        <label for="vertical-radio1" class="clr-control-label">Small Farmer</label>
+                                        </div>
+                                        <div class="clr-radio-wrapper">
+                                        <input type="radio" id="vertical-radio2" name="radio-full1" value="option2" class="clr-radio">
+                                        <label for="vertical-radio2" class="clr-control-label">Marginal Farmer</label>
+                                        </div>
+                                        <div class="clr-radio-wrapper">
+                                        <input type="radio" id="vertical-radio3" name="radio-full1" value="option3" class="clr-radio">
+                                        <label for="vertical-radio3" class="clr-control-label">Big Farmer</label>
+                                        </div>
+                                        <div class="clr-subtext-wrapper">
+                                        <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                                        <!-- <span class="clr-subtext">Helper Text</span> -->
+                                        </div>
+                                </div>
+                                </div>
+                                
+                                <div style = "padding-top: 20px;" class="clr-form-control" class="clr-col-lg-4">
+                                <label class="clr-control-label">Caste Category</label>
+                                <div class="clr-control-container clr-control-inline">
+                                        <div class="clr-radio-wrapper">
+                                        <input type="radio" id="vertical-radio1" name="radio-full" value="option1" *ngIf="infoisHidden" class="clr-radio">                                        
+                                        <input type="radio" id="vertical-radio1" name="radio-full" value="option1"*ngIf="!infoisHidden" checked class="clr-radio">
+                                        <label for="vertical-radio1" class="clr-control-label">SC/ST</label>
+                                        </div>
+                                        <div class="clr-radio-wrapper">
+                                        <input type="radio" id="vertical-radio2" name="radio-full" value="option2" class="clr-radio">
+                                        <label for="vertical-radio2" class="clr-control-label">NT</label>
+                                        </div>
+                                        <div class="clr-radio-wrapper">
+                                        <input type="radio" id="vertical-radio3" name="radio-full" value="option3" class="clr-radio">
+                                        <label for="vertical-radio3" class="clr-control-label">OBC</label>
+                                        </div>
+                                        <div class="clr-radio-wrapper">
+                                        <input type="radio" id="vertical-radio4" name="radio-full" value="option4" class="clr-radio">
+                                        <label for="vertical-radio4" class="clr-control-label">Others</label>
+                                        </div>
+                                        <div class="clr-subtext-wrapper">
+                                        <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                                        <!-- <span class="clr-subtext">Helper Text</span> -->
+                                        </div>
+                                </div>
+                                </div>
+                                
+                                <button clrStepButton="next">next</button>
+                                </clr-step-content>
+                        </clr-stepper-panel>
+                        
+                        <clr-stepper-panel formGroupName="farm">
+                                <clr-step-title>Farm details</clr-step-title>
+                                <clr-step-description>List down your farm details</clr-step-description>
+                                <clr-step-content *clrIfExpanded class="clr-row">
+                        
+                                <clr-input-container class="clr-col-lg-4">
+                                <label>District</label>
+                                <input clrInput formControlName="district" />
+                                <clr-control-error *clrIfError="'required'">District Required</clr-control-error>
+                                </clr-input-container>
+                        
+                                <clr-input-container class="clr-col-lg-4">
+                                <label>Village/Ward</label>
+                                <input clrInput formControlName="village" />
+                                <clr-control-error *clrIfError="'required'">Village/Ward Required</clr-control-error>
+                                </clr-input-container>
+                        
+                                <clr-input-container class="clr-col-lg-4">
+                                <label>Survey Number</label>
+                                <input clrInput formControlName="survey" />
+                                <clr-control-error *clrIfError="'required'">Survey Number Required</clr-control-error>
+                                </clr-input-container>
+                        
+                                <clr-input-container class="clr-col-lg-12">
+                                <label>Farm Area</label>
+                                <input clrInput formControlName="area" />
+                                <clr-control-error *clrIfError="'required'">Farm Area Required</clr-control-error>
+                                </clr-input-container>
+                                <button clrStepButton="next">next</button>
+                                </clr-step-content>
+                        </clr-stepper-panel>
+                                
+                        <clr-stepper-panel formGroupName="crop">
+                                <clr-step-title>Crop sowing Details</clr-step-title>
+                                <clr-step-description></clr-step-description>
+                                <clr-step-content *clrIfExpanded class="clr-row">
+                        
+                                <clr-input-container class="clr-col-lg-4">
+                                <label>Crop Name</label>
+                                <input clrInput formControlName="cropname" />
+                                <clr-control-error *clrIfError="'required'">Crop Name Required</clr-control-error>
+                                </clr-input-container>
+                        
+                                <clr-input-container class="clr-col-lg-4">
+                                <label>Date of Sowing</label>
+                                <input clrInput formControlName="sowdate" />
+                                <clr-control-error *clrIfError="'required'">Date of Sowing Required</clr-control-error>
+                                </clr-input-container>
+                        
+                                <clr-input-container class="clr-col-lg-4">
+                                <label>Area Sown(in Acres)</label>
+                                <input clrInput formControlName="sownarea" />
+                                <clr-control-error *clrIfError="'required'">Area Sown(in Acres) Required</clr-control-error>
+                                </clr-input-container>
+                        
+                                <clr-input-container class="clr-col-lg-12">
+                                <label>Season</label>
+                                <input clrInput formControlName="season" />
+                                <clr-control-error *clrIfError="'required'">Season Required</clr-control-error>
+                                </clr-input-container>
+                                <button clrStepButton="next">next</button>
+                                </clr-step-content>
+                                </clr-stepper-panel>
+                        
+                        <clr-stepper-panel formGroupName="bank">
+                                <clr-step-title>Bank Account Details</clr-step-title>
+                                <clr-step-description></clr-step-description>
+                                <clr-step-content *clrIfExpanded class="clr-row">
+                                
+                                <clr-input-container class="clr-col-lg-4">
+                                <label>Bank Account No.</label>
+                                <input clrInput formControlName="bankaccount" />
+                                <clr-control-error *clrIfError="'required'">Crop Name Required</clr-control-error>
+                                </clr-input-container>
+
+                                <clr-input-container class="clr-col-lg-4">
+                                <label>IFSC code</label>
+                                <input clrInput formControlName="ifsc" />
+                                <clr-control-error *clrIfError="'required'">Crop Name Required</clr-control-error>
+                                </clr-input-container>
+
+                                <clr-input-container class="clr-col-lg-4">
+                                <label>Branch Name</label>
+                                <input clrInput formControlName="branch" />
+                                <clr-control-error *clrIfError="'required'">Crop Name Required</clr-control-error>
+                                </clr-input-container>
+
+                                <button clrStepButton="submit" (click)="next_page()">submit</button>
+                                </clr-step-content>
+                        </clr-stepper-panel>
+                </form>
+                <!-- <form clrStepper #contactForm="ngForm" (ngSubmit)="templateFormSubmit(contactForm.value)">
+                                <clr-stepper-panel >
+                                  <clr-step-title>Legal Name</clr-step-title>
+                                  <clr-step-description>Description goes here.</clr-step-description>
+                                  <clr-step-content>
+                                    <clr-input-container>
+                                      <label>First Name</label>
+                                      <input clrInput  name="firstName" required />
+                                    </clr-input-container>
+                              
+                                    <clr-input-container>
+                                      <label>Last Name</label>
+                                      <input clrInput  name="lastName" required />
+                                    </clr-input-container>
+                              
+                                    <button clrStepButton="next">next</button>
+                                  </clr-step-content>
+                                </clr-stepper-panel>
+                              
+                                <clr-stepper-panel >
+                                  <clr-step-title>Contact Information</clr-step-title>
+                                  <clr-step-description>...</clr-step-description>
+                                  <clr-step-content>
+                                    ...
+                                    <button clrStepButton="next">next</button>
+                                  </clr-step-content>
+                                </clr-stepper-panel>
+                              
+                                <clr-stepper-panel >
+                                  <clr-step-title>Password</clr-step-title>
+                                  <clr-step-description>...</clr-step-description>
+                                  <clr-step-content>
+                                    ...
+                                    <button clrStepButton="submit">submit</button>
+                                  </clr-step-content>
+                                </clr-stepper-panel>
+                              </form> -->
+                <!-- <form clrForm>
                         <span class="clr-sr-only">Tabbing through form inputs will trigger validation messages to be read aloud.</span>
                         <h4>Basic Details</h4>
                         <div class="clr-row">
@@ -165,7 +375,7 @@
                                 <input clrInput type="text"  name="doorNo" />
                         </clr-input-container>
                         <button class="btn btn-primary" type="submit" (click)="next_page()">Submit</button>
-                    </form>                                                                         
+                    </form>                                                                          -->
                 </div>  
               </div>
               

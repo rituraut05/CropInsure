@@ -20,6 +20,7 @@
         </div> -->
 <div class="main-container">
     <div class="content-container">
+<<<<<<< HEAD
         <clr-vertical-nav *ngIf="option === 'lazy'" [clrVerticalNavCollapsible]="true" [clrVerticalNavCollapsed]="navCollapsed" (clrVerticalNavCollapsedChange)="updateNavCollapsed($event)">
 
             <clr-vertical-nav-group routerLinkActive="active">
@@ -99,6 +100,123 @@
                     <a routerLinkActive="active" [routerLink]="['./wikipedia']">ગુજ્રતિ</a>
                 </span>
             </div>
+=======
+            <clr-vertical-nav *ngIf="option === 'lazy'"
+                              [clrVerticalNavCollapsible]="true"
+                              [clrVerticalNavCollapsed]="navCollapsed"
+                              (clrVerticalNavCollapsedChange)="updateNavCollapsed($event)">
+
+                <clr-vertical-nav-group routerLinkActive="active">
+                    <a
+                        [routerLink]="['./beatles']"
+                        routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact:true}"
+                        clrVerticalNavLink>
+                        <clr-icon [attr.shape]="'home'" clrVerticalNavIcon></clr-icon>
+                        The Beatles
+                    </a>
+                    <ng-template
+                        [clrIfExpanded]="groupExpand"
+                        (clrIfExpandedChange)="updateGroupExpand($event)">
+                        <clr-vertical-nav-group-children>
+                            <a routerLinkActive="active"
+                               clrVerticalNavLink
+                               [routerLink]="['./abbey-road']">
+                                Abbey Road
+                            </a>
+                            <a routerLinkActive="active"
+                               clrVerticalNavLink
+                               [routerLink]="['./revolver']">
+                                Revolver
+                            </a>
+                            <a routerLinkActive="active"
+                               clrVerticalNavLink
+                               [routerLink]="['./rubber-soul']">
+                                Rubber Soul
+                            </a>
+                        </clr-vertical-nav-group-children>
+                    </ng-template>
+                </clr-vertical-nav-group>
+                <clr-vertical-nav-group routerLinkActive="active">
+                        <a
+                            [routerLink]="['./beatles']"
+                            routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact:true}"
+                            clrVerticalNavLink>
+                            <clr-icon [attr.shape]="'line-chart'" clrVerticalNavIcon></clr-icon>
+                            Analytics
+                        </a>
+                        <ng-template
+                            [clrIfExpanded]="groupExpand"
+                            (clrIfExpandedChange)="updateGroupExpand($event)">
+                            <clr-vertical-nav-group-children>
+                                <a routerLinkActive="active"
+                                   clrVerticalNavLink
+                                   [routerLink]="['./abbey-road']">
+                                    Abbey Road
+                                </a>
+                                <a routerLinkActive="active"
+                                   clrVerticalNavLink
+                                   [routerLink]="['./revolver']">
+                                    Revolver
+                                </a>
+                                <a routerLinkActive="active"
+                                   clrVerticalNavLink
+                                   [routerLink]="['./rubber-soul']">
+                                    Rubber Soul
+                                </a>
+                            </clr-vertical-nav-group-children>
+                        </ng-template>
+                    </clr-vertical-nav-group>
+    
+                <clr-vertical-nav-group routerLinkActive="active" routerLinkActive="active">
+                    <a
+                        [routerLink]="['./killers']"
+                        routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact:true}"
+                        clrVerticalNavLink>
+                        <clr-icon [attr.shape]="'slider'" clrVerticalNavIcon></clr-icon>
+                        Filters
+                    </a>
+                    <ng-template clrIfExpanded>
+                        <clr-vertical-nav-group-children>
+                            <a routerLinkActive="active"
+                               [routerLink]="['./hot-fuss']"
+                               clrVerticalNavLink>
+                                District
+                            </a>
+                            <a routerLinkActive="active"
+                               clrVerticalNavLink
+                               [routerLink]="['./day-and-age']">
+                                Farm size
+                            </a>
+                            <a routerLinkActive="active"
+                               clrVerticalNavLink
+                               [routerLink]="['./sams-town']">
+                                Farmer Type
+                            </a>
+                        </clr-vertical-nav-group-children>
+                    </ng-template>
+                </clr-vertical-nav-group>
+
+                <a routerLinkActive="active"
+                   clrVerticalNavLink
+                   [routerLink]="['./wikipedia']">
+                    <clr-icon shape="certificate" clrVerticalNavIcon></clr-icon>
+                    Wikipedia
+                </a>
+                <div style="position: fixed; bottom: 4px;">
+                    <span style="padding: 8px;"><a routerLinkActive="active"
+                        [routerLink]="['./wikipedia']">English</a></span>
+                    <span style="padding: 8px;"><a routerLinkActive="active"
+                    [routerLink]="['./wikipedia']">मराठी</a></span>
+                    <span style="padding: 8px;"><a routerLinkActive="active"
+                        [routerLink]="['./wikipedia']">हिंदी</a></span>
+                    <span style="padding: 8px;"><a routerLinkActive="active"
+                        [routerLink]="['./wikipedia']">ગુજ્રતિ</a></span>
+                </div>
+                
+>>>>>>> d51b88b71ece33e52a695dfd63f36fd90271f017
 
 
         </clr-vertical-nav>
@@ -152,6 +270,7 @@
               </clr-vertical-nav> -->
 
         <div class="content-area">
+<<<<<<< HEAD
             <br>
             <div>
                 <h3 style="display:inline;">Manage Insurances</h3>
@@ -198,11 +317,91 @@
                                     <div class="alert-item static" role="alert">
                                         <div class="alert-icon-wrapper">
                                             <clr-icon class="alert-icon" shape="info-circle"></clr-icon>
+=======
+                    <br>
+                    <div>
+                      <h3 style="display:inline;">Manage Insurances</h3>
+                      <div class="search" style="display:inline; padding-left: 10%">    
+                        <input placeholder="Search insurance" style="width:50%" >
+                        <button class="btn btn-link"><clr-icon shape="search"></clr-icon></button>
+                        <!-- <button class="btn btn-link">Check Risks</button> -->
+                        <button class="btn btn-primary btn-sm" (click)='toggle_check_risk()'>Check Risks</button>
+                      </div>
+                      
+                        <clr-toggle-wrapper style="display:inline; padding-left: 10%">
+                            <input type="checkbox" clrToggle value="option1" name="options" />
+                            <label>Claim critical cases automatically</label>
+                        </clr-toggle-wrapper>
+                      </div>
+                      
+                      <!-- <span class="spinner spinner-lg">
+                            Loading...
+                        </span> TODO--> 
+                      <div class="clr-row">
+                            <div class="clr-col-lg-3 clr-col-12" *ngFor="let item of contracts">
+                                    <div class="card">
+                                            <div class="card-header">
+                                                {{item.type}}
+                                                <div *ngIf="check_risk && item.damage > 80" class="alert alert-danger alert-sm">
+                                                    <div class="alert-items">
+                                                        <div class="alert-item static" role="alert">
+                                                            <div class="alert-icon-wrapper">
+                                                                <clr-icon class="alert-icon" shape="exclamation-circle"></clr-icon>
+                                                            </div>
+                                                            <span class="alert-text">
+                                                                Damage % > 80%
+                                                            </span>
+                                                        </div>
+                                                    </div>                                                   
+                                                    <button type="button" class="close" aria-label="Close">
+                                                            <clr-icon aria-hidden="true" shape="close"></clr-icon>
+                                                        </button>
+                                                </div>
+                                                <div *ngIf="check_risk && item.damage < 80" class="alert alert-info alert-sm">
+                                                        <div class="alert-items">
+                                                            <div class="alert-item static" role="alert">
+                                                                <div class="alert-icon-wrapper">
+                                                                    <clr-icon class="alert-icon" shape="info-circle"></clr-icon>
+                                                                </div>
+                                                                <span class="alert-text">
+                                                                    Damage % = {{item.damage}}
+                                                                </span>
+                                                            </div>
+                                                        </div>                                                   
+                                                        <button type="button" class="close" aria-label="Close">
+                                                                <clr-icon aria-hidden="true" shape="close"></clr-icon>
+                                                            </button>
+                                                    </div>
+                                            </div>
+            
+                                            <div class="card-block">
+                                                    
+                                                <div class="card-media-block wrap">                                           
+                                                    <div class="card-media-description">
+                                                        <span>{{item.farmer_name}}</span>
+                                                        <span>Issue Date: {{item.issue}}</span>
+                                                        <span>Maturity: {{item.maturity}}</span>
+                                                        <span>Premium amount: {{item.premium}}</span>
+                                                        <span>Recurrence: {{item.recurrence}}</span>
+                                                        <span>Region: {{item.region}}</span>
+                                                    </div>
+                                                </div>
+                                                <span *ngIf="item.due" class="label label-info">Premium Due</span>
+                                                <span *ngIf="!item.due" class="label label-success">Premium Paid</span>
+                                                <a href="#" class="label label-purple clickable">
+                                                        Claim Now
+                                                    </a>
+                                                
+                                            </div>
+                                            
+                                            
+>>>>>>> d51b88b71ece33e52a695dfd63f36fd90271f017
                                         </div>
                                         <span class="alert-text">
                                             Damage % = {{item.damage}}
                                         </span>
                                     </div>
+<<<<<<< HEAD
                                 </div>
                                 <button type="button" class="close" aria-label="Close">
                                     <clr-icon aria-hidden="true" shape="close"></clr-icon>
@@ -239,3 +438,9 @@
     <!-- <app-atom-spinner [animationDuration]="1000" [size]="60" [color]="'#ff1d5e'">
     </app-atom-spinner> -->
 </div>
+=======
+                      </div>
+                </div>
+            </div>
+    </div>
+>>>>>>> d51b88b71ece33e52a695dfd63f36fd90271f017

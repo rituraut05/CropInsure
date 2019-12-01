@@ -25,10 +25,15 @@
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
     "@webcomponents/custom-elements": "^1.0.0",
+<<<<<<< HEAD
     "angular-epic-spinners": "^2.0.0",
     "chart.js": "^2.9.3",
     "ngx-loading": "^8.0.0",
     "rxjs": "^6.4.0",
+=======
+    "chart.js": "^2.9.3",
+    "rxjs": "~6.4.0",
+>>>>>>> d51b88b71ece33e52a695dfd63f36fd90271f017
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
   },
