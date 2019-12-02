@@ -8,6 +8,34 @@ import { Component, OnInit } from '@angular/core';
 export class InDashboardComponent implements OnInit {
 
   constructor() { }
+
+  settle_loading = false;
+  after_loading = false;
+  settle(i){
+    //always settle the first card
+    
+    this.settle_loading = true;
+    setTimeout (() => {
+      this.settle_loading = false;
+      this.contracts[i].settle =  true;
+      setTimeout (() => {
+        this.after_loading = true;
+        
+     }, 1000);
+      
+   }, 3000);
+    
+  }
+  cancel(){
+    this.basic = false;
+    this.after_loading = false;
+    
+  }
+
+  basic = false
+  modal(){
+    this.basic = true
+  }
   check_risk = false;
   loading = false;
   toggle_check_risk() {
@@ -28,7 +56,8 @@ export class InDashboardComponent implements OnInit {
     premium: '1000 Rs',
     recurrence: 'Monthly',
     due: true,
-    damage: 90
+    damage: 90,
+    settle: false
   },
   {
     farmer_name: 'Shivram Bhau Patil',
@@ -39,7 +68,8 @@ export class InDashboardComponent implements OnInit {
     premium: '1000 Rs',
     recurrence: 'Monthly',
     due: false,
-    damage: 20
+    damage: 20,
+    settle: false
   },
   {
     farmer_name: 'Shivram Bhau Patil',
@@ -50,7 +80,8 @@ export class InDashboardComponent implements OnInit {
     premium: '1000 Rs',
     recurrence: 'Monthly',
     due: true,
-    damage: 12
+    damage: 12,
+    settle: false
   },
   {
     farmer_name: 'Shivram Bhau Patil',
@@ -61,7 +92,8 @@ export class InDashboardComponent implements OnInit {
     premium: '1000 Rs',
     recurrence: 'Monthly',
     due: false,
-    damage: 82
+    damage: 82,
+    settle: false
   },
   {
     farmer_name: 'Shivram Bhau Patil',
@@ -72,7 +104,8 @@ export class InDashboardComponent implements OnInit {
     premium: '1000 Rs',
     recurrence: 'Monthly',
     due: true,
-    damage: 85
+    damage: 85,
+    settle: false
   },
   {
     farmer_name: 'Shivram Bhau Patil',
@@ -83,7 +116,8 @@ export class InDashboardComponent implements OnInit {
     premium: '1000 Rs',
     recurrence: 'Monthly',
     due: true,
-    damage: 23
+    damage: 23,
+    settle: false
   },
   {
     farmer_name: 'Shivram Bhau Patil',
@@ -93,8 +127,9 @@ export class InDashboardComponent implements OnInit {
     maturity: '29/11/2024',
     premium: '1000 Rs',
     recurrence: 'Monthly',
-    due: false,
-    damage: 50
+    due: true,
+    damage: 82,
+    settle: false
   }
 
 ];

@@ -162,8 +162,8 @@
                       </div>                      
 
                       <div class="clr-row">
-                            <div class="clr-col-lg-3 clr-col-12" *ngFor="let item of contracts">
-                                    <div class="card">
+                            <div class="clr-col-lg-3 clr-col-12" *ngFor="let item of contracts; let i = index" >
+                                    <div class="card" *ngIf="!item.settle">
                                             <div class="card-header">
                                                 {{item.type}}
                                                 <div *ngIf="check_risk && item.damage > 80" class="alert alert-danger alert-sm">
@@ -212,11 +212,34 @@
                                                 </div>
                                                 <span *ngIf="item.due" class="label label-info">Premium Due</span>
                                                 <span *ngIf="!item.due" class="label label-success">Premium Paid</span>
-                                                <a href="#" *ngIf="check_risk && item.damage > 80" class="label label-purple clickable">
+                                                <a (click)="modal()"  *ngIf="check_risk && item.damage > 80" class="label label-purple clickable">
                                                         Settle Early
                                                     </a>
                                                 
                                             </div>
+                                            <clr-modal [(clrModalOpen)]="basic">
+                                                    <h3 class="modal-title">Settlement</h3>
+                                                    <div class="modal-body">
+                                                        <p>Settlement amount = 30000 Rs.</p>
+                                                        <div class="clr-row" *ngIf="settle_loading">
+                                                                <span class="clr-col-lg-5"></span>
+                                                                <span class="clr-col-lg-7" class="spinner spinner-lg">
+                                                                    Loading...
+                                                                </span>
+                                                        </div>
+                                                        <div  *ngIf="after_loading"></div>
+                                                        
+                                                        <span style="padding-left: 200px;">
+                                                            <clr-icon *ngIf="after_loading" shape="success-standard" size="100" class="is-solid is-success"></clr-icon>
+                                                        </span>
+                                                        
+                                                    </div>
+                                                    
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-outline" (click)="cancel()">Cancel</button>
+                                                        <button type="button" class="btn btn-primary" (click)="settle(i)">Settle</button>
+                                                    </div>
+                                                </clr-modal>
                                             
                                             
                                         </div>
