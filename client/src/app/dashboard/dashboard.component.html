@@ -28,12 +28,12 @@
 
 <clr-vertical-nav-group routerLinkActive="active">
 <a
-[routerLink]="['./beatles']"
+[routerLink]="['./in']"
 routerLinkActive="active"
 [routerLinkActiveOptions]="{exact:true}"
 clrVerticalNavLink>
 <clr-icon [attr.shape]="'dollar-bill'" clrVerticalNavIcon></clr-icon>
-Transactions
+{{'Crop Coin Wallet'|translate}}
 </a>
 <ng-template
 [clrIfExpanded]="groupExpand"
@@ -42,17 +42,17 @@ Transactions
     <a routerLinkActive="active"
         clrVerticalNavLink
         [routerLink]="['./abbey-road']">
-        Abbey Road
+       {{'Wallet Balance'|translate}}
     </a>
     <a routerLinkActive="active"
         clrVerticalNavLink
         [routerLink]="['./revolver']">
-        Revolver
+       {{'Wallet Transaction'|translate}}
     </a>
     <a routerLinkActive="active"
         clrVerticalNavLink
         [routerLink]="['./rubber-soul']">
-        Rubber Soul
+      {{'Wallet Offers'|translate}}
     </a>
 </clr-vertical-nav-group-children>
 </ng-template>
@@ -123,7 +123,7 @@ clrVerticalNavLink>
 clrVerticalNavLink
 [routerLink]="['./wikipedia']">
 <clr-icon shape="phone-handset" clrVerticalNavIcon></clr-icon>
-Contact Us
+{{'Contact Us'|translate}}
 </a>
 <div style="position: fixed; bottom: 4px;">
 <button (click)="changeLanguage('en')">English</button>
