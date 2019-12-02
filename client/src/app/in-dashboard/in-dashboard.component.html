@@ -14,7 +14,7 @@
             </a>
         </div>
     </header>
-    
+
     <!-- <div>
             <img  src='../../assets/pptpic.png' style="width:100%; height: 50%;" class='card-media-image'>
         </div> -->
@@ -32,7 +32,7 @@
                         [routerLinkActiveOptions]="{exact:true}"
                         clrVerticalNavLink>
                         <clr-icon [attr.shape]="'dollar-bill'" clrVerticalNavIcon></clr-icon>
-                        Transactions 
+                        Transactions
                     </a>
                     <ng-template
                         [clrIfExpanded]="groupExpand"
@@ -87,7 +87,7 @@
                             </clr-vertical-nav-group-children>
                         </ng-template>
                     </clr-vertical-nav-group>
-    
+
                 <clr-vertical-nav-group routerLinkActive="active" routerLinkActive="active">
                     <a
                         [routerLink]="['./killers']"
@@ -134,24 +134,28 @@
                     <span style="padding: 8px;"><a routerLinkActive="active"
                         [routerLink]="['./wikipedia']">ગુજ્રતિ</a></span>
                 </div>
-                
+
 
             </clr-vertical-nav>
-              
+
         <div class="content-area">
                     <br>
                     <div>
                       <h3 style="display:inline;">Manage Insurances</h3>
-                      <div class="search" style="display:inline; padding-left: 10%">    
+                      <div class="search" style="display:inline; padding-left: 10%">
                         <input placeholder="Search insurance" style="width:50%" >
                         <button class="btn btn-link"><clr-icon shape="search"></clr-icon></button>
                         <button class="btn btn-primary btn-sm" (click)='toggle_check_risk()'>Check Risks</button>
                       </div>
-                      
+
                         <clr-toggle-wrapper style="display:inline; padding-left: 10%">
                             <input type="checkbox" clrToggle value="option1" name="options" />
                             <label>Settle critical cases early automatically</label>
                         </clr-toggle-wrapper>
+                        <clr-toggle-wrapper style="display:inline; padding-left: 10%">
+                          <input type="checkbox" clrToggle value="option1" name="options" />
+                          <label>Automatically check for risks daily</label>
+                      </clr-toggle-wrapper>
                       </div>
 
                       <div class="clr-row" *ngIf="loading">
@@ -159,7 +163,7 @@
                         <span class="clr-col-lg-7" class="spinner spinner-lg">
                             Loading...
                         </span>
-                      </div>                      
+                      </div>
 
                       <div class="clr-row">
                             <div class="clr-col-lg-3 clr-col-12" *ngFor="let item of contracts; let i = index" >
@@ -176,7 +180,7 @@
                                                                 Damage % > 80%
                                                             </span>
                                                         </div>
-                                                    </div>                                                   
+                                                    </div>
                                                     <button type="button" class="close" aria-label="Close">
                                                             <clr-icon aria-hidden="true" shape="close"></clr-icon>
                                                         </button>
@@ -191,16 +195,16 @@
                                                                     Damage % = {{item.damage}}
                                                                 </span>
                                                             </div>
-                                                        </div>                                                   
+                                                        </div>
                                                         <button type="button" class="close" aria-label="Close">
                                                                 <clr-icon aria-hidden="true" shape="close"></clr-icon>
                                                             </button>
                                                     </div>
                                             </div>
-            
+
                                             <div class="card-block">
-                                                    
-                                                <div class="card-media-block wrap">                                           
+
+                                                <div class="card-media-block wrap">
                                                     <div class="card-media-description">
                                                         <span>{{item.farmer_name}}</span>
                                                         <span>Issue Date: {{item.issue}}</span>
@@ -215,7 +219,7 @@
                                                 <a (click)="modal()"  *ngIf="check_risk && item.damage > 80" class="label label-purple clickable">
                                                         Settle Early
                                                     </a>
-                                                
+
                                             </div>
                                             <clr-modal [(clrModalOpen)]="basic">
                                                     <h3 class="modal-title">Settlement</h3>
@@ -228,20 +232,20 @@
                                                                 </span>
                                                         </div>
                                                         <div  *ngIf="after_loading"></div>
-                                                        
+
                                                         <span style="padding-left: 200px;">
                                                             <clr-icon *ngIf="after_loading" shape="success-standard" size="100" class="is-solid is-success"></clr-icon>
                                                         </span>
-                                                        
+
                                                     </div>
-                                                    
+
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-outline" (click)="cancel()">Cancel</button>
                                                         <button type="button" class="btn btn-primary" (click)="settle(i)">Settle</button>
                                                     </div>
                                                 </clr-modal>
-                                            
-                                            
+
+
                                         </div>
                                     </div>
                       </div>
