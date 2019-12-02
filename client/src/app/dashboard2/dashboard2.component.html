@@ -144,8 +144,14 @@
                         <button class="btn btn-link"><clr-icon shape="search"></clr-icon></button>
                       </div>
                       </div>
-    
-                    <div class="clr-row">
+
+                      <div class="clr-row" *ngIf="loading">
+                        <span class="clr-col-lg-5"></span>
+                        <span class="clr-col-lg-7" class="spinner spinner-lg">
+                            Loading...
+                        </span>
+                        </div>
+                    <div *ngIf="!loading" class="clr-row">
                             <div class="clr-col-lg-3 clr-col-12">
                                     <a class="card clickable" (click)='next_page()'>
     

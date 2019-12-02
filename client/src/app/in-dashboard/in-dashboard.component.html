@@ -146,16 +146,18 @@
                         <input placeholder="Search insurance" style="width:50%" >
                         <button class="btn btn-link"><clr-icon shape="search"></clr-icon></button>
                         <button class="btn btn-primary btn-sm" (click)='toggle_check_risk()'>Check Risks</button>
+                        </div>
+                      <div class="clr-row">
+                            <clr-toggle-wrapper style="display:inline; padding-left: 12px">
+                                    <input type="checkbox" clrToggle value="option1" name="options" />
+                                    <label>Settle critical cases early automatically</label>
+                            </clr-toggle-wrapper>
+                            <clr-toggle-wrapper >
+                                <input type="checkbox" clrToggle value="option1" name="options" />
+                                <label>Automatically check for risks daily</label>
+                            </clr-toggle-wrapper>
                       </div>
-
-                        <clr-toggle-wrapper style="display:inline; padding-left: 10%">
-                            <input type="checkbox" clrToggle value="option1" name="options" />
-                            <label>Settle critical cases early automatically</label>
-                        </clr-toggle-wrapper>
-                        <clr-toggle-wrapper style="display:inline; padding-left: 10%">
-                          <input type="checkbox" clrToggle value="option1" name="options" />
-                          <label>Automatically check for risks daily</label>
-                      </clr-toggle-wrapper>
+                        
                       </div>
 
                       <div class="clr-row" *ngIf="loading">

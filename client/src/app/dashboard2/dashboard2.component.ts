@@ -11,7 +11,7 @@ export class Dashboard2Component implements OnInit {
 
   constructor(private router: Router,private translate:TranslateService) { }
   option = "lazy";
-
+  loading = true;
   next_page() {
     history.pushState({data: {key: 'valuee'}}, '', '');
     this.router.navigate(['/InsuranceForm'], {state: {data: {key: 'valuee'}}});
@@ -66,6 +66,9 @@ export class Dashboard2Component implements OnInit {
 ];
 
   ngOnInit() {
+    setTimeout (() => {
+      this.loading = false;
+   }, 1000);
   }
 
 }
