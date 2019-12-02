@@ -27,7 +27,7 @@ export class DashboardComponent implements OnInit {
   contracts = [
   {
     farmer_name: 'Ganpatrao Patil',
-    type: 'Wasp Disease Insurance',
+    type: 'Soyabean Insurance',
     region: 'Jalgaon, Maharashtra',
     issue: '11/5/2017',
     maturity: '11/4/2011',
@@ -39,7 +39,7 @@ export class DashboardComponent implements OnInit {
   },
   {
     farmer_name: 'Ganpatrao Patil',
-    type: 'Drought Insurance',
+    type: 'Wheat Insurance',
     region: 'Jalgaon, Maharashtra',
     issue: '10/7/2018',
     maturity: '11/11/2010',

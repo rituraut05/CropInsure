@@ -13,23 +13,23 @@ export class InDashboardComponent implements OnInit {
   after_loading = false;
   settle(i){
     //always settle the first card
-    
+
     this.settle_loading = true;
     setTimeout (() => {
       this.settle_loading = false;
       this.contracts[i].settle =  true;
       setTimeout (() => {
         this.after_loading = true;
-        
+
      }, 1000);
-      
+
    }, 3000);
-    
+
   }
   cancel(){
     this.basic = false;
     this.after_loading = false;
-    
+
   }
 
   basic = false
@@ -49,7 +49,7 @@ export class InDashboardComponent implements OnInit {
   // tslint:disable-next-line: member-ordering
   contracts = [{
     farmer_name: 'Ganpatrao Patil',
-    type: 'Flood Insurance',
+    type: 'Wheat Insurance',
     region: 'Satara, Maharashtra',
     issue: '2/12/2019',
     maturity: '30/11/2021',
@@ -61,7 +61,7 @@ export class InDashboardComponent implements OnInit {
   },
   {
     farmer_name: 'Shivram Bhau Patil',
-    type: 'Flood Insurance',
+    type: 'Wheat Insurance',
     region: 'Jalgaon, Maharashtra',
     issue: '28/11/2019',
     maturity: '29/11/2024',
@@ -73,7 +73,7 @@ export class InDashboardComponent implements OnInit {
   },
   {
     farmer_name: 'Shevteraj Kamble',
-    type: 'Drought Insurance',
+    type: 'Rice Insurance',
     region: 'Bhid, Maharashtra',
     issue: '5/10/2019',
     maturity: '29/11/2024',
@@ -85,7 +85,7 @@ export class InDashboardComponent implements OnInit {
   },
   {
     farmer_name: 'Hansraj Sonavne',
-    type: 'Wasp Disease Insurance',
+    type: 'Soyabean Insurance',
     region: 'Kolhapur, Maharashtra',
     issue: '5/11/2019',
     maturity: '5/11/2020',
@@ -97,7 +97,7 @@ export class InDashboardComponent implements OnInit {
   },
   {
     farmer_name: 'Shivkumar Bhau Nalawde',
-    type: 'Flood Insurance',
+    type: 'Wheat Insurance',
     region: 'Kanchangao, Maharashtra',
     issue: '28/11/2019',
     maturity: '29/11/2024',
@@ -109,7 +109,7 @@ export class InDashboardComponent implements OnInit {
   },
   {
     farmer_name: 'Suraj Bharte',
-    type: 'Wasp Disease Insurance',
+    type: 'Soyabean Insurance',
     region: 'Pusegaon, Maharashtra',
     issue: '2/7/2019',
     maturity: '2/8/2010',
@@ -121,7 +121,7 @@ export class InDashboardComponent implements OnInit {
   },
   {
     farmer_name: 'Ganpatrao Patil',
-    type: 'Drought Insurance',
+    type: 'Rice Insurance',
     region: 'Satara, Maharashtra',
     issue: '10/7/2018',
     maturity: '11/11/2010',
@@ -133,7 +133,7 @@ export class InDashboardComponent implements OnInit {
   },
   {
     farmer_name: 'Ganpatrao Patil',
-    type: 'Wasp Disease Insurance',
+    type: 'Soyabean Insurance',
     region: 'Satara, Maharashtra',
     issue: '11/5/2017',
     maturity: '11/4/2011',
@@ -145,7 +145,7 @@ export class InDashboardComponent implements OnInit {
   },
   {
     farmer_name: 'Shivram Bhau Patil',
-    type: 'Flood Insurance',
+    type: 'Wheat Insurance',
     region: 'Jalgaon, Maharashtra',
     issue: '28/11/2019',
     maturity: '29/11/2024',

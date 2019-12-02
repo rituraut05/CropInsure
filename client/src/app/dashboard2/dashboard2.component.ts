@@ -28,7 +28,7 @@ export class Dashboard2Component implements OnInit {
   contracts = [
     {
       farmer_name: 'Ganpatrao Patil',
-      type: 'Flood Insurance',
+      type: 'Soyabean Insurance',
       region: 'Jalgaon, Maharashtra',
       issue: '2/12/2019',
       maturity: '30/11/2021',
@@ -40,7 +40,7 @@ export class Dashboard2Component implements OnInit {
     },
   {
     farmer_name: 'Ganpatrao Patil',
-    type: 'Wasp Disease Insurance',
+    type: 'Wheat Insurance',
     region: 'Jalgaon, Maharashtra',
     issue: '11/5/2017',
     maturity: '11/4/2011',
@@ -52,7 +52,7 @@ export class Dashboard2Component implements OnInit {
   },
   {
     farmer_name: 'Ganpatrao Patil',
-    type: 'Drought Insurance',
+    type: 'Rice Insurance',
     region: 'Jalgaon, Maharashtra',
     issue: '10/7/2018',
     maturity: '11/11/2010',
@@ -62,7 +62,7 @@ export class Dashboard2Component implements OnInit {
     claim: false,
     damage: 12
   }
-  
+
 ];
 
   ngOnInit() {
