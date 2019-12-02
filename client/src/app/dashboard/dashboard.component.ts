@@ -23,9 +23,6 @@ export class DashboardComponent implements OnInit {
   changeLanguage(lang: string) {
     console.log("language is ", lang)
     this.translate.setDefaultLang(lang);
-
-
-
   }
   contracts = [
   {

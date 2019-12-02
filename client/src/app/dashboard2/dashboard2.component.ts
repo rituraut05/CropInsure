@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-dashboard2',
@@ -8,9 +9,9 @@ import { Router } from '@angular/router';
 })
 export class Dashboard2Component implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private translate:TranslateService) { }
   option = "lazy";
-  
+
   next_page() {
     history.pushState({data: {key: 'valuee'}}, '', '');
     this.router.navigate(['/InsuranceForm'], {state: {data: {key: 'valuee'}}});
@@ -18,6 +19,10 @@ export class Dashboard2Component implements OnInit {
   basic = false
   modal(){
     this.basic = true
+  }
+  changeLanguage(lang: string) {
+    console.log("language is ", lang)
+    this.translate.setDefaultLang(lang);
   }
 
   contracts = [

@@ -126,17 +126,10 @@ clrVerticalNavLink
 {{'Contact Us'|translate}}
 </a>
 <div style="position: fixed; bottom: 4px;">
-<button (click)="changeLanguage('en')">English</button>
-<button (click)="changeLanguage('hn')">हिंदी</button>
-
-<!-- <span style="padding: 8px;"><a routerLinkActive="active"
-[routerLink]="['./wikipedia']">English</a></span>
-<span style="padding: 8px;"><a routerLinkActive="active"
-[routerLink]="['./wikipedia']">मराठी</a></span>
-<span style="padding: 8px;"><a routerLinkActive="active"
-[routerLink]="['./wikipedia']">हिंदी</a></span>
-<span style="padding: 8px;"><a routerLinkActive="active"
-[routerLink]="['./wikipedia']">ગુજ્રતિ</a></span> -->
+    <span style="padding: 8px;"><a (click)="changeLanguage('en')" [routerLink]="['./wikipedia']" routerLinkActive="active">English</a></span>
+    <span style="padding: 8px;"><a (click)="changeLanguage('hn')" [routerLink]="['./wikipedia']" routerLinkActive="active">हिंदी</a></span>
+    <span style="padding: 8px;"><a [routerLink]="['./wikipedia']" routerLinkActive="active">मराठी</a></span>
+    <span style="padding: 8px;"><a [routerLink]="['./wikipedia']" routerLinkActive="active">ગુજ્રતિ</a></span>
 </div>
 
 
