@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
 
   contracts = [
   {
-    farmer_name: 'Ganpatrao Patil,
+    farmer_name: 'Ganpatrao Patil',
     type: 'Wasp Disease Insurance',
     region: 'Jalgaon, Maharashtra',
     issue: '11/5/2017',
