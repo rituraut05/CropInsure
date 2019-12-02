@@ -1,6 +1,6 @@
 <div class="content-container">
         <div class="content-area">
-      
+
           <div class="login-wrapper">
             <form class="login" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
               <section class="title">
@@ -11,9 +11,9 @@
               <div class="login-group">
                 <clr-select-container>
                     <label class="clr-sr-only">User Role</label>
-                    <select clrSelect name="type" >
+                    <select clrSelect name="type" (change)="changeRole($event.target.value)">
                         <option [ngValue]="position">Farmer</option>
-                        <option value="admin">Insurer</option>
+                        <option value="insurer">Insurer</option>
                     </select>
                 </clr-select-container>
                 <clr-input-container>
@@ -42,7 +42,6 @@
               </div>
             </form>
           </div>
-      
+
         </div>
       </div>
-      

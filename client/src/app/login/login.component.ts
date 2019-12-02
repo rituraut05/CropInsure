@@ -9,13 +9,34 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   position: ""
+  options:"Farmer";
+  loginForm : FormGroup;
+  fb:FormBuilder;
   constructor(private router: Router, private formBuilder: FormBuilder) { }
-
+  role:String;
   ngOnInit() {
+    this.fb= new FormBuilder();
     console.log(this.position)
+    this.loginForm = this.fb.group(
+      {
+        role:[''],
+        username:[''],
+        password:[''],
+        rememberme:['']
+      }
+    )
   }
+changeRole(role){
+  this.role = role;
+}
   next_page() {
+    console.log(this.role);
+
+    if(this.role==="insurer"){
+      this.router.navigate(['/in']);
+    }else{
     this.router.navigate(['/index1']);
+    }
   }
 
 }

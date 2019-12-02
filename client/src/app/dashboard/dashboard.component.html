@@ -2,7 +2,7 @@
     <div class="branding">
         <a class="nav-link">
             <!-- <clr-icon shape="vm-bug"></clr-icon> -->
-            <span class="title">CROP INSURE</span>
+            <span class="title">{{'CROP INSURE'|translate}}</span>
         </a>
     </div>
     <div class="header-actions">
@@ -64,7 +64,7 @@ Transactions
     [routerLinkActiveOptions]="{exact:true}"
     clrVerticalNavLink>
     <clr-icon [attr.shape]="'line-chart'" clrVerticalNavIcon></clr-icon>
-    Analytics
+    {{'Analytics'|translate}}
 </a>
 <ng-template
     [clrIfExpanded]="groupExpand"
@@ -96,7 +96,7 @@ routerLinkActive="active"
 [routerLinkActiveOptions]="{exact:true}"
 clrVerticalNavLink>
 <clr-icon [attr.shape]="'slider'" clrVerticalNavIcon></clr-icon>
-Filters
+{{'Filters'|translate}}
 </a>
 <ng-template clrIfExpanded>
 <clr-vertical-nav-group-children>
@@ -126,29 +126,32 @@ clrVerticalNavLink
 Contact Us
 </a>
 <div style="position: fixed; bottom: 4px;">
-<span style="padding: 8px;"><a routerLinkActive="active"
+<button (click)="changeLanguage('en')">English</button>
+<button (click)="changeLanguage('hn')">हिंदी</button>
+
+<!-- <span style="padding: 8px;"><a routerLinkActive="active"
 [routerLink]="['./wikipedia']">English</a></span>
 <span style="padding: 8px;"><a routerLinkActive="active"
 [routerLink]="['./wikipedia']">मराठी</a></span>
 <span style="padding: 8px;"><a routerLinkActive="active"
 [routerLink]="['./wikipedia']">हिंदी</a></span>
 <span style="padding: 8px;"><a routerLinkActive="active"
-[routerLink]="['./wikipedia']">ગુજ્રતિ</a></span>
+[routerLink]="['./wikipedia']">ગુજ્રતિ</a></span> -->
 </div>
 
 
 </clr-vertical-nav>
     <div class="content-area">
-        
+
                <br>
                 <div>
-                  <h3 style="display:inline;">Manage Insurances</h3>
-                  <div class="search" style="display:inline; padding-left: 20%">    
+                  <h3 style="display:inline;">{{'Manage Insurances'|translate}}</h3>
+                  <div class="search" style="display:inline; padding-left: 20%">
                     <input placeholder="Search insurance" style="width:50%" >
                     <button class="btn btn-link"><clr-icon shape="search"></clr-icon></button>
                   </div>
                   </div>
-                  
+
                 <div class="clr-row">
                         <div class="clr-col-lg-3 clr-col-12">
                                 <a class="card clickable" (click)='next_page()'>
@@ -158,7 +161,7 @@ Contact Us
                                                 <clr-icon shape="plus-circle" class="is-solid is-info" size="140"></clr-icon>
                                                 </div>
                                                 <h4 class="is-info">
-                                                    Create Insurance
+                                                    {{'Create Insurance'|translate}}
                                                 </h4>
                                             </div>
                                 </a>
@@ -166,42 +169,42 @@ Contact Us
                             <div class="clr-col-lg-3 clr-col-12" *ngFor="let item of contracts">
                                     <div class="card clickable" (click)="modal()">
                                             <div class="card-header">
-                                                {{item.type}}
-                                                
+                                                {{item.type|translate}}
+
                                             </div>
-            
+
                                             <div class="card-block">
-                                                    
-                                                <div class="card-media-block wrap">                                           
+
+                                                <div class="card-media-block wrap">
                                                     <div class="card-media-description">
-                                                        <span>Issue Date: {{item.issue}}</span>
-                                                        <span>Maturity: {{item.maturity}}</span>
-                                                        <span>Premium amount: {{item.premium}}</span>
-                                                        <span>Recurrence: {{item.recurrence}}</span>
+                                                        <span>{{'Issue Date'|translate}}: {{item.issue}}</span>
+                                                        <span>{{'Maturity'|translate}}: {{item.maturity}}</span>
+                                                        <span>{{'Premium amount'|translate}}: {{item.premium}}</span>
+                                                        <span>{{'Recurrence'|translate}}: {{item.recurrence}}</span>
                                                     </div>
                                                 </div>
-                                                <span *ngIf="item.due" class="label label-info">Premium Due</span>
-                                                <span *ngIf="!item.due" class="label label-success">Premium Paid</span>
-                                                <a href="#" *ngIf="item.claim" class="label label-purple clickable">Claimed</a>
-                                                <a href="#" *ngIf="!item.claim" class="label label-purple clickable">Claim Now</a>                                                
+                                                <span *ngIf="item.due" class="label label-info">{{'Premium Due'|translate}}</span>
+                                                <span *ngIf="!item.due" class="label label-success">{{'Premium Paid'|translate}}</span>
+                                                <a href="#" *ngIf="item.claim" class="label label-purple clickable">{{'Claimed'|translate}}</a>
+                                                <a href="#" *ngIf="!item.claim" class="label label-purple clickable">{{'Claim Now'|translate}}</a>
                                             </div>
-                                            
-                                            
+
+
                                         </div>
                                     </div>
-                        
+
                         <clr-modal [(clrModalOpen)]="basic">
-                                <h3 class="modal-title">Insurance Form</h3>
+                                <h3 class="modal-title">{{'Insurance Form'|translate}}</h3>
                                 <div class="modal-body">
                                     <img  src='../../assets/InsuranceForm.png' style="width:100%; height: 75%;" class='card-media-image'>
                                 </div>
                                 <div class="modal-footer">
                                     <!-- <button type="button" class="btn btn-outline" (click)="basic = false">Cancel</button> -->
-                                    <button type="button" class="btn btn-primary" (click)="basic = false">Ok</button>
+                                    <button type="button" class="btn btn-primary" (click)="basic = false">{{'Ok'|translate}}</button>
                                 </div>
                             </clr-modal>
                      </div>
             </div>
           </div>
-          
+
 </div>
