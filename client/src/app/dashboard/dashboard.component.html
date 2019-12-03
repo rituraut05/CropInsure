@@ -16,188 +16,155 @@
 </header>
 
 <div>
-    <img  src='../../assets/pptpic.png' style="width:100%; height: 50%;" class='card-media-image'>
+    <img src='../../assets/pptpic.png' style="width:100%; height: 50%;" class='card-media-image'>
 </div>
 
 <div class="main-container">
-<div class="content-container">
-<clr-vertical-nav *ngIf="option === 'lazy'"
-        [clrVerticalNavCollapsible]="true"
-        [clrVerticalNavCollapsed]="navCollapsed"
-        (clrVerticalNavCollapsedChange)="updateNavCollapsed($event)">
+    <div class="content-container">
+        <clr-vertical-nav *ngIf="option === 'lazy'" [clrVerticalNavCollapsible]="true" [clrVerticalNavCollapsed]="navCollapsed" (clrVerticalNavCollapsedChange)="updateNavCollapsed($event)">
 
-<clr-vertical-nav-group routerLinkActive="active">
-<a
-[routerLink]="['./in']"
-routerLinkActive="active"
-[routerLinkActiveOptions]="{exact:true}"
-clrVerticalNavLink>
-<clr-icon [attr.shape]="'dollar-bill'" clrVerticalNavIcon></clr-icon>
-{{'Crop Coin Wallet'|translate}}
-</a>
-<ng-template
-[clrIfExpanded]="groupExpand"
-(clrIfExpandedChange)="updateGroupExpand($event)">
-<clr-vertical-nav-group-children>
-    <a routerLinkActive="active"
-        clrVerticalNavLink
-        [routerLink]="['./abbey-road']">
-       {{'Wallet Balance'|translate}}
-    </a>
-    <a routerLinkActive="active"
-        clrVerticalNavLink
-        [routerLink]="['./revolver']">
-       {{'Wallet Transaction'|translate}}
-    </a>
-    <a routerLinkActive="active"
-        clrVerticalNavLink
-        [routerLink]="['./rubber-soul']">
-      {{'Wallet Offers'|translate}}
-    </a>
-</clr-vertical-nav-group-children>
-</ng-template>
-</clr-vertical-nav-group>
-<clr-vertical-nav-group routerLinkActive="active">
-<a
-    [routerLink]="['./beatles']"
-    routerLinkActive="active"
-    [routerLinkActiveOptions]="{exact:true}"
-    clrVerticalNavLink>
-    <clr-icon [attr.shape]="'line-chart'" clrVerticalNavIcon></clr-icon>
-    {{'Analytics'|translate}}
-</a>
-<ng-template
-    [clrIfExpanded]="groupExpand"
-    (clrIfExpandedChange)="updateGroupExpand($event)">
-    <clr-vertical-nav-group-children>
-        <a routerLinkActive="active"
-            clrVerticalNavLink
-            [routerLink]="['./abbey-road']">
-            Abbey Road
-        </a>
-        <a routerLinkActive="active"
-            clrVerticalNavLink
-            [routerLink]="['./revolver']">
-            Revolver
-        </a>
-        <a routerLinkActive="active"
-            clrVerticalNavLink
-            [routerLink]="['./rubber-soul']">
-            Rubber Soul
-        </a>
-    </clr-vertical-nav-group-children>
-</ng-template>
-</clr-vertical-nav-group>
+            <clr-vertical-nav-group routerLinkActive="active">
+                <a [routerLink]="['./in']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" clrVerticalNavLink>
+                    <clr-icon [attr.shape]="'dollar-bill'" clrVerticalNavIcon></clr-icon>
+                    {{'Crop Coin Wallet'|translate}}
+                </a>
+                <ng-template [clrIfExpanded]="groupExpand" (clrIfExpandedChange)="updateGroupExpand($event)">
+                    <clr-vertical-nav-group-children>
+                        <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./abbey-road']">
+                            {{'Wallet Balance'|translate}}
+                        </a>
+                        <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./revolver']">
+                            {{'Wallet Transaction'|translate}}
+                        </a>
+                        <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./rubber-soul']">
+                            {{'Wallet Offers'|translate}}
+                        </a>
+                    </clr-vertical-nav-group-children>
+                </ng-template>
+            </clr-vertical-nav-group>
+            <clr-vertical-nav-group routerLinkActive="active">
+                <a [routerLink]="['./beatles']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" clrVerticalNavLink>
+                    <clr-icon [attr.shape]="'line-chart'" clrVerticalNavIcon></clr-icon>
+                    {{'Analytics'|translate}}
+                </a>
+                <ng-template [clrIfExpanded]="groupExpand" (clrIfExpandedChange)="updateGroupExpand($event)">
+                    <clr-vertical-nav-group-children>
+                        <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./abbey-road']">
+                            Abbey Road
+                        </a>
+                        <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./revolver']">
+                            Revolver
+                        </a>
+                        <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./rubber-soul']">
+                            Rubber Soul
+                        </a>
+                    </clr-vertical-nav-group-children>
+                </ng-template>
+            </clr-vertical-nav-group>
 
-<clr-vertical-nav-group routerLinkActive="active" routerLinkActive="active">
-<a
-[routerLink]="['./killers']"
-routerLinkActive="active"
-[routerLinkActiveOptions]="{exact:true}"
-clrVerticalNavLink>
-<clr-icon [attr.shape]="'slider'" clrVerticalNavIcon></clr-icon>
-{{'Filters'|translate}}
-</a>
-<ng-template clrIfExpanded>
-<clr-vertical-nav-group-children>
-    <a routerLinkActive="active"
-        [routerLink]="['./hot-fuss']"
-        clrVerticalNavLink>
-        Hot Fuss
-    </a>
-    <a routerLinkActive="active"
-        clrVerticalNavLink
-        [routerLink]="['./day-and-age']">
-        Day & Age
-    </a>
-    <a routerLinkActive="active"
-        clrVerticalNavLink
-        [routerLink]="['./sams-town']">
-        Sam's Town
-    </a>
-</clr-vertical-nav-group-children>
-</ng-template>
-</clr-vertical-nav-group>
+            <clr-vertical-nav-group routerLinkActive="active" routerLinkActive="active">
+                <a [routerLink]="['./killers']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" clrVerticalNavLink>
+                    <clr-icon [attr.shape]="'slider'" clrVerticalNavIcon></clr-icon>
+                    {{'Filters'|translate}}
+                </a>
+                <ng-template clrIfExpanded>
+                    <clr-vertical-nav-group-children>
+                        <a routerLinkActive="active" [routerLink]="['./hot-fuss']" clrVerticalNavLink>
+                            Hot Fuss
+                        </a>
+                        <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./day-and-age']">
+                            Day & Age
+                        </a>
+                        <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./sams-town']">
+                            Sam's Town
+                        </a>
+                    </clr-vertical-nav-group-children>
+                </ng-template>
+            </clr-vertical-nav-group>
 
-<a routerLinkActive="active"
-clrVerticalNavLink
-[routerLink]="['./wikipedia']">
-<clr-icon shape="phone-handset" clrVerticalNavIcon></clr-icon>
-{{'Contact Us'|translate}}
-</a>
-<div style="position: fixed; bottom: 4px;">
-    <span style="padding: 8px;"><a (click)="changeLanguage('en')" [routerLink]="['./wikipedia']" routerLinkActive="active">English</a></span>
-    <span style="padding: 8px;"><a (click)="changeLanguage('hn')" [routerLink]="['./wikipedia']" routerLinkActive="active">हिंदी</a></span>
-    <span style="padding: 8px;"><a [routerLink]="['./wikipedia']" routerLinkActive="active">मराठी</a></span>
-    <span style="padding: 8px;"><a [routerLink]="['./wikipedia']" routerLinkActive="active">ગુજ્રતિ</a></span>
-</div>
-
-
-</clr-vertical-nav>
-    <div class="content-area">
-
-               <br>
-                <div>
-                  <h3 style="display:inline;">{{'Manage Insurances'|translate}}</h3>
-                  <div class="search" style="display:inline; padding-left: 20%">
-                    <input placeholder="Search insurance" style="width:50%" >
-                    <button class="btn btn-link"><clr-icon shape="search"></clr-icon></button>
-                  </div>
-                  </div>
-
-                <div class="clr-row">
-                        <div class="clr-col-lg-3 clr-col-12">
-                                <a class="card clickable" (click)='next_page()'>
-
-                                            <div class="card-block" style="padding-left: 75px;">
-                                                <div>
-                                                <clr-icon shape="plus-circle" class="is-solid is-info" size="140"></clr-icon>
-                                                </div>
-                                                <h4 class="is-info">
-                                                    {{'Create Insurance'|translate}}
-                                                </h4>
-                                            </div>
-                                </a>
-                            </div>
-                            <div class="clr-col-lg-3 clr-col-12" *ngFor="let item of contracts">
-                                    <div class="card clickable" (click)="modal()">
-                                            <div class="card-header">
-                                                {{item.type|translate}}
-
-                                            </div>
-
-                                            <div class="card-block">
-
-                                                <div class="card-media-block wrap">
-                                                    <div class="card-media-description">
-                                                        <span>{{'Issue Date'|translate}}: {{item.issue}}</span>
-                                                        <span>{{'Maturity'|translate}}: {{item.maturity}}</span>
-                                                        <span>{{'Premium amount'|translate}}: {{item.premium}}</span>
-                                                        <span>{{'Recurrence'|translate}}: {{item.recurrence}}</span>
-                                                    </div>
-                                                </div>
-                                                <span *ngIf="item.due" class="label label-info">{{'Premium Due'|translate}}</span>
-                                                <span *ngIf="!item.due" class="label label-success">{{'Premium Paid'|translate}}</span>
-                                                <a href="#" *ngIf="item.claim" class="label label-purple clickable">{{'Claimed'|translate}}</a>
-                                                <a href="#" *ngIf="!item.claim" class="label label-purple clickable">{{'Claim Now'|translate}}</a>
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-
-                        <clr-modal [(clrModalOpen)]="basic">
-                                <h3 class="modal-title">{{'Insurance Form'|translate}}</h3>
-                                <div class="modal-body">
-                                    <img  src='../../assets/InsuranceForm.png' style="width:100%; height: 75%;" class='card-media-image'>
-                                </div>
-                                <div class="modal-footer">
-                                    <!-- <button type="button" class="btn btn-outline" (click)="basic = false">Cancel</button> -->
-                                    <button type="button" class="btn btn-primary" (click)="basic = false">{{'Ok'|translate}}</button>
-                                </div>
-                            </clr-modal>
-                     </div>
+            <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./wikipedia']">
+                <clr-icon shape="phone-handset" clrVerticalNavIcon></clr-icon>
+                {{'Contact Us'|translate}}
+            </a>
+            <div style="position: fixed; bottom: 4px;">
+                <span style="padding: 8px;">
+                    <a (click)="changeLanguage('en')" [routerLink]="['./wikipedia']" routerLinkActive="active">English</a>
+                </span>
+                <span style="padding: 8px;">
+                    <a (click)="changeLanguage('hn')" [routerLink]="['./wikipedia']" routerLinkActive="active">हिंदी</a>
+                </span>
+                <!-- <span style="padding: 8px;"><a [routerLink]="['./wikipedia']" routerLinkActive="active">मराठी</a></span>
+    <span style="padding: 8px;"><a [routerLink]="['./wikipedia']" routerLinkActive="active">ગુજ્રતિ</a></span> -->
             </div>
-          </div>
+
+
+        </clr-vertical-nav>
+        <div class="content-area">
+
+            <br>
+            <div>
+                <h3 style="display:inline;">{{'Manage Insurances'|translate}}</h3>
+                <div class="search" style="display:inline; padding-left: 20%">
+                    <input placeholder="Search insurance" style="width:50%">
+                    <button class="btn btn-link">
+                        <clr-icon shape="search"></clr-icon>
+                    </button>
+                </div>
+            </div>
+
+            <div class="clr-row">
+                <div class="clr-col-lg-3 clr-col-12">
+                    <a class="card clickable" (click)='next_page()'>
+
+                        <div class="card-block" style="padding-left: 75px;">
+                            <div>
+                                <clr-icon shape="plus-circle" class="is-solid is-info" size="140"></clr-icon>
+                            </div>
+                            <h4 class="is-info">
+                                {{'Create Insurance'|translate}}
+                            </h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="clr-col-lg-3 clr-col-12" *ngFor="let item of contracts">
+                    <div class="card clickable" (click)="modal()">
+                        <div class="card-header">
+                            {{item.type|translate}}
+
+                        </div>
+
+                        <div class="card-block">
+
+                            <div class="card-media-block wrap">
+                                <div class="card-media-description">
+                                    <span>{{'Issue Date'|translate}}: {{item.issue}}</span>
+                                    <span>{{'Maturity'|translate}}: {{item.maturity}}</span>
+                                    <span>{{'Premium amount'|translate}}: {{item.premium}}</span>
+                                    <span>{{'Recurrence'|translate}}: {{item.recurrence}}</span>
+                                </div>
+                            </div>
+                            <span *ngIf="item.due" class="label label-info">{{'Premium Due'|translate}}</span>
+                            <span *ngIf="!item.due" class="label label-success">{{'Premium Paid'|translate}}</span>
+                            <a href="#" *ngIf="item.claim" class="label label-purple clickable">{{'Claimed'|translate}}</a>
+                            <a href="#" *ngIf="!item.claim" class="label label-purple clickable">{{'Claim Now'|translate}}</a>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <clr-modal [(clrModalOpen)]="basic">
+                    <h3 class="modal-title">{{'Insurance Form'|translate}}</h3>
+                    <div class="modal-body">
+                        <img src='../../assets/InsuranceForm.png' style="width:100%; height: 75%;" class='card-media-image'>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- <button type="button" class="btn btn-outline" (click)="basic = false">Cancel</button> -->
+                        <button type="button" class="btn btn-primary" (click)="basic = false">{{'Ok'|translate}}</button>
+                    </div>
+                </clr-modal>
+            </div>
+        </div>
+    </div>
 
 </div>
