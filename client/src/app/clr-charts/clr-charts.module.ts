@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 import { ClrChartsComponent } from './clr-charts.component';
 
 @NgModule({
-  declarations: [ClrChartsComponent],
+  declarations: [],
   imports: [
   ],
-  exports: [ClrChartsComponent]
+  exports: []
 })
 export class ClrChartsModule { }

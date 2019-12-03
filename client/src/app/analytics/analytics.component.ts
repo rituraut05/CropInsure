@@ -9,6 +9,11 @@ import { Chart } from 'chart.js';
 export class AnalyticsComponent implements OnInit {
 
   constructor() { }
+  navCollapsed: any
+  groupExpand: any
+  updateNavCollapsed: any
+  updateGroupExpand: any
+
   data: any;
   options: any;
   option = "lazy";
