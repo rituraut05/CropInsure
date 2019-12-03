@@ -8,32 +8,38 @@ import { Component, OnInit } from '@angular/core';
 export class InDashboardComponent implements OnInit {
 
   constructor() { }
-
+  dailyCheck = false
   settle_loading = false;
   after_loading = false;
-  settle(i){
+  autoSettle = false;
+  settle(i) {
     //always settle the first card
 
     this.settle_loading = true;
-    setTimeout (() => {
+    setTimeout(() => {
       this.settle_loading = false;
-      this.contracts[i].settle =  true;
-      setTimeout (() => {
+      this.contracts[i].settle = true;
+      setTimeout(() => {
         this.after_loading = true;
 
-     }, 1000);
+      }, 1000);
 
-   }, 3000);
+    }, 3000);
 
   }
-  cancel(){
+  cancel() {
     this.basic = false;
     this.after_loading = false;
 
   }
-
+  OnDailyCheck() {
+    this.dailyCheck = !this.dailyCheck
+  }
+  OnAutoSettle() {
+    this.autoSettle = !this.autoSettle
+  }
   basic = false
-  modal(){
+  modal() {
     this.basic = true
   }
   check_risk = false;
@@ -41,10 +47,10 @@ export class InDashboardComponent implements OnInit {
   toggle_check_risk() {
     // this.check_risk = true;
     this.loading = true;
-    setTimeout (() => {
+    setTimeout(() => {
       this.loading = false;
       this.check_risk = true;
-   }, 3000);
+    }, 3000);
   }
   // tslint:disable-next-line: member-ordering
   contracts = [{
@@ -156,7 +162,7 @@ export class InDashboardComponent implements OnInit {
     settle: false
   }
 
-];
+  ];
   items = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
   option = 'lazy';
   downloadinInvoice = true;

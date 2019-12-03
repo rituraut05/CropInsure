@@ -1,47 +1,49 @@
 <div class="content-container">
-        <div class="content-area">
+  <div class="content-area">
 
-          <div class="login-wrapper">
-            <form class="login" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-              <section class="title">
-                <h3 class="welcome">Welcome to</h3>
-                CROP INSURE
-                <!-- <h5 class="hint">Use your Company ID to sign in or create one now</h5> -->
-              </section>
-              <div class="login-group">
-                <clr-select-container>
-                    <label class="clr-sr-only">User Role</label>
-                    <select clrSelect name="type" (change)="changeRole($event.target.value)">
-                        <option [ngValue]="position">Farmer</option>
-                        <option value="insurer">Insurer</option>
-                    </select>
-                </clr-select-container>
-                <clr-input-container>
-                  <input type="text" clrInput formControlName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-                  <clr-control-error>Username is required</clr-control-error>
-                </clr-input-container>
-                <clr-password-container>
-                  <input type="password" clrPassword formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-                  <clr-control-error *clrIfError="'required'">Password is required</clr-control-error>
-                </clr-password-container>
-                <clr-checkbox-wrapper>
-                  <label>Remember me</label>
-                  <input type="checkbox" clrCheckbox formControlName="rememberme">
-                </clr-checkbox-wrapper>
-                <div class="error active" *ngIf="submitted && f.username.errors">
-                  Invalid user name or password
-                </div>
-                <button [disabled]="loading" class="btn btn-primary" (click)='next_page()'>
-                  Login
-                  <span *ngIf="loading" class="spinner spinner-inline">
-                    Loading...
-                  </span>
-                </button>
-
-                <!-- <a routerLink="/register" class="signup">Sign up for a Company ID</a> -->
-              </div>
-            </form>
+    <div class="login-wrapper">
+      <form class="login" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <section class="title">
+          <h3 class="welcome">Welcome to</h3>
+          CROP INSURE
+          <!-- <h5 class="hint">Use your Company ID to sign in or create one now</h5> -->
+        </section>
+        <div class="login-group">
+          <clr-select-container>
+            <label class="clr-sr-only">User Role</label>
+            <select clrSelect name="type" (change)="changeRole($event.target.value)">
+              <option [ngValue]="position">Farmer</option>
+              <option value="insurer">Insurer</option>
+            </select>
+          </clr-select-container>
+          <clr-input-container>
+            <input type="text" required clrInput formControlName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+            />
+            <clr-control-error>Username is required</clr-control-error>
+          </clr-input-container>
+          <clr-password-container>
+            <input type="password" required clrPassword formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+            />
+            <clr-control-error *clrIfError="'required'">Password is required</clr-control-error>
+          </clr-password-container>
+          <clr-checkbox-wrapper>
+            <label>Remember me</label>
+            <input type="checkbox" clrCheckbox formControlName="rememberme">
+          </clr-checkbox-wrapper>
+          <div class="error active" *ngIf="submitted && f.username.errors">
+            Invalid user name or password
           </div>
+          <button [disabled]="loading" class="btn btn-primary" (click)='next_page()'>
+            Login
+            <span *ngIf="loading" class="spinner spinner-inline">
+              Loading...
+            </span>
+          </button>
 
+          <!-- <a routerLink="/register" class="signup">Sign up for a Company ID</a> -->
         </div>
-      </div>
+      </form>
+    </div>
+
+  </div>
+</div>

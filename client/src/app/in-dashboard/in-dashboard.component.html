@@ -1,256 +1,228 @@
 <header class="header-6">
-        <div class="branding">
-            <a class="nav-link">
-                <!-- <clr-icon shape="vm-bug"></clr-icon> -->
-                <span class="title">CROP INSURE</span>
-            </a>
-        </div>
-        <div class="header-actions">
-            <a class="nav-link nav-icon" aria-label="settings">
-                <clr-icon shape="bell"></clr-icon>
-            </a>
-            <a href="#" class="nav-link nav-icon" aria-label="settings">
-                <clr-icon shape="cog"></clr-icon>
-            </a>
-        </div>
-    </header>
+    <div class="branding">
+        <a class="nav-link">
+            <!-- <clr-icon shape="vm-bug"></clr-icon> -->
+            <span class="title">CROP INSURE</span>
+        </a>
+    </div>
+    <div class="header-actions">
+        <a class="nav-link nav-icon" aria-label="settings">
+            <clr-icon shape="bell"></clr-icon>
+        </a>
+        <a href="#" class="nav-link nav-icon" aria-label="settings">
+            <clr-icon shape="cog"></clr-icon>
+        </a>
+    </div>
+</header>
 
-    <!-- <div>
+<!-- <div>
             <img  src='../../assets/pptpic.png' style="width:100%; height: 50%;" class='card-media-image'>
         </div> -->
-    <div class="main-container">
+<div class="main-container">
     <div class="content-container">
-            <clr-vertical-nav *ngIf="option === 'lazy'"
-                              [clrVerticalNavCollapsible]="true"
-                              [clrVerticalNavCollapsed]="navCollapsed"
-                              (clrVerticalNavCollapsedChange)="updateNavCollapsed($event)">
+        <clr-vertical-nav *ngIf="option === 'lazy'" [clrVerticalNavCollapsible]="true" [clrVerticalNavCollapsed]="navCollapsed" (clrVerticalNavCollapsedChange)="updateNavCollapsed($event)">
 
-                <clr-vertical-nav-group routerLinkActive="active">
-                    <a
-                        [routerLink]="['./beatles']"
-                        routerLinkActive="active"
-                        [routerLinkActiveOptions]="{exact:true}"
-                        clrVerticalNavLink>
-                        <clr-icon [attr.shape]="'dollar-bill'" clrVerticalNavIcon></clr-icon>
-                        Transactions
-                    </a>
-                    <ng-template
-                        [clrIfExpanded]="groupExpand"
-                        (clrIfExpandedChange)="updateGroupExpand($event)">
-                        <clr-vertical-nav-group-children>
-                            <a routerLinkActive="active"
-                               clrVerticalNavLink
-                               [routerLink]="['./abbey-road']">
-                                Abbey Road
-                            </a>
-                            <a routerLinkActive="active"
-                               clrVerticalNavLink
-                               [routerLink]="['./revolver']">
-                                Revolver
-                            </a>
-                            <a routerLinkActive="active"
-                               clrVerticalNavLink
-                               [routerLink]="['./rubber-soul']">
-                                Rubber Soul
-                            </a>
-                        </clr-vertical-nav-group-children>
-                    </ng-template>
-                </clr-vertical-nav-group>
-                <clr-vertical-nav-group routerLinkActive="active">
-                        <a
-                            [routerLink]="['./beatles']"
-                            routerLinkActive="active"
-                            [routerLinkActiveOptions]="{exact:true}"
-                            clrVerticalNavLink>
-                            <clr-icon [attr.shape]="'line-chart'" clrVerticalNavIcon></clr-icon>
-                            Analytics
-                        </a>
-                        <ng-template
-                            [clrIfExpanded]="groupExpand"
-                            (clrIfExpandedChange)="updateGroupExpand($event)">
-                            <clr-vertical-nav-group-children>
-                                <a routerLinkActive="active"
-                                   clrVerticalNavLink
-                                   [routerLink]="['./abbey-road']">
-                                    Abbey Road
-                                </a>
-                                <a routerLinkActive="active"
-                                   clrVerticalNavLink
-                                   [routerLink]="['./revolver']">
-                                    Revolver
-                                </a>
-                                <a routerLinkActive="active"
-                                   clrVerticalNavLink
-                                   [routerLink]="['./rubber-soul']">
-                                    Rubber Soul
-                                </a>
-                            </clr-vertical-nav-group-children>
-                        </ng-template>
-                    </clr-vertical-nav-group>
-
-                <clr-vertical-nav-group routerLinkActive="active" routerLinkActive="active">
-                    <a
-                        [routerLink]="['./killers']"
-                        routerLinkActive="active"
-                        [routerLinkActiveOptions]="{exact:true}"
-                        clrVerticalNavLink>
-                        <clr-icon [attr.shape]="'slider'" clrVerticalNavIcon></clr-icon>
-                        Filters
-                    </a>
-                    <ng-template clrIfExpanded>
-                        <clr-vertical-nav-group-children>
-                            <a routerLinkActive="active"
-                               [routerLink]="['./hot-fuss']"
-                               clrVerticalNavLink>
-                                District
-                            </a>
-                            <a routerLinkActive="active"
-                               clrVerticalNavLink
-                               [routerLink]="['./day-and-age']">
-                                Farm size
-                            </a>
-                            <a routerLinkActive="active"
-                               clrVerticalNavLink
-                               [routerLink]="['./sams-town']">
-                                Farmer Type
-                            </a>
-                        </clr-vertical-nav-group-children>
-                    </ng-template>
-                </clr-vertical-nav-group>
-
-                <a routerLinkActive="active"
-                   clrVerticalNavLink
-                   [routerLink]="['./wikipedia']">
-                    <clr-icon shape="phone-handset" clrVerticalNavIcon></clr-icon>
-                    Contact Us
+            <clr-vertical-nav-group routerLinkActive="active">
+                <a [routerLink]="['./beatles']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" clrVerticalNavLink>
+                    <clr-icon [attr.shape]="'dollar-bill'" clrVerticalNavIcon></clr-icon>
+                    Transactions
                 </a>
-                <div style="position: fixed; bottom: 4px;">
-                    <span style="padding: 8px;"><a routerLinkActive="active"
-                        [routerLink]="['./wikipedia']">English</a></span>
-                    <span style="padding: 8px;"><a routerLinkActive="active"
-                    [routerLink]="['./wikipedia']">मराठी</a></span>
-                    <span style="padding: 8px;"><a routerLinkActive="active"
-                        [routerLink]="['./wikipedia']">हिंदी</a></span>
-                    <span style="padding: 8px;"><a routerLinkActive="active"
-                        [routerLink]="['./wikipedia']">ગુજ્રતિ</a></span>
-                </div>
+                <ng-template [clrIfExpanded]="groupExpand" (clrIfExpandedChange)="updateGroupExpand($event)">
+                    <clr-vertical-nav-group-children>
+                        <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./abbey-road']">
+                            Abbey Road
+                        </a>
+                        <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./revolver']">
+                            Revolver
+                        </a>
+                        <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./rubber-soul']">
+                            Rubber Soul
+                        </a>
+                    </clr-vertical-nav-group-children>
+                </ng-template>
+            </clr-vertical-nav-group>
+            <clr-vertical-nav-group routerLinkActive="active">
+                <a [routerLink]="['./beatles']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" clrVerticalNavLink>
+                    <clr-icon [attr.shape]="'line-chart'" clrVerticalNavIcon></clr-icon>
+                    Analytics
+                </a>
+                <ng-template [clrIfExpanded]="groupExpand" (clrIfExpandedChange)="updateGroupExpand($event)">
+                    <clr-vertical-nav-group-children>
+                        <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./abbey-road']">
+                            Abbey Road
+                        </a>
+                        <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./revolver']">
+                            Revolver
+                        </a>
+                        <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./rubber-soul']">
+                            Rubber Soul
+                        </a>
+                    </clr-vertical-nav-group-children>
+                </ng-template>
+            </clr-vertical-nav-group>
+
+            <clr-vertical-nav-group routerLinkActive="active" routerLinkActive="active">
+                <a [routerLink]="['./killers']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" clrVerticalNavLink>
+                    <clr-icon [attr.shape]="'slider'" clrVerticalNavIcon></clr-icon>
+                    Filters
+                </a>
+                <ng-template clrIfExpanded>
+                    <clr-vertical-nav-group-children>
+                        <a routerLinkActive="active" [routerLink]="['./hot-fuss']" clrVerticalNavLink>
+                            District
+                        </a>
+                        <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./day-and-age']">
+                            Farm size
+                        </a>
+                        <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./sams-town']">
+                            Farmer Type
+                        </a>
+                    </clr-vertical-nav-group-children>
+                </ng-template>
+            </clr-vertical-nav-group>
+
+            <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./wikipedia']">
+                <clr-icon shape="phone-handset" clrVerticalNavIcon></clr-icon>
+                Contact Us
+            </a>
+            <div style="position: fixed; bottom: 4px;">
+                <span style="padding: 8px;">
+                    <a routerLinkActive="active" [routerLink]="['./wikipedia']">English</a>
+                </span>
+                <!-- <span style="padding: 8px;">
+                    <a routerLinkActive="active" [routerLink]="['./wikipedia']">मराठी</a>
+                </span>
+                <span style="padding: 8px;">
+                    <a routerLinkActive="active" [routerLink]="['./wikipedia']">हिंदी</a>
+                </span>
+                <span style="padding: 8px;">
+                    <a routerLinkActive="active" [routerLink]="['./wikipedia']">ગુજ્રતિ</a>
+                </span> -->
+            </div>
 
 
-            </clr-vertical-nav>
+        </clr-vertical-nav>
 
         <div class="content-area">
+            <br>
+            <div>
+                <h3 style="display:inline;">Manage Insurances</h3>
+                <div class="search" style="display:inline; padding-left: 10%">
+                    <input placeholder="Search insurance" style="width:50%">
+                    <button class="btn btn-link">
+                        <clr-icon shape="search"></clr-icon>
+                    </button>
+                    <button class="btn btn-primary btn-sm" (click)='toggle_check_risk()'>Check Risks</button>
+                </div>
+                <div class="clr-row">
+                    <clr-toggle-wrapper style="display:inline; padding-left: 12px">
+                        <input type="checkbox" clrToggle value="option1" name="options" (change)="OnAutoSettle()" />
+                        <label>Settle critical cases early automatically</label>
+                    </clr-toggle-wrapper>
+                    <clr-toggle-wrapper>
+                        <input type="checkbox" clrToggle value="option1" name="options" (change)="OnDailyCheck()" />
+                        <label>Automatically check for risks daily</label>
+
+                    </clr-toggle-wrapper>
                     <br>
-                    <div>
-                      <h3 style="display:inline;">Manage Insurances</h3>
-                      <div class="search" style="display:inline; padding-left: 10%">
-                        <input placeholder="Search insurance" style="width:50%" >
-                        <button class="btn btn-link"><clr-icon shape="search"></clr-icon></button>
-                        <button class="btn btn-primary btn-sm" (click)='toggle_check_risk()'>Check Risks</button>
-                        </div>
-                      <div class="clr-row">
-                            <clr-toggle-wrapper style="display:inline; padding-left: 12px">
-                                    <input type="checkbox" clrToggle value="option1" name="options" />
-                                    <label>Settle critical cases early automatically</label>
-                            </clr-toggle-wrapper>
-                            <clr-toggle-wrapper >
-                                <input type="checkbox" clrToggle value="option1" name="options" />
-                                <label>Automatically check for risks daily</label>
-                            </clr-toggle-wrapper>
-                      </div>
-                        
-                      </div>
 
-                      <div class="clr-row" *ngIf="loading">
-                        <span class="clr-col-lg-5"></span>
-                        <span class="clr-col-lg-7" class="spinner spinner-lg">
-                            Loading...
-                        </span>
-                      </div>
+                </div>
+                <p style="color:#FF0000" *ngIf="dailyCheck">Next check will be done after 24 hours</p>
+                <p style="color:#FF0000" *ngIf="autoSettle">Farmers money will get settled automatically after weather triggers</p>
 
-                      <div class="clr-row">
-                            <div class="clr-col-lg-3 clr-col-12" *ngFor="let item of contracts; let i = index" >
-                                    <div class="card" *ngIf="!item.settle">
-                                            <div class="card-header">
-                                                {{item.type}}
-                                                <div *ngIf="check_risk && item.damage > 80" class="alert alert-danger alert-sm">
-                                                    <div class="alert-items">
-                                                        <div class="alert-item static" role="alert">
-                                                            <div class="alert-icon-wrapper">
-                                                                <clr-icon class="alert-icon" shape="exclamation-circle"></clr-icon>
-                                                            </div>
-                                                            <span class="alert-text">
-                                                                Damage % > 80%
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    <button type="button" class="close" aria-label="Close">
-                                                            <clr-icon aria-hidden="true" shape="close"></clr-icon>
-                                                        </button>
-                                                </div>
-                                                <div *ngIf="check_risk && item.damage < 80" class="alert alert-info alert-sm">
-                                                        <div class="alert-items">
-                                                            <div class="alert-item static" role="alert">
-                                                                <div class="alert-icon-wrapper">
-                                                                    <clr-icon class="alert-icon" shape="info-circle"></clr-icon>
-                                                                </div>
-                                                                <span class="alert-text">
-                                                                    Damage % = {{item.damage}}
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                        <button type="button" class="close" aria-label="Close">
-                                                                <clr-icon aria-hidden="true" shape="close"></clr-icon>
-                                                            </button>
-                                                    </div>
-                                            </div>
+            </div>
 
-                                            <div class="card-block">
+            <div class="clr-row" *ngIf="loading">
+                <span class="clr-col-lg-5"></span>
+                <span class="clr-col-lg-7" class="spinner spinner-lg">
+                    Loading...
+                </span>
+            </div>
 
-                                                <div class="card-media-block wrap">
-                                                    <div class="card-media-description">
-                                                        <span>{{item.farmer_name}}</span>
-                                                        <span>Issue Date: {{item.issue}}</span>
-                                                        <span>Maturity: {{item.maturity}}</span>
-                                                        <span>Premium amount: {{item.premium}}</span>
-                                                        <span>Recurrence: {{item.recurrence}}</span>
-                                                        <span>Region: {{item.region}}</span>
-                                                    </div>
-                                                </div>
-                                                <span *ngIf="item.due" class="label label-info">Premium Due</span>
-                                                <span *ngIf="!item.due" class="label label-success">Premium Paid</span>
-                                                <a (click)="modal()"  *ngIf="check_risk && item.damage > 80" class="label label-purple clickable">
-                                                        Settle Early
-                                                    </a>
-
-                                            </div>
-                                            <clr-modal [(clrModalOpen)]="basic">
-                                                    <h3 class="modal-title">Settlement</h3>
-                                                    <div class="modal-body">
-                                                        <p>Settlement amount = 30000 Rs.</p>
-                                                        <div class="clr-row" *ngIf="settle_loading">
-                                                                <span class="clr-col-lg-5"></span>
-                                                                <span class="clr-col-lg-7" class="spinner spinner-lg">
-                                                                    Loading...
-                                                                </span>
-                                                        </div>
-                                                        <div  *ngIf="after_loading"></div>
-
-                                                        <span style="padding-left: 200px;">
-                                                            <clr-icon *ngIf="after_loading" shape="success-standard" size="100" class="is-solid is-success"></clr-icon>
-                                                        </span>
-
-                                                    </div>
-
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-outline" (click)="cancel()">Cancel</button>
-                                                        <button type="button" class="btn btn-primary" (click)="settle(i)">Settle</button>
-                                                    </div>
-                                                </clr-modal>
-
-
+            <div class="clr-row">
+                <div class="clr-col-lg-3 clr-col-12" *ngFor="let item of contracts; let i = index">
+                    <div class="card" *ngIf="!item.settle">
+                        <div class="card-header">
+                            {{item.type}}
+                            <div *ngIf="check_risk && item.damage > 80" class="alert alert-danger alert-sm">
+                                <div class="alert-items">
+                                    <div class="alert-item static" role="alert">
+                                        <div class="alert-icon-wrapper">
+                                            <clr-icon class="alert-icon" shape="exclamation-circle"></clr-icon>
                                         </div>
+                                        <span class="alert-text">
+                                            Damage % > 80%
+                                        </span>
                                     </div>
-                      </div>
+                                </div>
+                                <button type="button" class="close" aria-label="Close">
+                                    <clr-icon aria-hidden="true" shape="close"></clr-icon>
+                                </button>
+                            </div>
+                            <div *ngIf="check_risk && item.damage < 80" class="alert alert-info alert-sm">
+                                <div class="alert-items">
+                                    <div class="alert-item static" role="alert">
+                                        <div class="alert-icon-wrapper">
+                                            <clr-icon class="alert-icon" shape="info-circle"></clr-icon>
+                                        </div>
+                                        <span class="alert-text">
+                                            Damage % = {{item.damage}}
+                                        </span>
+                                    </div>
+                                </div>
+                                <button type="button" class="close" aria-label="Close">
+                                    <clr-icon aria-hidden="true" shape="close"></clr-icon>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="card-block">
+
+                            <div class="card-media-block wrap">
+                                <div class="card-media-description">
+                                    <span>{{item.farmer_name}}</span>
+                                    <span>Issue Date: {{item.issue}}</span>
+                                    <span>Maturity: {{item.maturity}}</span>
+                                    <span>Premium amount: {{item.premium}}</span>
+                                    <span>Recurrence: {{item.recurrence}}</span>
+                                    <span>Region: {{item.region}}</span>
+                                </div>
+                            </div>
+                            <span *ngIf="item.due" class="label label-info">Premium Due</span>
+                            <span *ngIf="!item.due" class="label label-success">Premium Paid</span>
+                            <a (click)="modal()" *ngIf="check_risk && item.damage > 80" class="label label-purple clickable">
+                                Settle Early
+                            </a>
+
+                        </div>
+                        <clr-modal [(clrModalOpen)]="basic">
+                            <h3 class="modal-title">Settlement</h3>
+                            <div class="modal-body">
+                                <p>Settlement amount = 30000 Rs.</p>
+                                <div class="clr-row" *ngIf="settle_loading">
+                                    <span class="clr-col-lg-5"></span>
+                                    <span class="clr-col-lg-7" class="spinner spinner-lg">
+                                        Loading...
+                                    </span>
+                                </div>
+                                <div *ngIf="after_loading"></div>
+
+                                <span style="padding-left: 200px;">
+                                    <clr-icon *ngIf="after_loading" shape="success-standard" size="100" class="is-solid is-success"></clr-icon>
+                                </span>
+
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline" (click)="cancel()">Cancel</button>
+                                <button type="button" class="btn btn-primary" (click)="settle(i)">Settle</button>
+                            </div>
+                        </clr-modal>
+
+
+                    </div>
                 </div>
             </div>
+        </div>
     </div>
+</div>
