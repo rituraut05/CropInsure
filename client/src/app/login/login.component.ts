@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+// import { ContractService } from '../ContractService/contract.service';
 
 @Component({
   selector: 'app-login',
@@ -17,6 +18,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.fb = new FormBuilder();
     console.log(this.position)
+
     this.loginForm = this.fb.group(
       {
         role: [''],
@@ -25,6 +27,7 @@ export class LoginComponent implements OnInit {
         rememberme: ['']
       }
     )
+
   }
   changeRole(role) {
     this.role = role;

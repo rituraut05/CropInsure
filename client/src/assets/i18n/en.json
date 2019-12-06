@@ -1,5 +1,5 @@
 {
-  "Crop_Insurance": "Crop_Insurance",
+  "Crop_Insurance": "Khet Insure",
   "The Beatles": "The Beatles",
   "Abbey Road": "Abbey Road",
   "Revolver": "Revolver",
@@ -22,9 +22,9 @@
   "Wheat Insurance": "Wheat Insurance",
   "Premium Due": "Premium Due",
   "Claim Now": "Claim Now",
-  "Crop Coin Wallet":"Crop Coin Wallet",
-  "Wallet Balance":"Wallet Balance",
-  "Wallet Transaction":"Wallet Transaction",
-  "Wallet Offers":"Wallet Offers",
-  "Contact Us":"Contact Us"
+  "Crop Coin Wallet": "Crop Coin Wallet",
+  "Wallet Balance": "Wallet Balance",
+  "Wallet Transaction": "Wallet Transaction",
+  "Wallet Offers": "Wallet Offers",
+  "Contact Us": "Contact Us"
 }

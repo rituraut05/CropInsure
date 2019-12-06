@@ -12,6 +12,11 @@ export class InDashboardComponent implements OnInit {
   settle_loading = false;
   after_loading = false;
   autoSettle = false;
+  showWalletBalance = false;
+  walletBalance = 1000000;
+  showWalletBalanceOn() {
+    this.showWalletBalance = !this.showWalletBalance
+  }
   settle(i) {
     //always settle the first card
 
@@ -19,12 +24,21 @@ export class InDashboardComponent implements OnInit {
     setTimeout(() => {
       this.settle_loading = false;
       this.contracts[i].settle = true;
-      setTimeout(() => {
-        this.after_loading = true;
+      if (this.autoSettle) {
+        setTimeout(() => {
+          this.after_loading = true;
 
-      }, 1000);
+        }, 1000);
+
+      } else {
+        setTimeout(() => {
+          this.after_loading = true;
+
+        }, 3000);
+      }
 
     }, 3000);
+    this.walletBalance = 999700
 
   }
   cancel() {
@@ -37,6 +51,7 @@ export class InDashboardComponent implements OnInit {
   }
   OnAutoSettle() {
     this.autoSettle = !this.autoSettle
+    this.walletBalance = 998800;
   }
   basic = false
   modal() {

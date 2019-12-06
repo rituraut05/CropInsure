@@ -2,7 +2,7 @@
     <div class="branding">
         <a class="nav-link">
             <!-- <clr-icon shape="vm-bug"></clr-icon> -->
-            <span class="title">CROP INSURE</span>
+            <span class="title">{{'CROP INSURE'|translate}}</span>
         </a>
     </div>
     <div class="header-actions">
@@ -20,49 +20,40 @@
         </div> -->
 <div class="main-container">
     <div class="content-container">
-        <clr-vertical-nav *ngIf="option === 'lazy'" [clrVerticalNavCollapsible]="true" [clrVerticalNavCollapsed]="navCollapsed" (clrVerticalNavCollapsedChange)="updateNavCollapsed($event)">
+        <clr-vertical-nav *ngIf="option === 'lazy'" [clrVerticalNavCollapsible]="true"
+            [clrVerticalNavCollapsed]="navCollapsed" (clrVerticalNavCollapsedChange)="updateNavCollapsed($event)">
 
             <clr-vertical-nav-group routerLinkActive="active">
-                <a [routerLink]="['./beatles']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" clrVerticalNavLink>
+                <a [routerLink]="['./in']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+                    clrVerticalNavLink>
                     <clr-icon [attr.shape]="'dollar-bill'" clrVerticalNavIcon></clr-icon>
-                    Transactions
+                    {{'Crop Coin Wallet'|translate}}
                 </a>
                 <ng-template [clrIfExpanded]="groupExpand" (clrIfExpandedChange)="updateGroupExpand($event)">
                     <clr-vertical-nav-group-children>
-                        <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./abbey-road']">
-                            Abbey Road
+                        <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./abbey-road']"
+                            (click)="showWalletBalanceOn()">
+                            {{'Wallet Balance'|translate}}
                         </a>
                         <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./revolver']">
-                            Revolver
+                            {{'Wallet Transaction'|translate}}
                         </a>
-                        <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./rubber-soul']">
-                            Rubber Soul
-                        </a>
+
                     </clr-vertical-nav-group-children>
                 </ng-template>
             </clr-vertical-nav-group>
             <clr-vertical-nav-group routerLinkActive="active">
-                <a [routerLink]="['./beatles']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" clrVerticalNavLink>
+                <a [routerLink]="['./beatles']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+                    clrVerticalNavLink>
                     <clr-icon [attr.shape]="'line-chart'" clrVerticalNavIcon></clr-icon>
                     Analytics
                 </a>
-                <ng-template [clrIfExpanded]="groupExpand" (clrIfExpandedChange)="updateGroupExpand($event)">
-                    <clr-vertical-nav-group-children>
-                        <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./abbey-road']">
-                            Abbey Road
-                        </a>
-                        <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./revolver']">
-                            Revolver
-                        </a>
-                        <a routerLinkActive="active" clrVerticalNavLink [routerLink]="['./rubber-soul']">
-                            Rubber Soul
-                        </a>
-                    </clr-vertical-nav-group-children>
-                </ng-template>
+
             </clr-vertical-nav-group>
 
             <clr-vertical-nav-group routerLinkActive="active" routerLinkActive="active">
-                <a [routerLink]="['./killers']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" clrVerticalNavLink>
+                <a [routerLink]="['./killers']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+                    clrVerticalNavLink>
                     <clr-icon [attr.shape]="'slider'" clrVerticalNavIcon></clr-icon>
                     Filters
                 </a>
@@ -103,7 +94,7 @@
 
         </clr-vertical-nav>
 
-        <div class="content-area">
+        <div class="content-area" *ngIf="!showWalletBalance">
             <br>
             <div>
                 <h3 style="display:inline;">Manage Insurances</h3>
@@ -128,7 +119,8 @@
 
                 </div>
                 <p style="color:#FF0000" *ngIf="dailyCheck">Next check will be done after 24 hours</p>
-                <p style="color:#FF0000" *ngIf="autoSettle">Farmers money will get settled automatically after weather triggers</p>
+                <p style="color:#FF0000" *ngIf="autoSettle">Farmers money will get settled automatically after weather
+                    triggers</p>
 
             </div>
 
@@ -190,8 +182,14 @@
                             </div>
                             <span *ngIf="item.due" class="label label-info">Premium Due</span>
                             <span *ngIf="!item.due" class="label label-success">Premium Paid</span>
-                            <a (click)="modal()" *ngIf="check_risk && item.damage > 80" class="label label-purple clickable">
+
+                            <a (click)="modal()" *ngIf="check_risk && item.damage > 80 && !autoSettle"
+                                class="label label-purple clickable">
                                 Settle Early
+                            </a>
+                            <a (click)="modal()" *ngIf="check_risk && item.damage > 80 && autoSettle"
+                                class="label label-purple clickable">
+                                Settled Automatically
                             </a>
 
                         </div>
@@ -208,7 +206,8 @@
                                 <div *ngIf="after_loading"></div>
 
                                 <span style="padding-left: 200px;">
-                                    <clr-icon *ngIf="after_loading" shape="success-standard" size="100" class="is-solid is-success"></clr-icon>
+                                    <clr-icon *ngIf="after_loading" shape="success-standard" size="100"
+                                        class="is-solid is-success"></clr-icon>
                                 </span>
 
                             </div>
@@ -224,5 +223,10 @@
                 </div>
             </div>
         </div>
+        <div class="content-area" *ngIf="showWalletBalance">
+            <h3 style="display:inline;">Wallet Balance is {{walletBalance}} crop coins </h3>
+
+        </div>
+
     </div>
 </div>

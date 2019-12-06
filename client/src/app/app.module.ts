@@ -18,6 +18,7 @@ import { LoginComponent } from './login/login.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CropCointWalletBalanceComponent } from './crop-coint-wallet-balance/crop-coint-wallet-balance.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     InDashboardComponent,
     AnalyticsComponent,
     ClrChartsComponent,
-    LoginComponent
+    LoginComponent,
+    CropCointWalletBalanceComponent
   ],
   imports: [
     BrowserModule,
