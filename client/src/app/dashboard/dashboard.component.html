@@ -136,6 +136,21 @@
                     <div class="card clickable" (click)="modal()">
                         <div class="card-header">
                             {{item.type|translate}}
+                            <div *ngIf=" item.damage > 20" class="alert alert-info alert-sm">
+                                <div class="alert-items">
+                                    <div class="alert-item static" role="alert">
+                                        <div class="alert-icon-wrapper">
+                                            <clr-icon class="alert-icon" shape="info-circle"></clr-icon>
+                                        </div>
+                                        <span class="alert-text">
+                                            Damage % = {{item.damage}}
+                                        </span>
+                                    </div>
+                                </div>
+                                <button type="button" class="close" aria-label="Close">
+                                    <clr-icon aria-hidden="true" shape="close"></clr-icon>
+                                </button>
+                            </div>
 
                         </div>
 

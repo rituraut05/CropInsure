@@ -58,7 +58,7 @@ export class DashboardComponent implements OnInit {
       recurrence: 'Monthly',
       due: true,
       claim: false,
-      damage: 12,
+      damage: 40,
       index: 1
     }
 
