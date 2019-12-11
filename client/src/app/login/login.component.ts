@@ -10,9 +10,16 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   position: ""
-  options: "Farmer";
-  loginForm: FormGroup;
-  fb: FormBuilder;
+  options:"Farmer";
+  loginForm : FormGroup;
+  fb:FormBuilder;
+
+  submitted: any
+  f: any
+  loading: any
+  onSubmit: any
+
+  
   constructor(private router: Router, private formBuilder: FormBuilder) { }
   role: String;
   ngOnInit() {

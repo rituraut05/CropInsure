@@ -8,6 +8,8 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 })
 export class InsuranceFormComponent implements OnInit {
   form: FormGroup;
+  submitbuttonStatus: any
+
   constructor(private router: Router, private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
       basic: this.formBuilder.group({

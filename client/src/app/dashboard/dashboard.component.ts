@@ -10,6 +10,13 @@ import { TranslateService } from '@ngx-translate/core';
 export class DashboardComponent implements OnInit {
 
   constructor(private router: Router, private translate: TranslateService) { }
+
+  navCollapsed: any
+  groupExpand: any
+  updateNavCollapsed: any
+  updateGroupExpand: any
+
+
   option = "lazy";
   walletBalance = 1000;
   premium = 10;

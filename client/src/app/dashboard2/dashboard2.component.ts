@@ -10,6 +10,11 @@ import { TranslateService } from '@ngx-translate/core';
 export class Dashboard2Component implements OnInit {
 
   constructor(private router: Router,private translate:TranslateService) { }
+  navCollapsed: any
+  groupExpand: any
+  updateNavCollapsed: any
+  updateGroupExpand: any
+  
   option = "lazy";
   loading = true;
   next_page() {

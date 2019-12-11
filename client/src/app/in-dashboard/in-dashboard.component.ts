@@ -8,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class InDashboardComponent implements OnInit {
 
   constructor() { }
+  navCollapsed: any
+  groupExpand: any
+  updateNavCollapsed: any
+  updateGroupExpand: any
+  
   dailyCheck = false
   settle_loading = false;
   after_loading = false;

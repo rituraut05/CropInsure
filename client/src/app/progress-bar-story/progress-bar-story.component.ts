@@ -52,7 +52,7 @@ export class ProgressBarStoryDemo {
   storyTime;
 
   constructor() {
-    this.storyProgressBar = new ProgbarExampleComponent('', 'Progress example');
+    this.storyProgressBar = new ProgbarExampleComponent();
     this.storyTime = timer(7500, 7500).pipe(take(10));
   }
 

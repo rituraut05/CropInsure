@@ -14,11 +14,11 @@ export class ProgbarExampleComponent {
   complete = false;
 
   constructor(
-    public label: string = 'demo',
-    public title: string = 'Progress Bar',
-    public isLabeled: boolean = false
+    
   ) {}
-
+  public label: string = 'demo'
+    public title: string = 'Progress Bar'
+    public isLabeled: boolean = false
   cssClassnames(): string {
     return ['progress', this.label].join(' ');
   }
