@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { EthcontractService } from '../ethcontract.service';
+
 @Component({
   selector: 'app-insurance-form',
   templateUrl: './insurance-form.component.html',
@@ -10,7 +12,7 @@ export class InsuranceFormComponent implements OnInit {
   form: FormGroup;
   submitbuttonStatus: any
 
-  constructor(private router: Router, private formBuilder: FormBuilder) {
+  constructor(private router: Router, private formBuilder: FormBuilder, private ethcontractService: EthcontractService) {
     this.form = this.formBuilder.group({
       basic: this.formBuilder.group({
         name: ['', Validators.required],
@@ -35,16 +37,18 @@ export class InsuranceFormComponent implements OnInit {
         branch: ['Koregaon', Validators.required],
       }),
     });
-   }
-   submit() {
+  }
+  submit() {
     console.log('reactive form submit', this.form.value);
+    let that = this;
+    this.ethcontractService.createInsurance();
   }
   progressisHidden = true;
   infoisHidden = true;
   firstName = '';
   midleName = '';
   lastName = '';
-  setValues(){
+  setValues() {
     setTimeout(
       () => {
         this.infoisHidden = false
@@ -77,12 +81,12 @@ export class InsuranceFormComponent implements OnInit {
     );
   }
   uplaoddata() {
-    
+
     this.progressisHidden = false;
     this.setValues();
-    
+
     // tslint:disable-next-line: no-unused-expression
-    
+
   }
   next_page() {
     this.router.navigate(['/index']);

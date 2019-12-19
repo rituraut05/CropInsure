@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { EthcontractService } from './ethcontract.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -50,7 +51,7 @@ import { CropCointWalletBalanceComponent } from './crop-coint-wallet-balance/cro
       }
     }),
   ],
-  providers: [],
+  providers: [EthcontractService],
   bootstrap: [AppComponent]
 })
 

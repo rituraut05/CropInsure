@@ -12,7 +12,7 @@ export class InDashboardComponent implements OnInit {
   groupExpand: any
   updateNavCollapsed: any
   updateGroupExpand: any
-  
+
   dailyCheck = false
   settle_loading = false;
   after_loading = false;
@@ -71,6 +71,7 @@ export class InDashboardComponent implements OnInit {
       this.loading = false;
       this.check_risk = true;
     }, 3000);
+
   }
   // tslint:disable-next-line: member-ordering
   contracts = [{
