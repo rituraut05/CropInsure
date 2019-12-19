@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 import * as Web3 from 'web3';
 import * as TruffleContract from 'truffle-contract';
 declare let require: any;
@@ -100,6 +101,7 @@ export class EthcontractService {
   private web3Provider: null
   private address = '0x6cE79737Ec7B0Eb9976A8B27a538D9fafc8CB669';
   private contracts: {}
+  private client;
   constructor() {
     if (typeof window.web3 !== 'undefined') {
       this.web3Provider = window.web3.currentProvider;
@@ -107,6 +109,7 @@ export class EthcontractService {
       this.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
     }
     window.web3 = new Web3(this.web3Provider);
+    this.client = window.web3.eth.contract(tokenAbi).at(this.address)
     console.log(window.web3)
   }
   getAccountInfo() {
@@ -129,9 +132,21 @@ export class EthcontractService {
 
   ) {
     let that = this;
-    var Client = window.web3.eth.contract(tokenAbi)
-    var client = Client.at(this.address)
-    client.depositFunds(10, {
+
+    this.client.depositFunds(10, {
+      gas: 50000,
+      from: window.web3.eth.accounts[1],
+      value: window.web3.toWei(10, 'ether')
+    }, function (err, transactionHash) {
+      console.log("in script putmoneyincontract")
+      console.log(window.web3.eth)
+
+      console.log('transactionHash:', transactionHash)
+    })
+  }
+  disbursePayment(address, amount) {
+
+    this.client.depositFunds(10, {
       gas: 50000,
       from: window.web3.eth.accounts[1],
       value: window.web3.toWei(10, 'ether')

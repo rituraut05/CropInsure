@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UtilityService } from '../utility.service';
 
 @Component({
   selector: 'app-in-dashboard',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InDashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private utilityService: UtilityService) { }
   navCollapsed: any
   groupExpand: any
   updateNavCollapsed: any
@@ -67,10 +68,12 @@ export class InDashboardComponent implements OnInit {
   toggle_check_risk() {
     // this.check_risk = true;
     this.loading = true;
+    this.utilityService.checkForCropFailure(true);
     setTimeout(() => {
       this.loading = false;
       this.check_risk = true;
     }, 3000);
+
 
   }
   // tslint:disable-next-line: member-ordering
