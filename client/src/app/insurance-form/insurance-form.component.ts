@@ -69,19 +69,21 @@ export class InsuranceFormComponent implements OnInit {
   firstName = '';
   midleName = '';
   lastName = '';
-  setValues() {
+  setValues(data) {
+    let farmerName = data["Farmer Name* : "] ? data["Farmer Name*:"]:data["Farmer Name* : "];
+    console.log("farmer name",farmerName);
     setTimeout(
       () => {
         this.infoisHidden = false
         this.form = this.formBuilder.group({
           basic: this.formBuilder.group({
-            name: ['Ganpatrao Patil', Validators.required],
-            adhaar: ['5845 5000 8000', Validators.required],
-            mobile: ['9458889772', Validators.required],
+            name: [data["Farmer Name* "], Validators.required],
+            adhaar: [data["Aadhar Number: "], Validators.required],
+            mobile: [data["Mobile No*: "], Validators.required],
           }),
           farm: this.formBuilder.group({
-            district: ['Satara', Validators.required],
-            village: ['Koregaon', Validators.required],
+            district: [data["District*: "], Validators.required],
+            village: [data["Village/Ward*: "], Validators.required],
             survey: ['10', Validators.required],
             area: ['0.5 acres', Validators.required]
           }),
@@ -101,7 +103,7 @@ export class InsuranceFormComponent implements OnInit {
           }),
         });
       },
-      6000
+      10
     );
   }
   filename:"";
@@ -115,12 +117,13 @@ export class InsuranceFormComponent implements OnInit {
   uplaoddata() {
 
     this.progressisHidden = false;
-    //this.setValues();
     console.log("sending request")
 
-    this.http.get('http://localhost:3000/api/textract').subscribe((data:any)=>{
+    this.http.get('http://localhost:3000/api/textract/'+this.filename).subscribe((data:any)=>{
 
       console.log("got the data",data);
+      this.setValues(data);
+
     },error=>{
       console.log("error:",error);
 
