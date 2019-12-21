@@ -99,7 +99,7 @@ let tokenAbi = [
 })
 export class EthcontractService {
   private web3Provider: null
-  private address = '0x6cE79737Ec7B0Eb9976A8B27a538D9fafc8CB669';
+  private address = '0xa2CEe804CB6dE596bFDab6912679A0AA6BcE3e75';
   private contracts: {}
   private client;
   constructor() {
@@ -110,7 +110,25 @@ export class EthcontractService {
     }
     window.web3 = new Web3(this.web3Provider);
     this.client = window.web3.eth.contract(tokenAbi).at(this.address)
-    console.log(window.web3)
+    console.log(window.web3);
+  }
+  getContractAddress(){
+    return this.address;
+  }
+  getFarmerAddress(){
+    console.log()
+    //return window.web3.eth.accounts[1];
+    return "0x2EEC861c4946b8743B06b09168A4a0914c338e8F";
+  }
+
+  async getEthBalance(address) {
+
+    await window.web3.eth.getBalance(address, (err, balance) => {
+      console.log(address + " Balance: ", window.web3.utils.fromWei(balance));
+      return <number>balance;
+     });
+     return 0;
+
   }
   getAccountInfo() {
     return new Promise((resolve, reject) => {
@@ -146,14 +164,11 @@ export class EthcontractService {
   }
   disbursePayment(address, amount) {
 
-    this.client.depositFunds(10, {
-      gas: 50000,
-      from: window.web3.eth.accounts[1],
-      value: window.web3.toWei(10, 'ether')
-    }, function (err, transactionHash) {
-      console.log("in script putmoneyincontract")
-      console.log(window.web3.eth)
-
+    this.client.disbursePayment(address, amount, {
+      gas: 30000,
+      from: window.web3.eth.accounts[0]
+    }, function(err, transactionHash) {
+      if (err) console.error(err)
       console.log('transactionHash:', transactionHash)
     })
   }

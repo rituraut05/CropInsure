@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import {AppInfoService} from '../AppInfoService/app-info.service';
+import {EthcontractService} from '../ethcontract.service';
 // import { ContractService } from '../ContractService/contract.service';
 
 @Component({
@@ -19,8 +21,10 @@ export class LoginComponent implements OnInit {
   loading: any
   onSubmit: any
 
-  
-  constructor(private router: Router, private formBuilder: FormBuilder) { }
+
+  constructor(private router: Router, private formBuilder: FormBuilder,
+    private appInfoService : AppInfoService,
+    private ethcontractService:EthcontractService) { }
   role: String;
   ngOnInit() {
     this.fb = new FormBuilder();
@@ -41,10 +45,15 @@ export class LoginComponent implements OnInit {
   }
   next_page() {
     console.log(this.role);
+    this.ethcontractService.disbursePayment("0xEAD2fF6e1ac2a86f7AaB4F8e8a4265b3acc5b44f",10);
     if (!this.loginForm.errors) {
+        this.appInfoService.setCurrentInsurerEthAddress(this.ethcontractService.getContractAddress());
       if (this.role === "insurer") {
+
         this.router.navigate(['/in'], { skipLocationChange: true });
       } else {
+        this.appInfoService.setCurrentFarmerEthAddress(this.ethcontractService.getFarmerAddress());
+
         this.router.navigate(['/index1'], { skipLocationChange: true });
       }
     }

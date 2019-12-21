@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {EthcontractService} from '../ethcontract.service';
 
 @Component({
   selector: 'app-crop-coint-wallet-balance',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CropCointWalletBalanceComponent implements OnInit {
 
-  constructor() { }
+  constructor(ethcontractService:EthcontractService) { }
 
   ngOnInit() {
   }
