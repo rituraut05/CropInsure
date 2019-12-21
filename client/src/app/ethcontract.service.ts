@@ -99,14 +99,14 @@ let tokenAbi = [
 })
 export class EthcontractService {
   private web3Provider: null
-  private address = '0x6cE79737Ec7B0Eb9976A8B27a538D9fafc8CB669';
+  private address = '0xb255f55e8d600f09ebc1035dd2118acec1018912';
   private contracts: {}
   private client;
   constructor() {
     if (typeof window.web3 !== 'undefined') {
       this.web3Provider = window.web3.currentProvider;
     } else {
-      this.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
+      this.web3Provider = new Web3.providers.HttpProvider('https://tejaswini.blockchain.azure.com:3200/9A4NbVfwss7kgNVVudxZYWzH');
     }
     window.web3 = new Web3(this.web3Provider);
     this.client = window.web3.eth.contract(tokenAbi).at(this.address)
@@ -135,7 +135,7 @@ export class EthcontractService {
 
     this.client.depositFunds(10, {
       gas: 50000,
-      from: window.web3.eth.accounts[1],
+      from: "0xab6c3f10bb4d2bbebf87d499480083b6ad52a930",
       value: window.web3.toWei(10, 'ether')
     }, function (err, transactionHash) {
       console.log("in script putmoneyincontract")
