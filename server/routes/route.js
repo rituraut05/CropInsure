@@ -41,6 +41,66 @@ module.exports = function(app) {
     //         }
     //     })
     // });
+    
+    function get_kv_relationship(key_map, value_map, block_map) {
+        kvs = {}
+        for (block_id in key_map) {
+            value_block = find_value_block(key_map[block_id], value_map)
+            key = get_text(key_map[block_id], block_map)
+            val = get_text(value_block, block_map)
+            kvs[key] = val
+        }
+        return kvs
+
+    }
+
+
+    function find_value_block(key_block, value_map) {
+        for (relationship of key_block['Relationships']) {
+            if (relationship['Type'] == 'VALUE')
+                for (value_id of relationship['Ids'])
+                    value_block = value_map[value_id]
+        }
+        return value_block
+    }
+
+
+    function get_text(result, blocks_map) {
+        text = ''
+        if ('Relationships' in result) {
+            for (relationship of result['Relationships']) {
+                if (relationship['Type'] == 'CHILD') {
+                    for (child_id of relationship['Ids']) {
+                        word = blocks_map[child_id]
+                        if (word['BlockType'] == 'WORD')
+                            text += word['Text'] + ' '
+                        if (word['BlockType'] == 'SELECTION_ELEMENT') {
+                            if (word['SelectionStatus'] == 'SELECTED')
+                                text += 'X '
+                        }
+                    }
+                }
+            }
+        }
+
+
+        return text
+    }
+
+
+    function print_kvs(kvs) {
+        for (key in kvs)
+            console.log(key, ":", kvs[key])
+    }
+
+
+    // function search_value(kvs, search_key) {
+    //     for ((key, value) in kvs) {
+    //         if (re.search(search_key, key, re.IGNORECASE))
+    //             return value
+    //     }
+    // }
+
 
     app.get('/textract', function(req, res) {
        
@@ -67,7 +127,27 @@ module.exports = function(app) {
         textract.analyzeDocument(params, function(err, data) {
             if (err) console.log(err, err.stack); // an error occurred
             else  {
-             console.log(data);           // successful response
+             //console.log(data); 
+                       // successful response
+                       blocks = data['Blocks']
+                // # get key and value maps
+                key_map = {}
+                value_map = {}
+                block_map = {}
+                for (block of blocks) {
+                    console.log(block)
+                    block_id = block['Id']
+                    block_map[block_id] = block
+                    if (block['BlockType'] == "KEY_VALUE_SET") {
+                        if (block['EntityTypes'].includes('KEY'))
+                            key_map[block_id] = block
+                        else
+                            value_map[block_id] = block
+                    }
+                }
+                console.log(key_map)
+                kvs = get_kv_relationship(key_map, value_map, block_map)
+                print_kvs(kvs)
 
             }
         });
