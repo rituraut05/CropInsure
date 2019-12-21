@@ -9,6 +9,27 @@ import { UtilityService } from '../utility.service';
 export class InDashboardComponent implements OnInit {
 
   constructor(private utilityService: UtilityService) { }
+  showWalletBalance = false;
+  showWalletTransaction = false;
+  showManageInsurance = true;
+  showManageInsurancesToggle(){
+    this.showWalletBalance = false;
+    this.showManageInsurance = true;
+    this.showWalletTransaction = false;
+  }
+  showWalletBalanceToggle() {
+    this.showWalletBalance = true;
+    this.showManageInsurance = false;
+    this.showWalletTransaction = false;
+    this.walletBalance = 1000
+  }
+  showWalletTransactionToggle() {
+    this.showWalletBalance = false;
+    this.showManageInsurance = false;
+    this.showWalletTransaction = true;
+    this.walletBalance = 1000
+  }
+
   navCollapsed: any
   groupExpand: any
   updateNavCollapsed: any
@@ -18,11 +39,11 @@ export class InDashboardComponent implements OnInit {
   settle_loading = false;
   after_loading = false;
   autoSettle = false;
-  showWalletBalance = false;
   walletBalance = 1000000;
   showWalletBalanceOn() {
     this.showWalletBalance = !this.showWalletBalance
   }
+  
   settle(i) {
     //always settle the first card
 
@@ -77,6 +98,31 @@ export class InDashboardComponent implements OnInit {
 
 
   }
+  // tslint:disable-next-line: member-ordering
+  transactions = [
+    {
+      farmer: "Ganpatrao Patil",
+      date: '12/12/2019',
+      debit: '500',
+      credit: '-',
+      type: 'Rupees'
+    },
+    {
+      farmer: "Ganpatrao Patil",
+      date: '12/12/2019',
+      debit: '500',
+      credit: '-',
+      type: 'Rupees'
+    },
+    {
+      farmer: "Ganpatrao Patil",
+      date: '12/12/2019',
+      debit: '500',
+      credit: '-',
+      type: 'CropCoin'
+    }
+  ]
+
   // tslint:disable-next-line: member-ordering
   contracts = [{
     farmer_name: 'Ganpatrao Patil',
@@ -191,6 +237,8 @@ export class InDashboardComponent implements OnInit {
   items = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
   option = 'lazy';
   downloadinInvoice = true;
+
+  
   ngOnInit() {
   }
 
