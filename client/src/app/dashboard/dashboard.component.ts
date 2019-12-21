@@ -53,6 +53,26 @@ export class DashboardComponent implements OnInit {
     console.log("language is ", lang)
     this.translate.setDefaultLang(lang);
   }
+  transactions = [
+    {
+      date: '12/12/2019',
+      debit:'500',
+      credit:'-',
+      type:'Rupees'
+    },
+    {
+      date: '12/12/2019',
+      debit:'500',
+      credit:'-',
+      type:'Rupees'
+    },
+    {
+      date: '12/12/2019',
+      debit:'500',
+      credit:'-',
+      type:'CropCoin'
+    }
+  ]
   contracts = [
     {
       farmer_name: 'Ganpatrao Patil',

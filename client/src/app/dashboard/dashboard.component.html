@@ -205,36 +205,19 @@
                         <table class="table">
                                 <thead>
                                     <tr>
-                                        <th class="left">Wizard</th>
-                                        <th>Allegiance</th>
-                                        <th>Triwizard Champion?</th>
-                                        <th>Can Cast Fireball</th>
+                                        <th class="left">Date</th>
+                                        <th>Debit</th>
+                                        <th>Credit</th>
+                                        <th>Type</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td class="left">Harry</td>
-                                        <td>Gryffindor</td>
-                                        <td>Yes</td>
-                                        <td>No</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="left">Gandalf</td>
-                                        <td>Hobbits</td>
-                                        <td>Maybe?</td>
-                                        <td>I don&apos;t think so...</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="left">Obi-Wan Kenobi</td>
-                                        <td>Republic/Rebellion</td>
-                                        <td>No</td>
-                                        <td>No</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="left">Merlin</td>
-                                        <td>King Arthur</td>
-                                        <td>Probably invented the tournament</td>
-                                        <td>Solid maybe</td>
+                                    <tr *ngFor="let item of transactions">
+                                        <td class="left">{{item.date}}</td>
+                                        <td>{{item.debit}}</td>
+                                        <td>{{item.credit}}</td>
+                                        <td style=" padding: 0%;" *ngIf="item.type === 'Rupees'"><img src='../../assets/rupee.jpg' style="width:10%; height: 20%;"> </td>
+                                        <td style=" padding: 0%;" *ngIf="item.type === 'CropCoin'"><img src='../../assets/cropcoin.png' style="width:6%; height: 20%; padding: 0%;"> </td>
                                     </tr>
                                 </tbody>
                             </table>
