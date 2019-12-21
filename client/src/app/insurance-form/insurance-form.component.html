@@ -2,7 +2,7 @@
         <div class="branding">
             <a class="nav-link">
                 <!-- <clr-icon shape="vm-bug"></clr-icon> -->
-                <span class="title">CROP INSURE</span>
+                <span class="title">KRUSHI CHAKRA</span>
             </a>
         </div>
         <div class="header-actions">
@@ -243,7 +243,7 @@
                                 </clr-input-container>
                                 <button (click)="modal()" class="btn btn-info-outline" clrStepButton="submit">Check Premium</button>
                                 </clr-step-content>
-                                
+                                <button *ngIf="no" (click)="calculatePremium(address)" class="btn btn-info-outline" clrStepButton="submit">Check Premium</button>                                
                         </clr-stepper-panel>
                 </form>
                 <clr-modal [(clrModalOpen)]="basic">

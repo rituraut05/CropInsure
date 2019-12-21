@@ -16,24 +16,45 @@ export class UtilityService {
     private modelService: ModelService,
     private weatherService: WeatherService,
     private ethContractService: EthcontractService) { }
-  calculatePayment(address) {
-    let farmer = this.databaseService.getFarmerByAddress(address);
-    let contract = this.databaseService.getContract(address);
-    const premium = contract.premium
+    calculatePayment(address) {
+      let farmer = this.databaseService.getFarmerByAddress(address);
+      let contract = this.databaseService.getContract(address);
+      const total_premium = contract.premium
 
-    const probSuccess = this.modelService.getProb({
-      // week: moment().week(),
-      week: "",
-      minTemp: 58,
-      rainfall: 76,
-      sunlightExposure: 43.22,
-      elevation: 49.33,
-      experience: contract.experience,
-      size_of_farm: contract.size,
-      technique: contract.technique === 'hand' ? 0 : 1,
-      disease: 0
-    })
-  }
+      const probSuccess = this.modelService.getProb({
+        // week: moment().week(),
+        week: "",
+        minTemp: 58,
+        rainfall: 76,
+        sunlightExposure: 43.22,
+        elevation: 49.33,
+        experience: contract.experience,
+        size_of_farm: contract.size,
+        technique: contract.technique === 'hand' ? 0 : 1,
+        disease: 0
+      })
+      return probSuccess* total_premium /(1-probSuccess)
+    }
+
+    calculatePremium(address) {
+      let farmer = this.databaseService.getFarmerByAddress(address);
+      let contract = this.databaseService.getContract(address);
+      const last_premium = contract.premium
+
+      const probSuccess = this.modelService.getProb({
+        // week: moment().week(),
+        week: "",
+        minTemp: 58,
+        rainfall: 76,
+        sunlightExposure: 43.22,
+        elevation: 49.33,
+        experience: contract.experience,
+        size_of_farm: contract.size,
+        technique: contract.technique === 'hand' ? 0 : 1,
+        disease: 0
+      })
+      return probSuccess* last_premium /(1-probSuccess)
+    }
   checkForCropFailure(force) {
     let weatherInfo = this.weatherService.getWeatherInfo().subscribe((response) => {
       console.log("response is :", response)
