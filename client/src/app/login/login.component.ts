@@ -51,6 +51,8 @@ export class LoginComponent implements OnInit {
       if (this.role === "insurer") {
 
         this.router.navigate(['/in'], { skipLocationChange: true });
+      } else if (this.role==="consumer"){
+        this.router.navigate(['/public'],{skipLocationChange:true})
       } else {
         this.appInfoService.setCurrentFarmerEthAddress(this.ethcontractService.getFarmerAddress());
 

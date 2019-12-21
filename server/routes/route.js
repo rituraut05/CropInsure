@@ -102,7 +102,7 @@ module.exports = function(app) {
     // }
 
 
-    app.get('/api/textract', function(req, res) {
+    app.get('/api/textract/:filename', function(req, res) {
        
         // Load the AWS SDK for Node.js
 
@@ -116,7 +116,7 @@ module.exports = function(app) {
             Document: { /* required */
             S3Object: {
                 Bucket: 'cropinsure2',
-                Name: 'insurance.png'
+                Name: req.params.filename
             }
             },
             FeatureTypes: [ /* required */

@@ -14,6 +14,8 @@
             <select clrSelect name="type" (change)="changeRole($event.target.value)">
               <option [ngValue]="position">Farmer</option>
               <option value="insurer">Insurer</option>
+              <option value="consumer">Consumer</option>
+
             </select>
           </clr-select-container>
           <clr-input-container>
