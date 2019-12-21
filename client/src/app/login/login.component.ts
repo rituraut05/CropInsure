@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
   }
   next_page() {
     console.log(this.role);
-    this.ethcontractService.disbursePayment("0xEAD2fF6e1ac2a86f7AaB4F8e8a4265b3acc5b44f",10);
+    // this.ethcontractService.disbursePayment("0xEAD2fF6e1ac2a86f7AaB4F8e8a4265b3acc5b44f",10);
     if (!this.loginForm.errors) {
         this.appInfoService.setCurrentInsurerEthAddress(this.ethcontractService.getContractAddress());
       if (this.role === "insurer") {

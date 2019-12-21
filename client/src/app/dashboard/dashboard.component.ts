@@ -26,12 +26,15 @@ export class DashboardComponent implements OnInit {
   walletBalance;
   premium = 10;
   showWalletBalance = false;
+  showWalletTransaction = false;
+  showManageInsurance = true;
   showWalletBalanceOn() {
     this.showWalletBalance = !this.showWalletBalance;
     console.log("Farmer address is ", this.appInfoService.getCurrentFarmerEthAddress());
     this.walletBalance = this.ethcontractService.getEthBalance(this.appInfoService.getCurrentFarmerEthAddress());
 
   }
+
 
   payPremium(index: number) {
     this.walletBalance = this.walletBalance - this.walletBalance;
@@ -79,7 +82,23 @@ export class DashboardComponent implements OnInit {
     }
 
   ];
-
+  showManageInsurancesToggle(){
+    this.showWalletBalance = false;
+    this.showManageInsurance = true;
+    this.showWalletTransaction = false;
+  }
+  showWalletBalanceToggle() {
+    this.showWalletBalance = true;
+    this.showManageInsurance = false;
+    this.showWalletTransaction = false;
+    this.walletBalance = 1000
+  }
+  showWalletTransactionToggle() {
+    this.showWalletBalance = false;
+    this.showManageInsurance = false;
+    this.showWalletTransaction = true;
+    this.walletBalance = 1000
+  }
   ngOnInit() {
   }
 

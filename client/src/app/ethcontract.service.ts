@@ -117,8 +117,8 @@ export class EthcontractService {
   }
   getFarmerAddress(){
     console.log()
-    //return window.web3.eth.accounts[1];
-    return "0x2EEC861c4946b8743B06b09168A4a0914c338e8F";
+    return window.web3.eth.accounts[1];
+    // return "0x2EEC861c4946b8743B06b09168A4a0914c338e8F";
   }
 
   async getEthBalance(address) {

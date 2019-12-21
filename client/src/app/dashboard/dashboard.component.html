@@ -23,20 +23,29 @@
     <div class="content-container">
         <clr-vertical-nav *ngIf="option === 'lazy'" [clrVerticalNavCollapsible]="true"
             [clrVerticalNavCollapsed]="navCollapsed" (clrVerticalNavCollapsedChange)="updateNavCollapsed($event)">
-
+            <clr-vertical-nav-group routerLinkActive="active">
+                    <a [routerLink]="['./beatles']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+                        clrVerticalNavLink
+                        (click)="showManageInsurancesToggle()">
+                        <clr-icon [attr.shape]="'list'" clrVerticalNavIcon></clr-icon>
+                        {{'Manage Insurances'|translate}}
+                    </a>
+    
+                </clr-vertical-nav-group>
             <clr-vertical-nav-group routerLinkActive="active">
                 <a [routerLink]="['./in']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
                     clrVerticalNavLink>
-                    <clr-icon [attr.shape]="'dollar-bill'" clrVerticalNavIcon></clr-icon>
+                    <clr-icon [attr.shape]="'coin-bag'" clrVerticalNavIcon></clr-icon>
                     {{'Crop Coin Wallet'|translate}}
                 </a>
                 <ng-template [clrIfExpanded]="groupExpand" (clrIfExpandedChange)="updateGroupExpand($event)">
                     <clr-vertical-nav-group-children>
                         <a routerLinkActive="active" clrVerticalNavLink
-                            (click)="showWalletBalanceOn()">
+                            (click)="showWalletBalanceToggle()">
                             {{'Wallet Balance'|translate}}
                         </a>
-                        <a routerLinkActive="active" clrVerticalNavLink>
+                        <a routerLinkActive="active" clrVerticalNavLink
+                        (click)="showWalletTransactionToggle()">
                             {{'Wallet Transaction'|translate}}
                         </a>
                         <a routerLinkActive="active" clrVerticalNavLink>
@@ -81,7 +90,7 @@
 
 
         </clr-vertical-nav>
-        <div class="content-area" *ngIf="!showWalletBalance">
+        <div class="content-area" *ngIf="showManageInsurance">
 
             <br>
             <div>
@@ -168,9 +177,72 @@
             </div>
         </div>
         <div class="content-area" *ngIf="showWalletBalance">
-            <h3 style="display:inline;">Wallet Balance is {{walletBalance}} crop coins </h3>
-
+            <h3 style="display:inline;"> Wallet Balance</h3>
+            <div class="clr-row">
+                    <div class="clr-col-lg-8 clr-col-12">
+                        <a class="card clickable">
+                            <div class="card-block" >
+                                    <div class="clr-row">
+                                    <img  src='../../assets/wallet.png' style="width:20%; height: 20%; padding-left: 30px; padding-right: 30px;"
+                                    class='card-media-image'>
+                                    <h3 style="padding: 30px">{{walletBalance}} crop coins</h3>
+                                    <!-- <h4 style="padding: 30px">{{walletBalance}} crop coins</h4> -->
+                                    </div>
+                                <!-- <div>
+                                    <clr-icon shape="plus-circle" class="is-solid is-info" size="140"></clr-icon>
+                                </div> -->
+                                
+                            </div>
+                        </a>
+                    </div>
+            </div>
+            
         </div>
+    <div class="content-area" *ngIf="showWalletTransaction">
+            <h3 style="display:inline;"> Wallet Transactions</h3>
+            <div class="clr-row">
+                <div class="clr-col-lg-8 clr-col-12">
+                        <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="left">Wizard</th>
+                                        <th>Allegiance</th>
+                                        <th>Triwizard Champion?</th>
+                                        <th>Can Cast Fireball</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="left">Harry</td>
+                                        <td>Gryffindor</td>
+                                        <td>Yes</td>
+                                        <td>No</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="left">Gandalf</td>
+                                        <td>Hobbits</td>
+                                        <td>Maybe?</td>
+                                        <td>I don&apos;t think so...</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="left">Obi-Wan Kenobi</td>
+                                        <td>Republic/Rebellion</td>
+                                        <td>No</td>
+                                        <td>No</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="left">Merlin</td>
+                                        <td>King Arthur</td>
+                                        <td>Probably invented the tournament</td>
+                                        <td>Solid maybe</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                </div>
+            </div>
+            
+        </div>
+
     </div>
 
 </div>
