@@ -30,7 +30,7 @@
                                 <input #file type="file" name="photo">
                                 <div>
                                     <br>
-                                    <button type="button" class="btn btn-primary btn-s" [disabled]="submitbuttonStatus"(click)="uplaoddata()">
+                                    <button type="button" class="btn btn-info-outline" [disabled]="submitbuttonStatus"(click)="uplaoddata()">
                                             Upload 
                                     </button>
                                     <p style="display: inline; text-align: right; ">Upload your insurance policy document</p>
@@ -156,8 +156,14 @@
                                 <input clrInput formControlName="survey" />
                                 <clr-control-error *clrIfError="'required'">Survey Number Required</clr-control-error>
                                 </clr-input-container>
-                        
-                                <clr-input-container class="clr-col-lg-12">
+
+                                <clr-input-container class="clr-col-lg-4">
+                                <label>Pincode</label>
+                                <input clrInput formControlName="area" />
+                                <clr-control-error *clrIfError="'required'">Pincode Required</clr-control-error>
+                                </clr-input-container>
+
+                                <clr-input-container class="clr-col-lg-8">
                                 <label>Farm Area</label>
                                 <input clrInput formControlName="area" />
                                 <clr-control-error *clrIfError="'required'">Farm Area Required</clr-control-error>
@@ -220,11 +226,42 @@
                                 <input clrInput formControlName="branch" />
                                 <clr-control-error *clrIfError="'required'">Crop Name Required</clr-control-error>
                                 </clr-input-container>
+                                <button clrStepButton="next">next</button>
 
-                                <button clrStepButton="submit" (click)="next_page()">submit</button>
                                 </clr-step-content>
+                                
+                        </clr-stepper-panel>
+                        <clr-stepper-panel formGroupName="premium">
+                                <clr-step-title>Check Premium</clr-step-title>
+                                <clr-step-description></clr-step-description>
+                                <clr-step-content *clrIfExpanded="acceptedPremium" class="clr-row">
+                                
+                                <clr-input-container class="clr-col-lg-4">
+                                <label>Premium</label>
+                                <input clrInput formControlName="checkpremium" />
+                                <clr-control-error *clrIfError="'required'">Premium Required</clr-control-error>
+                                </clr-input-container>
+                                <button (click)="modal()" class="btn btn-info-outline" clrStepButton="submit">Check Premium</button>
+                                </clr-step-content>
+                                
                         </clr-stepper-panel>
                 </form>
+                <clr-modal [(clrModalOpen)]="basic">
+                <h3 class="modal-title">{{'Insurance Form'|translate}}</h3>
+                <div class="modal-body">
+                        Premium calculated = {{premium}} Rs
+                </div>
+                <div class="modal-footer">
+                        <!-- <button type="button" class="btn btn-outline" (click)="basic = false">Cancel</button> -->
+                        <button type="button" class="btn btn-primary"
+                        (click)="modalOk()">{{'Agree'|translate}}</button>
+                        <button type="button" class="btn btn-primary"
+                        (click)="basic=false">{{'Close'|translate}}</button>
+                        
+                </div>
+                </clr-modal>
+                <button disabled *ngIf="!acceptedPremium" class="btn btn-primary">Submit</button>
+                <button *ngIf="acceptedPremium" (click)="next_page()" class="btn btn-primary">Submit</button>
                 <!-- <form clrStepper #contactForm="ngForm" (ngSubmit)="templateFormSubmit(contactForm.value)">
                                 <clr-stepper-panel >
                                   <clr-step-title>Legal Name</clr-step-title>

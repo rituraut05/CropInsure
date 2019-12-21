@@ -20,6 +20,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CropCointWalletBalanceComponent } from './crop-coint-wallet-balance/crop-coint-wallet-balance.component';
+import { PublicDashboardComponent } from './public-dashboard/public-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CropCointWalletBalanceComponent } from './crop-coint-wallet-balance/cro
     AnalyticsComponent,
     ClrChartsComponent,
     LoginComponent,
-    CropCointWalletBalanceComponent
+    CropCointWalletBalanceComponent,
+    PublicDashboardComponent
   ],
   imports: [
     BrowserModule,

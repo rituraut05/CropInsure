@@ -6,6 +6,7 @@ import { Dashboard2Component } from './dashboard2/dashboard2.component';
 import { InDashboardComponent } from './in-dashboard/in-dashboard.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { LoginComponent } from './login/login.component';
+import { PublicDashboardComponent } from './public-dashboard/public-dashboard.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path:'analytics',
     component:AnalyticsComponent
+  },
+  {
+    path:'public',
+    component:PublicDashboardComponent
   }
 ];
 

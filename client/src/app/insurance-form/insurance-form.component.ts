@@ -36,8 +36,26 @@ export class InsuranceFormComponent implements OnInit {
         ifsc: ['MAHB00301', Validators.required],
         branch: ['Koregaon', Validators.required],
       }),
+      premium: this.formBuilder.group({
+        checkpremium: ""
+      }),
     });
   }
+  basic = false
+  modal() {
+    console.log("in modal")
+    this.basic = true
+  }
+  premium=100
+  modalOk(){
+    // this.formBuilder.group({premium:this.formBuilder.group({
+    //   checkpremium:"100"
+    // })})
+    
+    this.basic =false;
+    this.acceptedPremium = true
+  }
+  acceptedPremium = false;
   submit() {
     console.log('reactive form submit', this.form.value);
     let that = this;
@@ -74,6 +92,9 @@ export class InsuranceFormComponent implements OnInit {
             bankaccount: ['645XXXXXXX', Validators.required],
             ifsc: ['MAHB00301', Validators.required],
             branch: ['Koregaon', Validators.required],
+          }),
+          premium: this.formBuilder.group({
+            checkpremium: ""
           }),
         });
       },
