@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { EthcontractService } from '../ethcontract.service';
-
+import { HttpClient } from '@angular/common/http';
+//import {Textract} from 'aws-sdk';
 @Component({
   selector: 'app-insurance-form',
   templateUrl: './insurance-form.component.html',
@@ -12,7 +13,8 @@ export class InsuranceFormComponent implements OnInit {
   form: FormGroup;
   submitbuttonStatus: any
 
-  constructor(private router: Router, private formBuilder: FormBuilder, private ethcontractService: EthcontractService) {
+  constructor(private router: Router, private formBuilder: FormBuilder, private ethcontractService: EthcontractService,
+    private http:HttpClient) {
     this.form = this.formBuilder.group({
       basic: this.formBuilder.group({
         name: ['', Validators.required],
@@ -51,7 +53,7 @@ export class InsuranceFormComponent implements OnInit {
     // this.formBuilder.group({premium:this.formBuilder.group({
     //   checkpremium:"100"
     // })})
-    
+
     this.basic =false;
     this.acceptedPremium = true
   }
@@ -61,6 +63,7 @@ export class InsuranceFormComponent implements OnInit {
     let that = this;
     this.ethcontractService.createInsurance();
   }
+
   progressisHidden = true;
   infoisHidden = true;
   firstName = '';
@@ -101,11 +104,27 @@ export class InsuranceFormComponent implements OnInit {
       6000
     );
   }
+  filename:"";
+  onFileSelected(event) {
+    if(event.target.files.length > 0)
+     {
+       console.log("filename:",event.target.files[0].name);
+       this.filename =event.target.files[0].name;
+     }
+   }
   uplaoddata() {
 
     this.progressisHidden = false;
-    this.setValues();
+    //this.setValues();
+    console.log("sending request")
 
+    this.http.get('http://localhost:3000/api/textract').subscribe((data:any)=>{
+
+      console.log("got the data",data);
+    },error=>{
+      console.log("error:",error);
+
+    });
     // tslint:disable-next-line: no-unused-expression
 
   }

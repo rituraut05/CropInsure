@@ -102,7 +102,7 @@ module.exports = function(app) {
     // }
 
 
-    app.get('/textract', function(req, res) {
+    app.get('/api/textract', function(req, res) {
        
         // Load the AWS SDK for Node.js
 
@@ -135,7 +135,7 @@ module.exports = function(app) {
                 value_map = {}
                 block_map = {}
                 for (block of blocks) {
-                    console.log(block)
+                    //console.log(block)
                     block_id = block['Id']
                     block_map[block_id] = block
                     if (block['BlockType'] == "KEY_VALUE_SET") {
@@ -145,9 +145,10 @@ module.exports = function(app) {
                             value_map[block_id] = block
                     }
                 }
-                console.log(key_map)
+               // console.log(key_map)
                 kvs = get_kv_relationship(key_map, value_map, block_map)
-                print_kvs(kvs)
+                print_kvs(kvs);
+                res.json(kvs);
 
             }
         });
