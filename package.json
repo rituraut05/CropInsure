@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/rituraut05/icertis-hackathon#readme",
   "dependencies": {
+    "aws-sdk": "^2.595.0",
     "body-parser": "^1.19.0",
     "connect": "^3.7.0",
     "cookie-parser": "^1.4.4",

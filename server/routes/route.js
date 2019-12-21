@@ -8,6 +8,8 @@ const Dependency = require('../models/Dependency')
 const accountUtil = require('../controller/accountUtil')
 const crypto = require('crypto')
 const fs = require("fs");
+        var AWS = require('aws-sdk');
+
 // const jwt = require('jsonwebtoken');
 // const moment = require('moment');
 // const NodeGeocoder = require('node-geocoder');
@@ -40,20 +42,36 @@ module.exports = function(app) {
     //     })
     // });
 
-    app.post('/service_def', function(req, res) {
-        let newServiceDef = new ServiceDefinition({
-            service_name : req.body.service_name,
-            version: req.body.version,
-            description: req.body.description
-        })
-        newServiceDef.save(function(err, model_def){
-            if(err){
-                res.json({msg: 'Failed to add model definition.'})
+    app.get('/textract', function(req, res) {
+       
+        // Load the AWS SDK for Node.js
+
+        // Set region
+        AWS.config.region = 'us-east-1';
+
+        var textract = new AWS.Textract();
+
+        // Set parameters for the API
+        var params = {
+            Document: { /* required */
+            S3Object: {
+                Bucket: 'cropinsure2',
+                Name: 'insurance.png'
             }
-            else{
-                res.json({msg: 'Model definition added successfully.'})
+            },
+            FeatureTypes: [ /* required */
+            'FORMS'
+            ]
+           
+        };
+        textract.analyzeDocument(params, function(err, data) {
+            if (err) console.log(err, err.stack); // an error occurred
+            else  {
+             console.log(data);           // successful response
+
             }
-        })
+        });
+        
     });
     
     // Model Definitions routes

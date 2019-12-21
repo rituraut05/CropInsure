@@ -25,6 +25,7 @@
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
     "@webcomponents/custom-elements": "^1.0.0",
+    "aws-sdk": "^2.595.0",
     "buffer": "^5.4.3",
     "chart.js": "^2.9.3",
     "rxjs": "~6.4.0",
