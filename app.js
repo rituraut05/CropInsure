@@ -5,7 +5,8 @@ const bodyParser = require('body-parser');
 // const expressJwt = require('express-jwt');
 const path = require('path');
 const app = express();
-
+const cors = require('cors');
+// app.use(cors);
 app.use(cookieParser());
 app.use(bodyParser.json());
 

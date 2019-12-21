@@ -14,9 +14,9 @@
             </a>
         </div>
     </header>
-    
-    
-    
+
+
+
     <div class="main-container">
     <div class="content-container">
         <div class="content-area">
@@ -27,15 +27,15 @@
                             <h3>Add your insurance</h3>
                                 <span class="label label-purple" style="display: inline" >Upload your insurance policy</span>
                                 <br><br>
-                                <input #file type="file" name="photo">
+                                <input #file type="file" name="photo" (change)="onFileSelected($event)">
                                 <div>
                                     <br>
                                     <button type="button" class="btn btn-info-outline" [disabled]="submitbuttonStatus"(click)="uplaoddata()">
-                                            Upload 
+                                            Upload
                                     </button>
                                     <p style="display: inline; text-align: right; ">Upload your insurance policy document</p>
                                 </div>
-                                
+
                                 <div *ngIf="!progressisHidden">
                                     <div class="clr-row">
                                         <div class="clr-col">
@@ -57,13 +57,13 @@
                                 <clr-step-title>Farmer Basic Details</clr-step-title>
                                 <clr-step-description></clr-step-description>
                                 <clr-step-content *clrIfExpanded class="clr-row">
-                                
+
                                 <clr-input-container class="clr-col-lg-4">
                                 <label>Full Name</label>
                                 <input clrInput formControlName="name" />
                                 <clr-control-error *clrIfError="'required'">Full Name Required</clr-control-error>
                                 </clr-input-container>
-                        
+
                                 <clr-input-container class="clr-col-lg-4">
                                 <label>Adhaar Card Number</label>
                                 <input clrInput formControlName="adhaar" />
@@ -84,7 +84,7 @@
                                 <label class="clr-control-label">Farmer Category</label>
                                 <div class="clr-control-container clr-control-inline">
                                         <div class="clr-radio-wrapper">
-                                        <input type="radio" id="vertical-radio1" name="radio-full1" *ngIf="infoisHidden" ng value="option1" class="clr-radio">                                        
+                                        <input type="radio" id="vertical-radio1" name="radio-full1" *ngIf="infoisHidden" ng value="option1" class="clr-radio">
                                         <input type="radio" id="vertical-radio1" name="radio-full1" *ngIf="!infoisHidden" checked value="option1" class="clr-radio">
                                         <label for="vertical-radio1" class="clr-control-label">Small Farmer</label>
                                         </div>
@@ -102,12 +102,12 @@
                                         </div>
                                 </div>
                                 </div>
-                                
+
                                 <div style = "padding-top: 20px;" class="clr-form-control" class="clr-col-lg-4">
                                 <label class="clr-control-label">Caste Category</label>
                                 <div class="clr-control-container clr-control-inline">
                                         <div class="clr-radio-wrapper">
-                                        <input type="radio" id="vertical-radio1" name="radio-full" value="option1" *ngIf="infoisHidden" class="clr-radio">                                        
+                                        <input type="radio" id="vertical-radio1" name="radio-full" value="option1" *ngIf="infoisHidden" class="clr-radio">
                                         <input type="radio" id="vertical-radio1" name="radio-full" value="option1"*ngIf="!infoisHidden" checked class="clr-radio">
                                         <label for="vertical-radio1" class="clr-control-label">SC/ST</label>
                                         </div>
@@ -129,28 +129,28 @@
                                         </div>
                                 </div>
                                 </div>
-                                
+
                                 <button clrStepButton="next">next</button>
                                 </clr-step-content>
                         </clr-stepper-panel>
-                        
+
                         <clr-stepper-panel formGroupName="farm">
                                 <clr-step-title>Farm details</clr-step-title>
                                 <clr-step-description>List down your farm details</clr-step-description>
                                 <clr-step-content *clrIfExpanded class="clr-row">
-                        
+
                                 <clr-input-container class="clr-col-lg-4">
                                 <label>District</label>
                                 <input clrInput formControlName="district" />
                                 <clr-control-error *clrIfError="'required'">District Required</clr-control-error>
                                 </clr-input-container>
-                        
+
                                 <clr-input-container class="clr-col-lg-4">
                                 <label>Village/Ward</label>
                                 <input clrInput formControlName="village" />
                                 <clr-control-error *clrIfError="'required'">Village/Ward Required</clr-control-error>
                                 </clr-input-container>
-                        
+
                                 <clr-input-container class="clr-col-lg-4">
                                 <label>Survey Number</label>
                                 <input clrInput formControlName="survey" />
@@ -171,30 +171,30 @@
                                 <button clrStepButton="next">next</button>
                                 </clr-step-content>
                         </clr-stepper-panel>
-                                
+
                         <clr-stepper-panel formGroupName="crop">
                                 <clr-step-title>Crop sowing Details</clr-step-title>
                                 <clr-step-description></clr-step-description>
                                 <clr-step-content *clrIfExpanded class="clr-row">
-                        
+
                                 <clr-input-container class="clr-col-lg-4">
                                 <label>Crop Name</label>
                                 <input clrInput formControlName="cropname" />
                                 <clr-control-error *clrIfError="'required'">Crop Name Required</clr-control-error>
                                 </clr-input-container>
-                        
+
                                 <clr-input-container class="clr-col-lg-4">
                                 <label>Date of Sowing</label>
                                 <input clrInput formControlName="sowdate" />
                                 <clr-control-error *clrIfError="'required'">Date of Sowing Required</clr-control-error>
                                 </clr-input-container>
-                        
+
                                 <clr-input-container class="clr-col-lg-4">
                                 <label>Area Sown(in Acres)</label>
                                 <input clrInput formControlName="sownarea" />
                                 <clr-control-error *clrIfError="'required'">Area Sown(in Acres) Required</clr-control-error>
                                 </clr-input-container>
-                        
+
                                 <clr-input-container class="clr-col-lg-12">
                                 <label>Season</label>
                                 <input clrInput formControlName="season" />
@@ -203,12 +203,12 @@
                                 <button clrStepButton="next">next</button>
                                 </clr-step-content>
                                 </clr-stepper-panel>
-                        
+
                         <clr-stepper-panel formGroupName="bank">
                                 <clr-step-title>Bank Account Details</clr-step-title>
                                 <clr-step-description></clr-step-description>
                                 <clr-step-content *clrIfExpanded class="clr-row">
-                                
+
                                 <clr-input-container class="clr-col-lg-4">
                                 <label>Bank Account No.</label>
                                 <input clrInput formControlName="bankaccount" />
@@ -229,13 +229,13 @@
                                 <button clrStepButton="next">next</button>
 
                                 </clr-step-content>
-                                
+
                         </clr-stepper-panel>
                         <clr-stepper-panel formGroupName="premium">
                                 <clr-step-title>Check Premium</clr-step-title>
                                 <clr-step-description></clr-step-description>
                                 <clr-step-content *clrIfExpanded="acceptedPremium" class="clr-row">
-                                
+
                                 <clr-input-container class="clr-col-lg-4">
                                 <label>Premium</label>
                                 <input clrInput formControlName="checkpremium" />
@@ -257,7 +257,7 @@
                         (click)="modalOk()">{{'Agree'|translate}}</button>
                         <button type="button" class="btn btn-primary"
                         (click)="basic=false">{{'Close'|translate}}</button>
-                        
+
                 </div>
                 </clr-modal>
                 <button disabled *ngIf="!acceptedPremium" class="btn btn-primary">Submit</button>
@@ -271,16 +271,16 @@
                                       <label>First Name</label>
                                       <input clrInput  name="firstName" required />
                                     </clr-input-container>
-                              
+
                                     <clr-input-container>
                                       <label>Last Name</label>
                                       <input clrInput  name="lastName" required />
                                     </clr-input-container>
-                              
+
                                     <button clrStepButton="next">next</button>
                                   </clr-step-content>
                                 </clr-stepper-panel>
-                              
+
                                 <clr-stepper-panel >
                                   <clr-step-title>Contact Information</clr-step-title>
                                   <clr-step-description>...</clr-step-description>
@@ -289,7 +289,7 @@
                                     <button clrStepButton="next">next</button>
                                   </clr-step-content>
                                 </clr-stepper-panel>
-                              
+
                                 <clr-stepper-panel >
                                   <clr-step-title>Password</clr-step-title>
                                   <clr-step-description>...</clr-step-description>
@@ -413,7 +413,7 @@
                         </clr-input-container>
                         <button class="btn btn-primary" type="submit" (click)="next_page()">Submit</button>
                     </form>                                                                          -->
-                </div>  
+                </div>
               </div>
-              
+
     </div>
