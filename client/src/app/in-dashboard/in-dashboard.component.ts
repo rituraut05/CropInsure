@@ -54,6 +54,7 @@ export class InDashboardComponent implements OnInit {
   }
   OnDailyCheck() {
     this.dailyCheck = !this.dailyCheck
+
   }
   OnAutoSettle() {
     this.autoSettle = !this.autoSettle

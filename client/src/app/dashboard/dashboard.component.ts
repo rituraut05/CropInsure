@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import {EthcontractService} from '../ethcontract.service';
+import {AppInfoService} from '../AppInfoService/app-info.service';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -9,7 +12,9 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private router: Router, private translate: TranslateService) { }
+  constructor(private router: Router, private translate: TranslateService,
+    private ethcontractService:EthcontractService,
+    private appInfoService : AppInfoService) { }
 
   navCollapsed: any
   groupExpand: any
@@ -18,12 +23,16 @@ export class DashboardComponent implements OnInit {
 
 
   option = "lazy";
-  walletBalance = 1000;
+  walletBalance;
   premium = 10;
   showWalletBalance = false;
   showWalletBalanceOn() {
-    this.showWalletBalance = !this.showWalletBalance
+    this.showWalletBalance = !this.showWalletBalance;
+    console.log("Farmer address is ", this.appInfoService.getCurrentFarmerEthAddress());
+    this.walletBalance = this.ethcontractService.getEthBalance(this.appInfoService.getCurrentFarmerEthAddress());
+
   }
+
   payPremium(index: number) {
     this.walletBalance = this.walletBalance - this.walletBalance;
     this.walletBalance = 990;
