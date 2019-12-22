@@ -9,24 +9,24 @@ export class PublicDashboardComponent implements OnInit {
 
   constructor() { }
   option = "lazy";
-  showWalletBalance = false;
+  showWalletBalance = true;
   showWalletTransaction = false;
-  showManageInsurance = true;
+  showWalletOffers = false;
   walletBalance = 1000
-  showManageInsurancesToggle(){
+  showWalletOffersToggle() {
     this.showWalletBalance = false;
-    this.showManageInsurance = true;
+    this.showWalletOffers = true;
     this.showWalletTransaction = false;
   }
   showWalletBalanceToggle() {
     this.showWalletBalance = true;
-    this.showManageInsurance = false;
+    this.showWalletOffers = false;
     this.showWalletTransaction = false;
     this.walletBalance = 1000
   }
-  showWalletTransactionToggle() {
+  showWalletTransactionsToggle() {
     this.showWalletBalance = false;
-    this.showManageInsurance = false;
+    this.showWalletOffers = false;
     this.showWalletTransaction = true;
     this.walletBalance = 1000
   }
